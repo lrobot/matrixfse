@@ -200,17 +200,18 @@ class Matrix_App(Tkinter.Tk):
     def OnQuit(self,event):
         if self.modified==True:
             if tkMessageBox.askyesno("Text was modified", "Do you want to save before quitting ?"):
-                self.OnSave()
+                self.OnSave(None)
         event.widget.quit()
         
     def OnLoadFile(self,event):
         self.fileName = tkFileDialog.askopenfilename()
         if len(self.fileName)>1:
             f=open(self.fileName,'r')
+            self.text.delete("1.0", Tkinter.END)
             self.text.insert(Tkinter.INSERT,f.read())
             self.setTitle()
             
-    def OnSave(self): 
+    def OnSave(self,event): 
         if self.fileName=="":
             self.OnSaveAs()
             return
