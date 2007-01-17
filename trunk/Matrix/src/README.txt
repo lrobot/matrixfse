@@ -2,13 +2,17 @@ RELEASE NOTES
 
 
 INSTALLATION:
-1) Exract the zip into any folder of your choice
+WINDOWS:
+1) Use the installer
 2) Run Matrix.exe
 
+LINUX/MAC:
+1) Extract the zip
+2) Run matrix.py
 
 
 RELEASE NOTES:
-Version 0.2
+Version 0.3
 """
 License:
 Copyright (c) 2006, Kerim Mansour
@@ -38,77 +42,53 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 Changelist
-
-changes from 0.1
---included two side panels and put the textcontrol in between them
--- switched to utf-8
---included configuration mechanism (load cfg ok, save missing !)
---cleaned up some code (refactoring, extracting methods)
+#version 0.3 (TK Version 0.1)
+#changes from 0.2
+#-switched to Tkinter
+#-removed Scrollbar
+#-added configuration panel (colors, font, textareawidth, left and right panel)
+#-configuration is saved completely now
+#changes from 0.1
+#-included two side panels and put the textcontrol in between them
+#-switched to utf-8
+#-included configuration mechanism (load cfg ok, save missing !)
+#-cleaned up some code (refactoring, extracting methods)
 
 
 Requirements
 
  -  Windows / Linux (not tested) / Mac (not tested)
  -  Python (developed  under 2.5 but should work with older versions too)
- -  wxPython (used 0.8.1 but should work with others too)
+ 
 
-Keyboard Shortcuts
-
-  File Menu
+File Features
         o New  Document: Ctrl+N
         o Load Document: Ctrl+L
         o Save Document: Ctrl+S
-        o Save Document: None
+        o Save As Document: None
         o Quit: Ctrl+Q
-  Edit Menu
-        o Undo: Ctrl+Z
-        o Redo: Ctrl+Y
+
+  Edit Features
         o Cut: Ctrl+X
         o Copy: Ctrl+C
         o Paste: Ctrl+V
         o Select All: Ctrl+A
-        o Change Font: Ctrl+O
-  Control Menu
+
+  Control Features
         o Toggle Fullscreen: Ctrl+T
+		o Preferences: Ctrl+P
 
 Bugs 
+ o None that i am aware of
 
-        o Scrollbar should either be disabled or changed in color to match the color of the font selected
-        o Using Windows XP the task bar occationally is NOT covered by the app. 
-           Seems there is a problem with the property to display the task bar allways as top most component. 
-           Sometimes it works despite that property, sometimes it doesn't
 
-Future release plan
-               
-        o 0.3
-                - i18n support
- 		- solve scrollbar problem
-                - load and save configuration file
+Future releases
         o 0.4
-                - statistics functionality (word count, line count)
-                - add spell checker functionality
+                - configurable documents directory
+                - i18n
+                - better support for encoding
 
+        o 0.5
+                - aspell / ispell integration
+                - run any external program with edited text as input
 
-This release is for windows and was generated with p2exe. Since i am not sure what dlls are present on your system i added those that where not part of my windows\system directory. The size increased to around 5 MB that way, but i wanted to make sure it works.
-See if you can drop some files and tell me which one. I will try to make a "base package" with those files the majority needed and an "additional dll" package for the rest.
-Apart of those files in the release you might need the following which SHOULD BE already present:
- OLEAUT32.dll 
- USER32.dll 
- COMCTL32.dll
- SHELL32.dll 
- ole32.dll 
- WINMM.dll
- WSOCK32.dll 
- comdlg32.dll
- ADVAPI32.dll
- GDI32.dll
- KERNEL32.dll 
- RPCRT4.dll 
-
-If you have python and wxPython installed or simply run linux or max you can drop me a line for the sources. I do not want to publish them at the moment for fairness reasons (WriteRoom makes some money with its product and darkroom respects that as well so far).
-
-License issues
-The program is as of 0.1 (and most probably for all versions to come) free to use. Sourcecode WILL be generally available at some future time, i am not yet sure however under what licence that exactly will be. So the program IS free but does NOT come without "cost".
-The price is at least one comment in this post about the program. I want to know who uses it, why and what he likes, dislikes, misses etc. So if you use it please do drop me a line.
-And if you are so overwhelmed with this programs features that you really dont know how to say thanks (ok ... i am joking) then you can of course allways drop 5 bucks and make me happy the materialistic way as well. 
-Just go to http://codeboje.de/blog/archives/Matrix-Fullscreen-Editor.html and click on the donate button.

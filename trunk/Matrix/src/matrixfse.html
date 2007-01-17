@@ -1,0 +1,121 @@
+<img width='700' height='525' style="float: center; border: 0px; padding-left: 5px; padding-right: 5px;" src="/blog/uploads/matrix03.jpg" alt="" />
+<p></p>
+(original size 1400x1050 (just right click and select "show picture")
+<p></p>
+Matrix is a fullscreen editor for distraction-free editing of texts.
+It provides you with the basic features any editor has (load, save, copy, paste, cut). More than that it doesn't do.
+<p></p>
+Alternatives to tis program are <a href="http://they.misled.us/dark-room"  title="Darkroom fullscreen editor">darkroom</a> and <a href="http://www.hogbaysoftware.com/product/writeroom"  title="WriteRoom fullscreen editor">WriteRoom</a>.
+Both of these applications are fullscreen editors. WriteRoom is for Mac only, Darkroom is for Windows only. 
+As for Linux there is an alternative approach <a hred="http://wiredearth-en.blogspot.com/2007/01/darkroom-deluxe-for-linux.html">here</a>
+You may want to have a look at those three products.
+<p></p>
+Darkroom requires .NET 2.0 which is where my problems started....<br>
+-I don't have .NET at every pc i work with, nor can i or do i want to install it everywhere.<br>
+<br>
+Writeroom is for Mac only which I don't have<br>
+And the linux solution came after i started work on Matrix and frankly i don't like emacs.
+<p></p>
+Since i am still learning Python and such a thing is allways a good excercise i simply made it with Python.
+<p></p>
+The outcome i called "Matrix" in analogy to the computer-screens in the film. Matrix is a fullscreen editor, simple, easy, with no extra special features that nobody needs (well at least I don't). It loads and saves, allows to copy, paste,cut and change the font (size, color). I found the ability to go fullscreen very good. No other applications, task bars etc. to distract you.
+Spellchecking and a way to call some external programs will be included in the next versions (i hope).
+Personally i still need to start some structured text functionality.
+<p></p>
+Here are the current releases:
+-<a href="http://downloads.codeboje.de/Matrix.exe"  title="Matrix Release 0.3">0.3 (Windows installer) </a>
+-<a href="http://downloads.codeboje.de/Matrix.zip"  title="Matrix Release 0.3">0.3 (python sources) </a>
+<p></p>
+<pre>
+<strong>Requirements</strong>
+
+ -  Windows / Linux (not tested) / Mac (not tested)
+ -  Python (developed  under 2.5 but should work with older versions too)
+
+<strong>Keyboard Shortcuts</strong>
+
+  File Features
+        o New  Document: Ctrl+N
+        o Load Document: Ctrl+L
+        o Save Document: Ctrl+S
+        o Save As Document: None
+        o Quit: Ctrl+Q
+  Edit Features
+        o Cut: Ctrl+X
+        o Copy: Ctrl+C
+        o Paste: Ctrl+V
+        o Select All: Ctrl+A
+        
+  Control Features
+        o Toggle Fullscreen: Ctrl+T
+		o Preferences: Ctrl+P
+		
+<strong> Bugs </strong>
+
+        o None that i am aware of
+
+Changelist
+
+changes from 0.2
+-switched to Tkinter
+-removed Scrollbar
+-added configuration panel (colors, font, textareawidth, left and right panel)
+-configuration is saved completely now
+
+changes from 0.1
+--included two side panels and put the textcontrol in between them
+-- switched to utf-8
+--included configuration mechanism (load cfg ok, save missing !)
+--cleaned up some code (refactoring, extracting methods)
+--solved Bug: "Fontcolor and style are allways the same at startup (white, monospaced) because (see future plans)"
+--changed initial font color to green and size to 12
+
+<strong>Future releases</strong>
+        o 0.4
+                - configurable documents directory
+                - i18n
+                - better support for encoding
+
+        o 0.5
+                - aspell / ispell integration
+                - run any external program with edited text as input
+
+</pre>
+
+<strong>License issues (new)</strong>
+BSD - like. Please just look at the supplied readme
+<p></p>
+<strong><A id="donate">Cost/Donation</A></strong>
+I offer most programs for free, and I write them in my free time, not that i had much of that.
+I will greatly appreciate any support you might be willing to give. There are a number of ways.
+You might start with a comment in the blog or consider a donation.
+If you don't want to spend money but happen to be an amazon shopper you might consider buying your books after entering amazon from my site. Wont cost you any extra money.
+<p></p>
+For US-users pick this one:
+<p></p>
+<iframe src="http://rcm.amazon.com/e/cm?t=codeboje-20&o=1&p=48&l=st1&mode=books&search=python%20&fc1=&lt1=&lc1=&bg1=&f=ifr" marginwidth="0" marginheight="0" width="728" height="90" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+<p></p>
+Germans might start here:
+<p></p>
+<iframe src="http://rcm-de.amazon.de/e/cm?t=codeboje-21&o=3&p=33&l=st1&mode=books-de&search=programming%20python&fc1=&lt1=_blank&lc1=&bg1=&f=ifr" marginwidth="0" marginheight="0" width="150" height="170" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+<p></p>
+The classical and direct way is of course paypal:
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="business" value="kmansour@web.de">
+<input type="hidden" name="no_shipping" value="2">
+<input type="hidden" name="no_note" value="1">
+<input type="hidden" name="currency_code" value="EUR">
+<input type="hidden" name="tax" value="0">
+<input type="hidden" name="lc" value="DE">
+<input type="hidden" name="bn" value="PP-DonationsBF">
+<input type="image" src="https://www.paypal.com/en_US/i/btn/x-click-but04.gif" border="0" name="submit" alt="PayPal!">
+<img alt="" border="0" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+</form><p></p>
+If the button doesn't work, you can donate manually to the address kmansour@web.de
+<p></p>
+If you prefer to send a donation by postal mail, email me and I will reply with a mailing address you can send to (please cash only). 
+<p></p>
+I also have an amazon wishlist <a href="https://www.amazon.de/gp/registry/wishlist/PE69ODLRMJB6/ref=cm_wl_rlist_go/302-5021500-1747225">here</a>
+
+
