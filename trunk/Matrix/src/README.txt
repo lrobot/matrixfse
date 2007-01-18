@@ -12,7 +12,7 @@ LINUX/MAC:
 
 
 RELEASE NOTES:
-Version 0.3
+Version 0.3b
 """
 License:
 Copyright (c) 2006, Kerim Mansour
@@ -42,7 +42,11 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 Changelist
-#version 0.3 (TK Version 0.1)
+#version 0.3b (TK Version 0.1b)
+#changes from 0.3
+#-added undo (ctrl-u)
+#-added redo (ctrl-r)
+#-fixed a bug related to setting background in the side panels
 #changes from 0.2
 #-switched to Tkinter
 #-removed Scrollbar
