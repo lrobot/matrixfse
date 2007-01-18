@@ -17,6 +17,8 @@ class ConfigDialog(Toplevel):
              "Control-a = Select All",\
              "Control-c = Copy",\
              "Control-v = Paste",\
+             "Control-u = Undo",\
+             "Control-r = Redo",\
              "Control-s = Save",\
              "Control-q = Quit"]
     
@@ -61,7 +63,7 @@ class ConfigDialog(Toplevel):
 
     def OnOk(self):
         self.Apply()
-        self.parent.reconfigureText()
+        self.parent.reconfigureLayout()
         self.destroy()       
         
     def Cancel(self):
