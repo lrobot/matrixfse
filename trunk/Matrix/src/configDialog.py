@@ -169,7 +169,7 @@ class ConfigDialog(Toplevel):
         donateBtn.pack(side=TOP,anchor=W)
         
     def Donate(self):
-        webbrowser.open('http://codeboje.de/blog/pages/MatrixFSE.html')
+        webbrowser.open('http://codeboje.de/blog/pages/donate.html')
         
     def CreatePageFontTab(self):
         self.fontSize=StringVar(self)
