@@ -23,8 +23,8 @@ Spellchecking and a way to call some external programs will be included in the n
 Personally i still need to start some structured text functionality.
 <p></p>
 Here are the current releases:
--<a href="http://downloads.codeboje.de/Matrix.exe"  title="Matrix Release 0.3">0.3 (Windows installer) </a>
--<a href="http://downloads.codeboje.de/Matrix.zip"  title="Matrix Release 0.3">0.3 (python sources) </a>
+-<a href="http://downloads.codeboje.de/Matrix.exe"  title="Matrix Release 0.3b">0.3b (Windows installer) </a>
+-<a href="http://downloads.codeboje.de/Matrix.zip"  title="Matrix Release 0.3b">0.3b (python sources) </a>
 <p></p>
 <pre>
 <strong>Requirements</strong>
@@ -44,6 +44,8 @@ Here are the current releases:
         o Cut: Ctrl+X
         o Copy: Ctrl+C
         o Paste: Ctrl+V
+        o Undo: Ctrl+U
+        o Redo: Ctrl+R
         o Select All: Ctrl+A
         
   Control Features
@@ -52,10 +54,14 @@ Here are the current releases:
 		
 <strong> Bugs </strong>
 
-        o None that i am aware of
+        o Windows seems to have problems getting rid of the taskbar !
 
 Changelist
 
+changes from 0.3
+-added undo (ctrl-u)
+-added redo (ctrl-r)
+-fixed a bug related to setting background in the side panels
 changes from 0.2
 -switched to Tkinter
 -removed Scrollbar

@@ -2,7 +2,11 @@
 # -*- coding: iso-8859-1 -*-
 
 #author: Kerim Mansour
-#version 0.3 (TK Version 0.1)
+#version 0.3b (TK Version 0.1b)
+#changes from 0.3
+#-added undo (ctrl-u)
+#-added redo (ctrl-r)
+#-fixed a bug related to setting background in the side panels
 #changes from 0.2
 #-switched to Tkinter
 #-removed Scrollbar
@@ -50,13 +54,13 @@ class Matrix_App(Tkinter.Tk):
         self.loadConfig()
         self.initializeGUI()
         self.fileName=""
-        self.modified=False
         self.encoding = "iso-8859-1"
         self.w,self.h=self.winfo_screenwidth(),self.winfo_screenheight()
         if self.cfg.get('GUI', 'startfullscreen')=="True":
             self.fullscreen=False 
         self.toggleFullScreen(None)
         self.bindEvents()
+        self.modified=False
     
     #------------------------  methods without event binding (all with lower first character)------------------------
     def bindEvents(self):
@@ -68,12 +72,14 @@ class Matrix_App(Tkinter.Tk):
         self.bind("<Control-n>",self.OnNew)
         self.bind("<Control-q>", self.OnQuit)
         self.bind("<Control-v>", self.OnPaste)
+        self.bind("<Control-u>", self.OnUndo)
+        self.bind("<Control-r>", self.OnRedo)
         self.bind("<Key>", self.OnKey)
     
     def getConfiguredFont(self, confweight):
         return tkFont.Font(family=self.cfg.get('FONT', 'family'), size=int(self.cfg.get('FONT', 'size')), weight=confweight)
         
-    def reconfigureText(self):
+    def reconfigureLayout(self):
         """ used to set the font in the textfield 
             after changes in the preferences
         """
@@ -85,6 +91,11 @@ class Matrix_App(Tkinter.Tk):
         bgColour, fgColour=self.getColour()
         self.text.configure(background=bgColour)
         self.text.configure(foreground=fgColour)
+        
+        if self.leftPane != None:
+            self.leftPane.configure(background=bgColour)
+        if self.rightPane != None:
+            self.rightPane.configure(background=bgColour)
         
     def toggleFullScreen(self, event):
         if self.fullscreen==False:
@@ -126,16 +137,20 @@ class Matrix_App(Tkinter.Tk):
         rightPanel=self.cfg.get('GUI','rightPanel')=='True'
         #do only display and configure those panels that are wanted
         if leftPanel:
-            leftPane = Tkinter.Label(self,anchor="w",fg="white",bg=bgColour)
-            leftPane.grid(column=0,row=0,sticky='EWNS')
+            self.leftPane = Tkinter.Label(self,anchor="w",fg="white",bg=bgColour)
+            self.leftPane.grid(column=0,row=0,sticky='EWNS')
+        else:
+            self.leftPane=None
         if rightPanel:
-            rightPane = Tkinter.Label(self,anchor="w",fg="white",bg=bgColour)
+            self.rightPane = Tkinter.Label(self,anchor="w",fg="white",bg=bgColour)
             if leftPanel:
-                rightPane.grid(column=2,row=0,sticky='EWNS')
+                self.rightPane.grid(column=2,row=0,sticky='EWNS')
                 self.grid_columnconfigure(2,weight=1)
             else:
-                rightPane.grid(column=1,row=0,sticky='EWNS')
+                self.rightPane.grid(column=1,row=0,sticky='EWNS')
                 self.grid_columnconfigure(1,weight=1)
+        else:
+            self.rightPane=None
         
         confweight=tkFont.NORMAL
         if self.cfg.get('FONT', 'weight')=='bold':
@@ -144,7 +159,7 @@ class Matrix_App(Tkinter.Tk):
         configuredfont=configuredfont=self.getConfiguredFont(confweight)
         if leftPanel | rightPanel:
             cfgwidth=int(self.cfg.get('GUI','textareawidth'))
-            self.text = Tkinter.Text(self, font=configuredfont, width=cfgwidth,insertbackground=fgColour,borderwidth=0,background=bgColour, foreground=fgColour,wrap='word')
+            self.text = Tkinter.Text(self, undo=1,font=configuredfont, width=cfgwidth,insertbackground=fgColour,borderwidth=0,background=bgColour, foreground=fgColour,wrap='word')
             self.text.grid(column=1,row=0,sticky='EWNS')
         else:
             self.text = Tkinter.Text(self, font=configuredfont, insertbackground=fgColour,borderwidth=0,background=bgColour, foreground=fgColour,wrap='word')
@@ -152,6 +167,7 @@ class Matrix_App(Tkinter.Tk):
             
         self.grid_columnconfigure(0,weight=1)
         self.grid_rowconfigure(0, weight=1)
+        self.text.edit_reset()
         self.text.focus_set()
        
     def loadConfig(self):    
@@ -183,8 +199,26 @@ class Matrix_App(Tkinter.Tk):
     def OnKey(self,event):    
         """ used to mark the text as dirty after a key was pressed
         """   
+        self.text.edit_separator()
         self.modified=True
+        #self.text.edit_modified(True)
     
+    def OnUndo(self,event):
+        try:
+            self.text.edit_undo()
+            self.modified=True
+            #self.text.edit_modified(True)
+        except:
+            pass #undo stack is empty
+    
+    def OnRedo(self,event):
+        try:
+            self.text.edit_redo()
+            self.modified=True
+            #self.text.edit_modified(True)
+        except:
+            pass #redo stack is empty
+        
     def OnPreferences(self,event):
         cd = configDialog.ConfigDialog(self, 'Preferences')
         
@@ -192,6 +226,7 @@ class Matrix_App(Tkinter.Tk):
         #apart of the build in paste functionality we set the position 
         self.text.see(Tkinter.INSERT)
         self.modified=True
+        #self.text.edit_modified(True)
         self.setTitle()
     
     def OnSelectAll(self, event):
@@ -234,6 +269,7 @@ class Matrix_App(Tkinter.Tk):
         self.setTitle()
         self.text.delete(1.0,Tkinter.END)
         self.modified=False
+        self.text.edit_reset()
     #------------------------------ methods for bindings end ---------------------------        
 
         
