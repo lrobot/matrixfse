@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 <XML_DIZ_INFO>
 	<MASTER_PAD_VERSION_INFO>
-		<MASTER_PAD_VERSION>2.02</MASTER_PAD_VERSION>
-		<MASTER_PAD_EDITOR>PADGen 2.0.2.30 http://www.padgen.org</MASTER_PAD_EDITOR>
+		<MASTER_PAD_VERSION>3.01</MASTER_PAD_VERSION>
+		<MASTER_PAD_EDITOR>PADGen 3.0.1.33 http://www.padgen.org</MASTER_PAD_EDITOR>
 		<MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://www.asp-shareware.org/pad</MASTER_PAD_INFO>
 	</MASTER_PAD_VERSION_INFO>
 	<Company_Info>
@@ -34,26 +34,26 @@
 	</Company_Info>
 	<Program_Info>
 		<Program_Name>Matrix</Program_Name>
-		<Program_Version>0.2</Program_Version>
-		<Program_Release_Month>12</Program_Release_Month>
-		<Program_Release_Day>14</Program_Release_Day>
-		<Program_Release_Year>2006</Program_Release_Year>
+		<Program_Version>0.3b</Program_Version>
+		<Program_Release_Month>01</Program_Release_Month>
+		<Program_Release_Day>18</Program_Release_Day>
+		<Program_Release_Year>2007</Program_Release_Year>
 		<Program_Cost_Dollars>0.00</Program_Cost_Dollars>
 		<Program_Cost_Other_Code />
 		<Program_Cost_Other>0.00</Program_Cost_Other>
 		<Program_Type>Freeware</Program_Type>
 		<Program_Release_Status>Beta</Program_Release_Status>
-		<Program_Install_Support>No Install Support</Program_Install_Support>
-		<Program_OS_Support>Windows2000,WinXP,Windows2003</Program_OS_Support>
+		<Program_Install_Support>Install and Uninstall</Program_Install_Support>
+		<Program_OS_Support>Windows2000,WinXP,Windows2003,Linux</Program_OS_Support>
 		<Program_Language>English</Program_Language>
 		<Program_Change_Info />
 		<Program_Specific_Category>Home/Hobby</Program_Specific_Category>
 		<Program_Category_Class>Home &amp; Hobby::Other</Program_Category_Class>
 		<Program_System_Requirements />
 		<File_Info>
-			<File_Size_Bytes>6005986</File_Size_Bytes>
-			<File_Size_K>5865</File_Size_K>
-			<File_Size_MB>5.73</File_Size_MB>
+			<File_Size_Bytes>2988092</File_Size_Bytes>
+			<File_Size_K>2918</File_Size_K>
+			<File_Size_MB>2.85</File_Size_MB>
 		</File_Info>
 		<Expire_Info>
 			<Has_Expire_Info>N</Has_Expire_Info>
@@ -71,65 +71,20 @@
 			<Char_Desc_45>Matrix is a fullscreen editor</Char_Desc_45>
 			<Char_Desc_80 />
 			<Char_Desc_250 />
-			<Char_Desc_450>Matrix is a fullscreen editor, simple, easy, with no extra special features that nobody needs (well at least I don't). It loads and saves, allows to copy, paste,cut and change the font (size, color). I found the ability to go fullscreen very good. No other applications, task bars etc. to distract you.</Char_Desc_450>
-			<Char_Desc_2000>Matrix is a fullscreen editor, simple, easy, with no extra special features that nobody needs (well at least I don't). It loads and saves, allows to copy, paste,cut and change the font (size, color). I found the ability to go fullscreen very good. No other applications, task bars etc. to distract you.
-
-
-So here is release 0.2 (Windows precompiled "binary" using p2exe)
-
-Changelist
-
-changes from 0.1
---included two side panels and put the textcontrol in between them
--- switched to utf-8
---included configuration mechanism (load cfg ok, save missing !)
---cleaned up some code (refactoring, extracting methods)
-
-
-Requirements
-
- -  Windows / Linux (not tested) / Mac (not tested)
- -  Python (developed  under 2.5 but should work with older versions too)
- -  wxPython (used 0.8.1 but should work with others too)
-
-Keyboard Shortcuts
-
-  File Menu
-        o New  Document: Ctrl+N
-        o Load Document: Ctrl+L
-        o Save Document: Ctrl+S
-        o Save Document: None
-        o Quit: Ctrl+Q
-  Edit Menu
-        o Undo: Ctrl+Z
-        o Redo: Ctrl+Y
-        o Cut: Ctrl+X
-        o Copy: Ctrl+C
-        o Paste: Ctrl+V
-        o Select All: Ctrl+A
-        o Change Font: Ctrl+O
-  Control Menu
-        o Toggle Fullscreen: Ctrl+T
-
-Bugs 
-
-        o Scrollbar should either be disabled or changed in color to match the color of the font selected
-        o Using Windows XP the task bar occationally is NOT covered by the app. 
-           Seems there is a problem with the property to display the task bar allways as top most component. 
-           Sometimes it works despite that property, sometimes it doesn't
-</Char_Desc_2000>
+			<Char_Desc_450>Matrix is a fullscreen editor, simple, easy, with no extra special features that nobody needs (well at least I don't). It loads and saves, allows to copy, paste,cut and change the font (size, color). I found the ability to go fullscreen very good. No other applications, task bars etc. to distract you. Python Source available.</Char_Desc_450>
+			<Char_Desc_2000 />
 		</English>
 	</Program_Descriptions>
 	<Web_Info>
 		<Application_URLs>
-			<Application_Info_URL>http://codebojede/blog</Application_Info_URL>
+			<Application_Info_URL>http://codeboje.de/blog/pages/MatrixFSE.html</Application_Info_URL>
 			<Application_Order_URL />
-			<Application_Screenshot_URL>http://codeboje.de/blog/uploads/matrix.jpg</Application_Screenshot_URL>
-			<Application_Icon_URL>http://codeboje.de/blog/uploads/matrix.jpg</Application_Icon_URL>
+			<Application_Screenshot_URL>http://codeboje.de/blog/uploads/matrix03.jpg</Application_Screenshot_URL>
+			<Application_Icon_URL />
 			<Application_XML_File_URL>http://downloads.codeboje.de/matrix_pad.xml</Application_XML_File_URL>
 		</Application_URLs>
 		<Download_URLs>
-			<Primary_Download_URL>http://downloads.codeboje.de/Matrix.zip</Primary_Download_URL>
+			<Primary_Download_URL>http://downloads.codeboje.de/Matrix.exe</Primary_Download_URL>
 			<Secondary_Download_URL />
 			<Additional_Download_URL_1 />
 			<Additional_Download_URL_2 />
@@ -161,8 +116,6 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON A
 WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT 
 OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """</Distribution_Permissions>
-		<EULA>The program is as of 0.1 (and most probably for all versions to come) free to use. Sourcecode WILL be generally available at some future time, i am not yet sure however under what licence that exactly will be. So the program IS free but does NOT come without "cost".
-The price is at least one comment in this post about the program. I want to know who uses it, why and what he likes, dislikes, misses etc. So if you use it please do drop me a line.
-And if you are so overwhelmed with this programs features that you really dont know how to say thanks (ok ... i am joking) then you can of course allways drop some bucks and make me happy the materialistic way as well.</EULA>
+		<EULA />
 	</Permissions>
 </XML_DIZ_INFO>
