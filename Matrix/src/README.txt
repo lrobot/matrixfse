@@ -62,12 +62,12 @@ IF you find a bug please mail me at kmansourADDwebDOTde
         o Cut       : Ctrl+X
         o Copy      : Ctrl+C
         o Paste     : Ctrl+V
-        o Undo      : Ctrl+U
-        o Redo      : Ctrl+R
+        o Undo      : Ctrl+Z
+        o Redo      : Ctrl+Y
         o Select All: Ctrl+A
         o Goto Line : Ctrl+G
-        o Find      : Alt+F
-        o Replace   : Alt+R
+        o Find      : Ctrl+F
+        o Replace   : Ctrl+R
         
   Control Features
     o Toggle Fullscreen: Ctrl+T
@@ -75,7 +75,7 @@ IF you find a bug please mail me at kmansourADDwebDOTde
 		
 <strong> Bugs </strong>
 
-        o Taskbar doesnt disaapear under Windows2000 no clue why
+    o Taskbar doesnt disappear under Windows2000 if its set to stay on top (no clue why)
         
 
 Changelist

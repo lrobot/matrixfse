@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# -*- coding: iso-8859-1 -*-
+# -*- coding: utf-8 -*-
 
 """
 License:
@@ -39,7 +39,7 @@ class Matrix_App(Tkinter.Tk):
         self.loadConfig()
         self.initializeGUI()
         self.fileName=""
-        self.encoding = "iso-8859-1"
+        self.encoding = "utf-8"
         self.w,self.h=self.winfo_screenwidth(),self.winfo_screenheight()
         if self.cfg.get('GUI', 'startfullscreen')=="True":
             self.fullscreen=False 
@@ -58,11 +58,11 @@ class Matrix_App(Tkinter.Tk):
         self.bind("<Control-n>",self.OnNew)
         self.bind("<Control-q>", self.OnQuit)
         self.bind("<Control-v>", self.OnPaste)
-        self.bind("<Control-u>", self.OnUndo)
-        self.bind("<Control-r>", self.OnRedo)
+        self.bind("<Control-z>", self.OnUndo)
+        self.bind("<Control-y>", self.OnRedo)
         self.bind("<Control-g>", self.OnGotoLine)
-        self.bind("<Alt-r>", self.OnReplace)
-        self.bind("<Alt-f>", self.OnFind)
+        self.bind("<Control-r>", self.OnReplace)
+        self.bind("<Control-f>", self.OnFind)
         self.bind("<Control-i>", self.OnInsertFile)
         self.bind("<Key>", self.OnKey)
     
@@ -111,7 +111,7 @@ class Matrix_App(Tkinter.Tk):
             else:
                 self.title(self.fileName)
         else:
-            self.title="Matrix - Full Screen Editor"
+            self.title("Matrix - Full Screen Editor")
     
     def getColour(self):
         r,g,b=self.cfg.get('GUI', 'bgcolor1'), self.cfg.get('GUI', 'bgcolor2'),self.cfg.get('GUI', 'bgcolor3')        
@@ -225,10 +225,10 @@ class Matrix_App(Tkinter.Tk):
         cd = configDialog.ConfigDialog(self, 'Preferences')
     
     def OnReplace(self,event):
-        rp=ReplaceDialog(self)
+        rp=ReplaceDialog(self,"Replace")
     
     def OnFind(self,event):
-        sd=SearchDialog(self)
+        sd=SearchDialog(self,"Find")
         
     def OnPaste(self,event):
         #apart of the build in paste functionality we set the position 
