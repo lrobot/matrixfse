@@ -17,10 +17,10 @@ class ConfigDialog(Toplevel):
              "Control-a = Select All",\
              "Control-c = Copy",\
              "Control-v = Paste",\
-             "Control-u = Undo",\
-             "Control-r = Redo",\
-             "Alt-r = Find",
-             "Alt-r = Replace",
+             "Control-z = Undo",\
+             "Control-y = Redo",\
+             "Control-r = Find",
+             "Control-f = Replace",
              "Control-s = Save",\
              "Control-q = Quit"]
     
