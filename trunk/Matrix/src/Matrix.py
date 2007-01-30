@@ -111,7 +111,7 @@ class Matrix_App(Tkinter.Tk):
             else:
                 self.title(self.fileName)
         else:
-            self.title="Matrix - Full Screen Editor (TK-Version 0.1)"
+            self.title="Matrix - Full Screen Editor"
     
     def getColour(self):
         r,g,b=self.cfg.get('GUI', 'bgcolor1'), self.cfg.get('GUI', 'bgcolor2'),self.cfg.get('GUI', 'bgcolor3')        
