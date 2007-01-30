@@ -12,7 +12,7 @@ LINUX/MAC:
 
 
 RELEASE NOTES:
-Version 0.3b
+Version 0.4
 """
 License:
 Copyright (c) 2006, Kerim Mansour
@@ -40,32 +40,10 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 
+Press Ctrl+P to get to the preferences showing you also the keybindings.
+This software is in development so do not expect it to work perfectly.
+IF you find a bug please mail me at kmansourADDwebDOTde
 
-Changelist
-<p></p>
-Alternatives to this program are <a href="http://they.misled.us/dark-room"  title="Darkroom fullscreen editor">darkroom</a> and <a href="http://www.hogbaysoftware.com/product/writeroom"  title="WriteRoom fullscreen editor">WriteRoom</a>.
-Both of these applications are fullscreen editors. WriteRoom is for Mac only, Darkroom is for Windows only. 
-As for Linux there is an alternative approach <a href="http://wiredearth-en.blogspot.com/2007/01/darkroom-deluxe-for-linux.html">here</a>
-You may want to have a look at those three products.
-<p></p>
-Darkroom requires .NET 2.0 which is where my problems started....<br>
--I don't have .NET at every pc i work with, nor can i or do i want to install it everywhere.<br>
-<br>
-Writeroom is for Mac only which I don't have<br>
-And the linux solution came after i started work on Matrix and frankly i don't like emacs.
-<p></p>
-Since i am still learning Python and such a thing is allways a good excercise i simply made it with Python.
-<p></p>
-The outcome i called "Matrix" in analogy to the computer-screens in the film. Matrix is a fullscreen editor, simple, easy, with no extra special features that nobody needs (well at least I don't). It loads and saves, allows to copy, paste,cut and change the font (size, color). I found the ability to go fullscreen very good. No other applications, task bars etc. to distract you.
-Spellchecking and a way to call some external programs will be included in the next versions (i hope).
-Personally i still need to start some structured text functionality.
-<p></p>
-Here are the current releases:
--<a href="http://downloads.codeboje.de/Matrix.exe"  title="Matrix Release 0.3b">0.3b (Windows installer) </a>
--<a href="http://downloads.codeboje.de/Matrix.zip"  title="Matrix Release 0.3b">0.3 b(python sources) </a>
-<p></p>Best thing to do after starting is pressing "Ctrl-p" to get an overview of shortcuts.
-<p></p>
-<pre>
 <strong>Requirements</strong>
 
  -  Windows / Linux (not tested) / Mac (not tested)
@@ -76,19 +54,23 @@ Here are the current releases:
   File Features
         o New  Document: Ctrl+N
         o Load Document: Ctrl+L
+        o Insert File  : Ctrl+I
         o Save Document: Ctrl+S
         o Save As Document: None
         o Quit: Ctrl+Q
   Edit Features
-        o Cut: Ctrl+X
-        o Copy: Ctrl+C
-        o Paste: Ctrl+V
-        o Undo: Ctrl+U
-        o Redo: Ctrl+R
+        o Cut       : Ctrl+X
+        o Copy      : Ctrl+C
+        o Paste     : Ctrl+V
+        o Undo      : Ctrl+U
+        o Redo      : Ctrl+R
         o Select All: Ctrl+A
+        o Goto Line : Ctrl+G
+        o Find      : Alt+F
+        o Replace   : Alt+R
         
   Control Features
-        o Toggle Fullscreen: Ctrl+T
+    o Toggle Fullscreen: Ctrl+T
 	o Preferences: Ctrl+P
 		
 <strong> Bugs </strong>
@@ -97,6 +79,13 @@ Here are the current releases:
         
 
 Changelist
+
+0.4 (changes from 0.3b) (30.01.2007)
+-added find(ctrl-f)
+-added replace(ctrl-r)
+-added insert File (ctrl-i)
+-added goto Line (ctrl-g)
+-switched to utf-8 encoding as default
 
 0.3b (changes from 0.3)  (18.01.2007)
 -added undo (ctrl-u)
@@ -118,40 +107,12 @@ Changelist
 --changed initial font color to green and size to 12
 
 
-Requirements
+Future release plans
+o 0.5
+  - aspell / ispell integration
+  - run any external program with edited text as input
+  - better support for encoding (detecting encoding of file?)
+  - configurable documents directory
+  - i18n
 
- -  Windows / Linux (not tested) / Mac (not tested)
- -  Python (developed  under 2.5 but should work with older versions too)
- 
-
-File Features
-        o New  Document: Ctrl+N
-        o Load Document: Ctrl+L
-        o Save Document: Ctrl+S
-        o Save As Document: None
-        o Quit: Ctrl+Q
-
-  Edit Features
-        o Cut: Ctrl+X
-        o Copy: Ctrl+C
-        o Paste: Ctrl+V
-        o Select All: Ctrl+A
-
-  Control Features
-        o Toggle Fullscreen: Ctrl+T
-		o Preferences: Ctrl+P
-
-Bugs 
- o None that i am aware of
-
-
-Future releases
-        o 0.4
-                - configurable documents directory
-                - i18n
-                - better support for encoding
-
-        o 0.5
-                - aspell / ispell integration
-                - run any external program with edited text as input
 

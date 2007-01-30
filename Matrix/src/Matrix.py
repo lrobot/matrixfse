@@ -1,22 +1,6 @@
 #!/usr/bin/python
 # -*- coding: iso-8859-1 -*-
 
-#author: Kerim Mansour
-#version 0.3b (TK Version 0.1b)
-#changes from 0.3
-#-added undo (ctrl-u)
-#-added redo (ctrl-r)
-#-fixed a bug related to setting background in the side panels
-#changes from 0.2
-#-switched to Tkinter
-#-removed Scrollbar
-#-added configuration panel (colors, font, textareawidth, left and right panel)
-#-configuration is saved completely now
-#changes from 0.1
-#-included two side panels and put the textcontrol in between them
-#-switched to utf-8
-#-included configuration mechanism (load cfg ok, save missing !)
-#-cleaned up some code (refactoring, extracting methods)
 """
 License:
 Copyright (c) 2006, Kerim Mansour
@@ -44,8 +28,9 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 import Tkinter
-import tkFileDialog,tkFont, tkMessageBox, configDialog
+import tkFileDialog, tkFont, tkMessageBox, configDialog,tkSimpleDialog 
 from ConfigParser import  *
+from searchDialog import  *
 
 class Matrix_App(Tkinter.Tk):
     def __init__(self,parent):
@@ -68,12 +53,17 @@ class Matrix_App(Tkinter.Tk):
         self.bind("<Control-p>", self.OnPreferences)
         self.bind("<Control-l>",self.OnLoadFile)
         self.bind("<Control-s>",self.OnSave)
+        self.bind("<Alt-Shift-s>",self.OnSave)
         self.bind("<Control-a>",self.OnSelectAll)
         self.bind("<Control-n>",self.OnNew)
         self.bind("<Control-q>", self.OnQuit)
         self.bind("<Control-v>", self.OnPaste)
         self.bind("<Control-u>", self.OnUndo)
         self.bind("<Control-r>", self.OnRedo)
+        self.bind("<Control-g>", self.OnGotoLine)
+        self.bind("<Alt-r>", self.OnReplace)
+        self.bind("<Alt-f>", self.OnFind)
+        self.bind("<Control-i>", self.OnInsertFile)
         self.bind("<Key>", self.OnKey)
     
     def getConfiguredFont(self, confweight):
@@ -110,7 +100,7 @@ class Matrix_App(Tkinter.Tk):
     def getText(self):
         """ used to get non-ascii text saved correctly
         """ 
-        return self.text.get(1.0,Tkinter.END).encode(self.encoding)
+        return self.text.get("1.0",Tkinter.END).encode(self.encoding)
     
     
                 
@@ -196,6 +186,18 @@ class Matrix_App(Tkinter.Tk):
         self.cfg.set('GUI', 'bgcolor2','0')
         self.cfg.set('GUI', 'bgcolor3','0')
     #------------------------------ methods for bindings ---------------------------
+    def OnGotoLine(self, event):
+        text = self.text
+        lineno = tkSimpleDialog.askinteger("Goto",
+                "Go to line number:",parent=text)
+        if lineno is None:
+            return "break"
+        if lineno <= 0:
+            text.bell()
+            return "break"
+        text.mark_set("insert", "%d.0" % lineno)
+        text.see("insert")
+        
     def OnKey(self,event):    
         """ used to mark the text as dirty after a key was pressed
         """   
@@ -221,6 +223,12 @@ class Matrix_App(Tkinter.Tk):
         
     def OnPreferences(self,event):
         cd = configDialog.ConfigDialog(self, 'Preferences')
+    
+    def OnReplace(self,event):
+        rp=ReplaceDialog(self)
+    
+    def OnFind(self,event):
+        sd=SearchDialog(self)
         
     def OnPaste(self,event):
         #apart of the build in paste functionality we set the position 
@@ -240,11 +248,15 @@ class Matrix_App(Tkinter.Tk):
         
     def OnLoadFile(self,event):
         self.fileName = tkFileDialog.askopenfilename()
+        self.text.delete("1.0", Tkinter.END)
+        self.OnInsertFile(None)
+    
+    def OnInsertFile(self,event):
         if len(self.fileName)>1:
             f=open(self.fileName,'r')
-            self.text.delete("1.0", Tkinter.END)
             self.text.insert(Tkinter.INSERT,f.read())
             self.setTitle()
+        self.text.see("insert")
             
     def OnSave(self,event): 
         if self.fileName=="":
@@ -267,7 +279,7 @@ class Matrix_App(Tkinter.Tk):
     def OnNew(self,event):
         self.fileName=""
         self.setTitle()
-        self.text.delete(1.0,Tkinter.END)
+        self.text.delete("1.0",Tkinter.END)
         self.modified=False
         self.text.edit_reset()
     #------------------------------ methods for bindings end ---------------------------        
@@ -275,5 +287,5 @@ class Matrix_App(Tkinter.Tk):
         
 if __name__ == "__main__":
     app = Matrix_App(None)
-    app.title('Matrix - Full Screen Editor 0.3 (TK-Version 0.1)')
+    app.title('Matrix - Full Screen Editor 0.4 (TK-Version 0.2)')
     app.mainloop()

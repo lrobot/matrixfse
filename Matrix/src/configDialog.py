@@ -19,6 +19,8 @@ class ConfigDialog(Toplevel):
              "Control-v = Paste",\
              "Control-u = Undo",\
              "Control-r = Redo",\
+             "Alt-r = Find",
+             "Alt-r = Replace",
              "Control-s = Save",\
              "Control-q = Quit"]
     
