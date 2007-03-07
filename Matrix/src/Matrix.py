@@ -89,12 +89,15 @@ class Matrix_App(Tkinter.Tk):
         
     def toggleFullScreen(self, event):
         if self.fullscreen==False:
-            self.overrideredirect(1)
             self.geometry("%dx%d+0+0"%(self.w,self.h)) 
+            if 'windows' in os.environ['OS']:
+                self.overrideredirect(1)
+            self.focus_force()
+            self.lift()
             self.fullscreen=True           
         else:
-            self.overrideredirect(0)
             self.geometry("%dx%d+0+0"%(800,600))
+            self.overrideredirect(0)
             self.fullscreen=False
     
     def getText(self):
@@ -287,5 +290,5 @@ class Matrix_App(Tkinter.Tk):
         
 if __name__ == "__main__":
     app = Matrix_App(None)
-    app.title('Matrix - Full Screen Editor 0.4 (TK-Version 0.2)')
+    app.title('Matrix - Full Screen Editor 0.4b (TK-Version 0.2b)')
     app.mainloop()
