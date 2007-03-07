@@ -27,8 +27,8 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON A
 WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT 
 OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
-import Tkinter
-import tkFileDialog, tkFont, tkMessageBox, configDialog,tkSimpleDialog 
+import Tkinter,os
+import tkFileDialog, tkFont, tkMessageBox, configDialog,tkSimpleDialog
 from ConfigParser import  *
 from searchDialog import  *
 
@@ -90,7 +90,7 @@ class Matrix_App(Tkinter.Tk):
     def toggleFullScreen(self, event):
         if self.fullscreen==False:
             self.geometry("%dx%d+0+0"%(self.w,self.h)) 
-            if 'windows' in os.environ['OS']:
+            if os.environ['OS'].count('Windows'):
                 self.overrideredirect(1)
             self.focus_force()
             self.lift()
