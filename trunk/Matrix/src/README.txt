@@ -12,7 +12,7 @@ LINUX/MAC:
 
 
 RELEASE NOTES:
-Version 0.4
+Version 0.4b
 """
 License:
 Copyright (c) 2006, Kerim Mansour
@@ -79,6 +79,8 @@ IF you find a bug please mail me at kmansourADDwebDOTde
         
 
 Changelist
+0.4b(changes fro m0.4) (07.03.2007)
+-workaround for unix issue with tk fullscreen
 
 0.4 (changes from 0.3b) (30.01.2007)
 -added find(ctrl-f)
