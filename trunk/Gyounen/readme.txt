@@ -56,7 +56,7 @@ And the linux solution came after i started work on Matrix and frankly i don't l
 <p></p>
 Since i am still learning Python and such a thing is allways a good excercise i simply made it with Python.
 <p></p>
-The outcome i called "Matrix" in analogy to the computer-screens in the film. Matrix is a fullscreen editor, simple, easy, with no extra special features that nobody needs (well at least I don't). It loads and saves, allows to copy, paste,cut and change the font (size, color). I found the ability to go fullscreen very good. No other applications, task bars etc. to distract you.
+The outcome i called Gyounen which is japanese and means as much as "contentrate on thought". Gyounen is a fullscreen editor, simple, easy, with no extra special features that nobody needs (well at least I don't). It loads and saves, allows to copy, paste,cut and change the font (size, color). I found the ability to go fullscreen very good. No other applications, task bars etc. to distract you.
 Spellchecking and a way to call some external programs will be included in the next versions (i hope).
 Personally i still need to start some structured text functionality.
 <p></p>

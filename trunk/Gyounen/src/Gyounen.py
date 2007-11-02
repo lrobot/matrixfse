@@ -121,11 +121,11 @@ class Gyounen_App(Tkinter.Tk):
     def setTitle(self):
         if len(self.fileName)>1:
             if self.modified==True:
-                self.title=self.fileName+"*"
+                self.title(self.fileName+"*")
             else:
-                self.title=self.fileName
+                self.title(self.fileName)
         else:
-            self.title="Gyounen - Full Screen Editor (TK-Version 0.1)"
+            self.title("Gyounen - Full Screen Editor (TK-Version 0.1)")
     
     def getColour(self):
         r,g,b=self.cfg.get('GUI', 'bgcolor1'), self.cfg.get('GUI', 'bgcolor2'),self.cfg.get('GUI', 'bgcolor3')        
