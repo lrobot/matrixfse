@@ -249,6 +249,8 @@ class Gyounen_App(Tkinter.Tk):
                   event.widget.quit()
             else:
               event.widget.quit()
+          else:
+              event.widget.quit()
         
         
     def OnLoadFile(self,event):
