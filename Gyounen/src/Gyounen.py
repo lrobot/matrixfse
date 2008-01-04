@@ -5,6 +5,7 @@
 #version 0.6 (TK Version 0.3)
 #changes from 0.5
 #-changed default encoding to utf8 (kanji work now)
+#-added a try, except routine to allow users to save the data in case of an error
 #changes from 0.4
 #-fixed flag for modofication of files (now only true when actually modified)
 #-added more commands (see help panel (ctrl-p))
@@ -49,7 +50,7 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON A
 WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT 
 OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
-import Tkinter
+import Tkinter, traceback
 import tkFileDialog,tkFont, tkMessageBox, configDialog
 from ConfigParser import  *
 
@@ -242,10 +243,13 @@ class Gyounen_App(Tkinter.Tk):
         self.text.tag_add(Tkinter.SEL, "1.0", Tkinter.END)         
         
     def OnQuit(self,event):
-        if self.modified==True:
+          if self.modified==True:
             if tkMessageBox.askyesno("Text was modified", "Do you want to save before quitting ?"):
-                self.OnSave(None)
-        event.widget.quit()
+                if self.OnSave(None):
+                  event.widget.quit()
+            else:
+              event.widget.quit()
+        
         
     def OnLoadFile(self,event):
         self.fileName = tkFileDialog.askopenfilename()
@@ -256,7 +260,8 @@ class Gyounen_App(Tkinter.Tk):
             self.modified=False
             self.setTitle()
             
-    def OnSave(self,event): 
+    def OnSave(self,event):
+      try: 
         if self.fileName=="":
             self.OnSaveAs()
             return
@@ -264,6 +269,10 @@ class Gyounen_App(Tkinter.Tk):
         f.write(self.getText())
         f.close()
         self.modified=False
+        return True
+      except:
+        tkMessageBox.showwarning("Could not save", "Could not save, please copy your text and paste it into some other editor. Please send this error (screenshot) to codeboje.de. \nDetails: \n"+traceback.format_exc())
+        
         
     def OnSaveAs(self): 
         self.fileName=tkFileDialog.asksaveasfilename()
