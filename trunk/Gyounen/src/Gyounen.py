@@ -2,7 +2,9 @@
 # -*- coding: iso-8859-1 -*-
 #concentration of thought =   gyounen
 #author: Kerim Mansour
-#version 0.5 (TK Version 0.2)
+#version 0.6 (TK Version 0.3)
+#changes from 0.5
+#-changed default encoding to utf8 (kanji work now)
 #changes from 0.4
 #-fixed flag for modofication of files (now only true when actually modified)
 #-added more commands (see help panel (ctrl-p))
@@ -58,7 +60,8 @@ class Gyounen_App(Tkinter.Tk):
         self.loadConfig()
         self.initializeGUI()
         self.fileName=""
-        self.encoding = "iso-8859-1"
+        #self.encoding = "iso-8859-1"
+        self.encoding = "utf8"
         self.w,self.h=self.winfo_screenwidth(),self.winfo_screenheight()
         if self.cfg.get('GUI', 'startfullscreen')=="True":
             self.fullscreen=False 
@@ -161,6 +164,7 @@ class Gyounen_App(Tkinter.Tk):
             confweight=tkFont.BOLD
             
         configuredfont=configuredfont=self.getConfiguredFont(confweight)
+        #TODO: check what configuredwidth was for with the panels
         if leftPanel | rightPanel:
             cfgwidth=int(self.cfg.get('GUI','textareawidth'))
             self.text = Tkinter.Text(self, undo=1,font=configuredfont, width=cfgwidth,insertbackground=fgColour,borderwidth=0,background=bgColour, foreground=fgColour,wrap='word')
