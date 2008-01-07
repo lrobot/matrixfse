@@ -1,0 +1,123 @@
+<?xml version="1.0" ?>
+<XML_DIZ_INFO>
+	<MASTER_PAD_VERSION_INFO>
+		<MASTER_PAD_VERSION>2.02</MASTER_PAD_VERSION>
+		<MASTER_PAD_EDITOR>PADGen 2.0.2.30 http://www.padgen.org</MASTER_PAD_EDITOR>
+		<MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://www.asp-shareware.org/pad</MASTER_PAD_INFO>
+	</MASTER_PAD_VERSION_INFO>
+	<Company_Info>
+		<Company_Name>Kerim Mansour</Company_Name>
+		<Address_1>--</Address_1>
+		<Address_2 />
+		<City_Town>Frankfurt</City_Town>
+		<State_Province />
+		<Zip_Postal_Code>--</Zip_Postal_Code>
+		<Country>Deutschland</Country>
+		<Company_WebSite_URL>http://codeboje.de/blog</Company_WebSite_URL>
+		<Contact_Info>
+			<Author_First_Name>Kerim</Author_First_Name>
+			<Author_Last_Name>Mansour</Author_Last_Name>
+			<Author_Email>kmansour@web.de</Author_Email>
+			<Contact_First_Name>Kerim</Contact_First_Name>
+			<Contact_Last_Name>Mansour</Contact_Last_Name>
+			<Contact_Email>kmansour@web.de</Contact_Email>
+		</Contact_Info>
+		<Support_Info>
+			<Sales_Email>kmansour@web.de</Sales_Email>
+			<Support_Email>kmansour@web.de</Support_Email>
+			<General_Email>kmansour@web.de</General_Email>
+			<Sales_Phone />
+			<Support_Phone />
+			<General_Phone />
+			<Fax_Phone />
+		</Support_Info>
+	</Company_Info>
+	<Program_Info>
+		<Program_Name>HDDCleaner</Program_Name>
+		<Program_Version>0.2</Program_Version>
+		<Program_Release_Month>12</Program_Release_Month>
+		<Program_Release_Day>27</Program_Release_Day>
+		<Program_Release_Year>2006</Program_Release_Year>
+		<Program_Cost_Dollars>0.00</Program_Cost_Dollars>
+		<Program_Cost_Other_Code />
+		<Program_Cost_Other>0.00</Program_Cost_Other>
+		<Program_Type>Freeware</Program_Type>
+		<Program_Release_Status>Beta</Program_Release_Status>
+		<Program_Install_Support>No Install Support</Program_Install_Support>
+		<Program_OS_Support>Windows2000,WinXP,Windows2003,Linux,Mac OS X</Program_OS_Support>
+		<Program_Language>English,French,German</Program_Language>
+		<Program_Change_Info />
+		<Program_Specific_Category>Utilities</Program_Specific_Category>
+		<Program_Category_Class>System Utilities::File &amp; Disk Management</Program_Category_Class>
+		<Program_System_Requirements />
+		<File_Info>
+			<File_Size_Bytes>4583694</File_Size_Bytes>
+			<File_Size_K>4476</File_Size_K>
+			<File_Size_MB>4.37</File_Size_MB>
+		</File_Info>
+		<Expire_Info>
+			<Has_Expire_Info>N</Has_Expire_Info>
+			<Expire_Count>0</Expire_Count>
+			<Expire_Based_On />
+			<Expire_Other_Info />
+			<Expire_Month />
+			<Expire_Day />
+			<Expire_Year />
+		</Expire_Info>
+	</Program_Info>
+	<Program_Descriptions>
+		<English>
+			<Keywords />
+			<Char_Desc_45 />
+			<Char_Desc_80>HDDClean lists your files according to size</Char_Desc_80>
+			<Char_Desc_250 />
+			<Char_Desc_450 />
+			<Char_Desc_2000 />
+		</English>
+	</Program_Descriptions>
+	<Web_Info>
+		<Application_URLs>
+			<Application_Info_URL>http://codeboje.de/blog/archives/Clean-Up-Your-HDD-source.html</Application_Info_URL>
+			<Application_Order_URL />
+			<Application_Screenshot_URL>http://codeboje.de/blog/uploads/HDDClean0.1.jpg</Application_Screenshot_URL>
+			<Application_Icon_URL />
+			<Application_XML_File_URL>http://downloads.codeboje.de/hddclean_pad.xml</Application_XML_File_URL>
+		</Application_URLs>
+		<Download_URLs>
+			<Primary_Download_URL>http://downloads.codeboje.de/HDDCleaner.zip</Primary_Download_URL>
+			<Secondary_Download_URL>http://downloads.codeboje.de/HDDCleaner.py</Secondary_Download_URL>
+			<Additional_Download_URL_1>http://downloads.codeboje.de/HDDCleaner-setup.exe</Additional_Download_URL_1>
+			<Additional_Download_URL_2 />
+		</Download_URLs>
+	</Web_Info>
+	<Permissions>
+		<Distribution_Permissions>License:
+Copyright (c) 2006, Kerim Mansour
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+    * Redistributions of source code must retain the above copyright notice,
+      this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright notice,
+      this list of conditions and the following disclaimer in the documentation 
+      and/or other materials provided with the distribution.
+    * Neither the name of the author nor the names of other contributors 
+      may be used to endorse or promote products derived from this software without 
+      specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES 
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE 
+COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, 
+OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; 
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT 
+OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+"""</Distribution_Permissions>
+		<EULA>The program IS free but does NOT come without "cost".
+The price is at least one comment in this post about the program. I want to know who uses it, why and what he likes, dislikes, misses etc. So if you use it please do drop me a line.
+And if you are so overwhelmed with this programs features that you really dont know how to say thanks (ok ... i am joking) then you can of course allways drop some bucks and make me happy the materialistic way as well.</EULA>
+	</Permissions>
+</XML_DIZ_INFO>
