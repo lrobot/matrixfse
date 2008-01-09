@@ -31,7 +31,6 @@ class ConfigDialog(Toplevel):
     
     def __init__(self,parent,title):
         Toplevel.__init__(self, parent)
-        self.geometry("+%d+%d" % (parent.winfo_rootx()+20,parent.winfo_rooty()+30))
         self.parent = parent
         self.LoadColorCfg()
         self.CreateWidgets()
@@ -40,6 +39,8 @@ class ConfigDialog(Toplevel):
         self.transient(parent)
         self.grab_set()
         self.protocol("WM_DELETE_WINDOW", self.Cancel)
+        
+        self.geometry("+%d+%d" % (parent.winfo_rootx()+100, parent.winfo_rooty()+100))
         
         self.tabPages.focus_set()
         self.wait_window()
@@ -94,16 +95,6 @@ class ConfigDialog(Toplevel):
         except:
             print 'Value in Textwidth field no number, will not be stored' 
                
-        if self.leftPanelExist.get():
-            self.parent.cfg.set('GUI','leftPanel','True')
-        else:
-            self.parent.cfg.set('GUI','leftPanel','False')
-        
-        if self.rightPanelExist.get():
-            self.parent.cfg.set('GUI','rightPanel','True')
-        else:
-            self.parent.cfg.set('GUI','rightPanel','False')
-        
         r,g,b= self.fgTuplet
         self.parent.cfg.set('FONT', 'fgcolor1',str(r))
         self.parent.cfg.set('FONT', 'fgcolor2',str(g))
@@ -113,6 +104,18 @@ class ConfigDialog(Toplevel):
         self.parent.cfg.set('GUI', 'bgcolor1',str(r))
         self.parent.cfg.set('GUI', 'bgcolor2',str(g))
         self.parent.cfg.set('GUI', 'bgcolor3',str(b))
+        
+        if self.autoSave.get():
+            self.parent.cfg.set('GUI','autosave','True')
+        else:
+            self.parent.cfg.set('GUI','autosave','False')
+        try:
+            int(self.entryTextWidth.get())
+            timeIntervall=self.entryAutoSave.get()
+            self.parent.cfg.set('GUI','timeintervall',timeIntervall)
+        except:
+            print 'Value in TimeIntervall field no number, will not be stored'
+        
                 
         self.SaveConfig()
         
@@ -134,21 +137,24 @@ class ConfigDialog(Toplevel):
         
     def CreatePageGeneral(self):
         self.textWidth=StringVar(self)
-        self.leftPanelExist=BooleanVar(self)
-        self.rightPanelExist=BooleanVar(self)
         frame=self.tabPages.pages['General']['page']
         orientationFrame=Frame(frame,borderwidth=2,relief=GROOVE)
+        
+        autoSaveFrame=Frame(orientationFrame)
+        self.autoSave=BooleanVar(self)
+        self.checkAutoSave=Checkbutton(autoSaveFrame,variable=self.autoSave,onvalue=1,offvalue=0,text='AutoSave in TemptFile')
+        if self.parent.cfg.get('GUI','autosave')=='True':
+            self.checkAutoSave.select()
+            
+        labelAutoSave=Label(autoSaveFrame,justify=LEFT,text='Time between autosaves in seconds:')
+        self.entryAutoSave=Entry(autoSaveFrame, width='3')
+        self.entryAutoSave.insert(INSERT, self.parent.cfg.get('GUI','timeintervall'))
+        
         textWidthFrame=Frame(orientationFrame)
-        labelNewStartInfo=Label(orientationFrame,justify=LEFT,text='Changes here take effect only after restart')
-        labelTextWidth=Label(textWidthFrame,justify=LEFT,text='Width of text (relevent only if all panels deactivated):')
+        labelTextWidth=Label(textWidthFrame,justify=LEFT,text='Width of text (-1 for whole screen, takes effect after restart):')
         self.entryTextWidth=Entry(textWidthFrame, width='3')
         self.entryTextWidth.insert(INSERT, self.parent.cfg.get('GUI','textareawidth'))
-        self.checkLeftPanel=Checkbutton(orientationFrame,variable=self.leftPanelExist,onvalue=1,offvalue=0,text='Left Panel exists')
-        if self.parent.cfg.get('GUI','leftPanel')=='True':
-            self.checkLeftPanel.select()
-        self.checkRightPanel=Checkbutton(orientationFrame,variable=self.rightPanelExist,onvalue=1,offvalue=0,text='Right Panel exists')
-        if self.parent.cfg.get('GUI','rightPanel')=='True':
-            self.checkRightPanel.select()
+               
         orientationFrame.pack(side=LEFT,padx=5,pady=10,expand=TRUE,fill=BOTH)
         
         helpCommandsFrame=Frame(orientationFrame,borderwidth=2,relief=GROOVE)
@@ -163,12 +169,16 @@ class ConfigDialog(Toplevel):
         btnImage = PhotoImage(file="donate.gif") 
         donateBtn = Button(donateFrame, compound=TOP, image=btnImage, command=self.Donate)
         donateBtn.image = btnImage
-        labelNewStartInfo.pack(side=TOP,anchor=W)
-        self.checkLeftPanel.pack(side=TOP,anchor=W)
-        self.checkRightPanel.pack(side=TOP,anchor=W)
+        
+        autoSaveFrame.pack(side=TOP,anchor=W)
+        self.checkAutoSave.pack(side=TOP,anchor=W)
+        labelAutoSave.pack(side=LEFT,anchor=W)
+        self.entryAutoSave.pack(side=RIGHT,anchor=W)
+        
         textWidthFrame.pack(side=TOP,anchor=W)
         labelTextWidth.pack(side=LEFT,anchor=W)
         self.entryTextWidth.pack(side=RIGHT,anchor=W)
+        
         helpCommandsFrame.pack(side=TOP,anchor=W)
         labelHelpText.pack(side=TOP,anchor=W)
         helpText.pack(side=TOP,anchor=W)
@@ -215,6 +225,12 @@ class ConfigDialog(Toplevel):
         bgColour = '#%02x%02x%02x' %  (int(r), int(g), int(b))
         
         self.labelFontSample=Label(fontSampleFrame,text='AaBbCcDdEe\nFfGgHhIiJjK\n1234567890\n#:+=(){}[]',justify=LEFT,font=self.editFont, foreground=fgColour, background=bgColour)
+        
+        textWidthFrame=Frame(fontFrame)
+        labelTextWidth=Label(textWidthFrame,justify=LEFT,text='Width of text (-1 for whole screen, takes effect after restart):')
+        self.entryTextWidth=Entry(textWidthFrame, width='3')
+        self.entryTextWidth.insert(INSERT, self.parent.cfg.get('GUI','textareawidth'))
+        textWidthFrame.pack(side=TOP,padx=5,pady=5,fill=X)
         
         #widget packing
         fontFrame.pack(side=LEFT,padx=5,pady=10,expand=TRUE,fill=BOTH)
@@ -313,4 +329,20 @@ class ConfigDialog(Toplevel):
         else:
             self.bgTuplet=rgbTuplet
             self.labelFontSample.config(background=colourString)
+
+    def GetAutosaveIntervall(self):
+        layer='foreground'
+        self.GetColour(layer,self.fgTuplet)
+    
+    def SetAutosaveIntervall(self, seconds):
+        layer='foreground'
+        self.GetColour(layer,self.fgTuplet)
         
+    def GetAutosaveIntervall(self):
+        layer='foreground'
+        self.GetColour(layer,self.fgTuplet)
+        
+    def GetAutosaveIntervall(self):
+        layer='foreground'
+        self.GetColour(layer,self.fgTuplet)    
+    

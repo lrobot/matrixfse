@@ -3,6 +3,8 @@
 #concentration of thought =   gyounen
 #author: Kerim Mansour
 #version 0.6 (TK Version 0.3)
+#-added autosave feature (contributed by Ben)
+#-cleaned up logic for sidepanels and textwidth 
 #changes from 0.5
 #-changed default encoding to utf8 (kanji work now)
 #-added a try, except routine to allow users to save the data in case of an error
@@ -53,6 +55,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 import Tkinter, traceback
 import tkFileDialog,tkFont, tkMessageBox, configDialog
 from ConfigParser import  *
+from time import time
 
 class Gyounen_App(Tkinter.Tk):
     def __init__(self,parent):
@@ -61,6 +64,7 @@ class Gyounen_App(Tkinter.Tk):
         self.loadConfig()
         self.initializeGUI()
         self.fileName=""
+        self.time = time()
         #self.encoding = "iso-8859-1"
         self.encoding = "utf8"
         self.w,self.h=self.winfo_screenwidth(),self.winfo_screenheight()
@@ -68,6 +72,7 @@ class Gyounen_App(Tkinter.Tk):
             self.fullscreen=False 
         self.toggleFullScreen(None)
         self.bindEvents()
+        self.autoRestore()
         self.modified=False
     
     #------------------------  methods without event binding (all with lower first character)------------------------
@@ -129,7 +134,7 @@ class Gyounen_App(Tkinter.Tk):
             else:
                 self.title(self.fileName)
         else:
-            self.title("Gyounen - Full Screen Editor (TK-Version 0.1)")
+            self.title("Gyounen - Full Screen Editor (TK-Version 0.3)")
     
     def getColour(self):
         r,g,b=self.cfg.get('GUI', 'bgcolor1'), self.cfg.get('GUI', 'bgcolor2'),self.cfg.get('GUI', 'bgcolor3')        
@@ -141,39 +146,30 @@ class Gyounen_App(Tkinter.Tk):
     def initializeGUI(self):
         self.grid()
         bgColour, fgColour=self.getColour()
-        leftPanel=self.cfg.get('GUI','leftPanel')=='True'
-        rightPanel=self.cfg.get('GUI','rightPanel')=='True'
-        #do only display and configure those panels that are wanted
-        if leftPanel:
-            self.leftPane = Tkinter.Label(self,anchor="w",fg="white",bg=bgColour)
-            self.leftPane.grid(column=0,row=0,sticky='EWNS')
-        else:
-            self.leftPane=None
-        if rightPanel:
-            self.rightPane = Tkinter.Label(self,anchor="w",fg="white",bg=bgColour)
-            if leftPanel:
-                self.rightPane.grid(column=2,row=0,sticky='EWNS')
-                self.grid_columnconfigure(2,weight=1)
-            else:
-                self.rightPane.grid(column=1,row=0,sticky='EWNS')
-                self.grid_columnconfigure(1,weight=1)
-        else:
-            self.rightPane=None
         
         confweight=tkFont.NORMAL
         if self.cfg.get('FONT', 'weight')=='bold':
             confweight=tkFont.BOLD
             
-        configuredfont=configuredfont=self.getConfiguredFont(confweight)
+        configuredfont=self.getConfiguredFont(confweight)
         #TODO: check what configuredwidth was for with the panels
-        if leftPanel | rightPanel:
+        try:
             cfgwidth=int(self.cfg.get('GUI','textareawidth'))
-            self.text = Tkinter.Text(self, undo=1,font=configuredfont, width=cfgwidth,insertbackground=fgColour,borderwidth=0,background=bgColour, foreground=fgColour,wrap='word')
-            self.text.grid(column=1,row=0,sticky='EWNS')
-        else:
-            self.text = Tkinter.Text(self, font=configuredfont, insertbackground=fgColour,borderwidth=0,background=bgColour, foreground=fgColour,wrap='word')
-            self.text.grid(column=0,row=0,sticky='EWNS')
-            
+            if cfgwidth>0:
+              self.leftPane = Tkinter.Label(self,anchor="w",fg="white",bg=bgColour)
+              self.leftPane.grid(column=0,row=0,sticky='EWNS')
+              self.rightPane = Tkinter.Label(self,anchor="w",fg="white",bg=bgColour)
+              self.rightPane.grid(column=2,row=0,sticky='EWNS')
+              self.grid_columnconfigure(2,weight=1)
+              self.text = Tkinter.Text(self, undo=1,font=configuredfont, width=cfgwidth,insertbackground=fgColour,borderwidth=0,background=bgColour, foreground=fgColour,wrap='word')
+              self.text.grid(column=1,row=0,sticky='EWNS')
+            else:
+              self.text = Tkinter.Text(self, font=configuredfont, insertbackground=fgColour,borderwidth=0,background=bgColour, foreground=fgColour,wrap='word')
+              self.text.grid(column=0,row=0,sticky='EWNS')
+        except:    
+              self.text = Tkinter.Text(self, font=configuredfont, insertbackground=fgColour,borderwidth=0,background=bgColour, foreground=fgColour,wrap='word')
+              self.text.grid(column=0,row=0,sticky='EWNS')
+              
         self.grid_columnconfigure(0,weight=1)
         self.grid_rowconfigure(0, weight=1)
         self.text.edit_reset()
@@ -189,7 +185,7 @@ class Gyounen_App(Tkinter.Tk):
             
     #TODO: fill info if something is amiss
     def initConfigDefaults(self):
-        self.cfg.set('GUI', 'version','0.1')
+        self.cfg.set('GUI', 'version','0.3')
         self.cfg.set('GUI', 'startfullscreen','True')
         self.cfg.set('GUI', 'leftPanel','True')
         self.cfg.set('GUI', 'rightPanel','True')
@@ -211,7 +207,16 @@ class Gyounen_App(Tkinter.Tk):
         if event.char != '': 
           self.text.edit_separator()
           self.modified=True
-        #self.text.edit_modified(True)
+          if self.cfg.get('GUI', 'autosave')=='True':
+              intervall = 60 #default is 60 seconds 
+              try:
+                intervall=int(self.cfg.get('GUI', 'timeintervall'))
+              except:
+                pass 
+              if self.time + intervall < time():
+                self.autoSave()
+                self.time = time()
+
     
     def OnUndo(self,event):
         try:
@@ -243,14 +248,15 @@ class Gyounen_App(Tkinter.Tk):
         self.text.tag_add(Tkinter.SEL, "1.0", Tkinter.END)         
         
     def OnQuit(self,event):
-          if self.modified==True:
+        self.delTempFile()
+        if self.modified==True:
             if tkMessageBox.askyesno("Text was modified", "Do you want to save before quitting ?"):
                 if self.OnSave(None):
                   event.widget.quit()
             else:
               event.widget.quit()
-          else:
-              event.widget.quit()
+        else:
+            event.widget.quit()
         
         
     def OnLoadFile(self,event):
@@ -270,6 +276,8 @@ class Gyounen_App(Tkinter.Tk):
         f=open(self.fileName,'w')
         f.write(self.getText())
         f.close()
+        self.delTempFile()
+        self.time = time()
         self.modified=False
         return True
       except:
@@ -287,6 +295,7 @@ class Gyounen_App(Tkinter.Tk):
             
     
     def OnNew(self,event):
+        self.time = time()
         self.fileName=""
         self.setTitle()
         self.text.delete(1.0,Tkinter.END)
@@ -294,6 +303,31 @@ class Gyounen_App(Tkinter.Tk):
         self.text.edit_reset()
     #------------------------------ methods for bindings end ---------------------------        
 
+# below contributed by Ben
+    def delTempFile(self):
+        try:
+            from os import remove
+            remove("temp.txt")
+        except:
+            return
+
+    def autoSave(self):
+        try:
+            f=open("temp.txt",'w')
+            f.write(self.getText())
+            f.close()
+        except:
+            return
+
+    def autoRestore(self):
+        try:
+            f = open("temp.txt", "r")
+            self.text.insert(Tkinter.END, f.read())
+            f.close()
+        except:
+            return
+    # above contributed by Ben
+    
         
 if __name__ == "__main__":
     app = Gyounen_App(None)

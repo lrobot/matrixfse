@@ -2,20 +2,15 @@ RELEASE NOTES
 
 
 INSTALLATION:
-WINDOWS:
-1) Use the installer
-2) Run 
-
-LINUX/MAC:
 1) Extract the zip
 2) Run Gyounen.py
 
 
 RELEASE NOTES:
-Version 0.5
+Version 0.6
 """
 License:
-Copyright (c) 2006, Kerim Mansour
+Copyright (c) 2006-2008, Kerim Mansour
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,
@@ -104,7 +99,9 @@ Here are the current releases:
         
 
 Changelist
-
+0.6 (04.01.2008)
+#-changed encoding to utf8
+#-added some try except blocks to keep the data save and get more info about errors
 0.5 (01.11.2007)
 #-fixed flag for modofication of files (now only true when actually modified)
 #-added more commands (see help panel (ctrl-p))
