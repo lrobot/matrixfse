@@ -1,0 +1,5 @@
+setup.py
+pysvg\__init__.py
+pysvg\pysvg.py
+pysvg\style.py
+pysvg\transform.py
