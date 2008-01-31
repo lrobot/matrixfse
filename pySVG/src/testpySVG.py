@@ -2,25 +2,26 @@
 # -*- coding: iso-8859-1 -*-
 
 from pysvg.pysvg import *
+from pysvg.objecthelper import *
+from pysvg.stylehelper import *
 
 def globaltest():
   oh=ObjectHelper()
   svg=SVG("test")
   
   #testing basic shapes
-  style=Style()
   svg.addElement(oh.createRect(0,0,400,200,12,12,strokewidth=2, stroke='navy'))
   svg.addElement(oh.createRect(100,50,200,100,strokewidth=2, stroke='navy', fill='yellow'))
   svg.addElement(oh.createCircle(700,500,50,strokewidth=5, stroke='red'))
   svg.addElement(oh.createCircle(810,500,50,strokewidth=5, stroke='yellow', fill='#AAAAAA'))
   svg.addElement(oh.createEllipse(600,50,50,30,strokewidth=5, stroke='red'))
   svg.addElement(oh.createEllipse(700,50,50,30,strokewidth=5, stroke='yellow', fill='#00AABB'))
-  style=Style()
+  style=StyleHelper()
   r=rect(0,0,100,100,12,12,style)
   
   svg.addElement(oh.createLine(0,0,300,300,strokewidth=2,stroke="black"))
   
-  #style=Style()
+  #style=StyleHelper()
   #style.setStroke(strokewidth=5, stroke="black")
   #style.fill="blue"
   #style.setGradient(stopcolor='red',stopopacity=1)
@@ -38,19 +39,19 @@ def globaltest():
   svg.addElement(pg)
   
    
-  style=Style()
+  style=StyleHelper()
   style.setFontFamily(fontfamily="Verdana", fontsize='5em')
   #style.setFilling(fill="blue")
-  style.fill="blue"
-  t1=text("pySVG with Style",0,650,style=style)
+  style.setFilling(fill='blue')
+  t1=text("pySVG with Style",0,650,style_dict=style.getStyleDict())
   t2=text("pySVG simple",0,550)
   svg.addElement(t1)
   svg.addElement(t2)
   #testing container
-  style=Style()
+  style=StyleHelper()
   style.setStroke(strokewidth=2,stroke="green")
-  g=Group(style)
-  style=Style()
+  style_dict=style.getStyleDict()
+  g=Group(style_dict)
   g.addElement(line(300,300,600,600))
   g.addElement(circle(500,500,50))
   svg.addElement(g)
@@ -61,10 +62,10 @@ def globaltest():
 def textText():
   oh=ObjectHelper()
   svg=SVG("test")
-  style=Style()
+  style=StyleHelper()
   style.setFontFamily(fontfamily="Verdana", fontsize='5em')
   style.setFilling(fill="blue")
-  t1=text("Verdana, blue, 5em",0,100,style=style)
+  t1=text("Verdana, blue, 5em",0,100,style_dict=style.getStyleDict())
   t2=text("pySVG simple",0,200)
   svg.addElement(t1)
   svg.addElement(t2)
@@ -72,12 +73,20 @@ def textText():
   rect=oh.createRect(350, 250, 100, 100, fill='green')
   svg.addElement(rect)
   
-  style=Style()
+  style=StyleHelper()
   style.setFontFamily(fontfamily="Times", fontsize='2em', fontstyle='italic', fontweight='bold')
   style.setFilling(fill="red",fillopacity='0.5',fillrule='evenodd')
   #style.fill="blue"
-  t3=text("Times, italic, 2em, bold, opacity=0.5, fillrule=evenodd",0,300,style=style)
+  t3=text("Times, italic, 2em, bold, opacity=0.5, fillrule=evenodd",0,300,style_dict=style.getStyleDict())
   svg.addElement(t3)
+
+  style=StyleHelper()
+  style.setFontFamily(fontfamily="Times", fontsize='2em', fontstyle='italic')
+  style.setFilling(fill="red",fillopacity='0.5')
+  #style.fill="blue"
+  t4=text("Times, italic, 2em, non bold, opacity=0.5",0,400,style_dict=style.getStyleDict())
+  svg.addElement(t4)
+
   
   print svg.getXML()
   svg.saveSVG('c:\\test.svg')
@@ -91,10 +100,10 @@ def textHelloWorld1():
 
 def textHelloWorld2():
   svg=SVG("Hello World Example") # title is ignored still
-  style=Style()
+  style=StyleHelper()
   style.setFontFamily(fontfamily="Verdana", fontsize='5em')
   style.setFilling(fill="blue")
-  t1=text("Hello World",0,100,style=style)
+  t1=text("Hello World",0,100,style_dict=style.getStyleDict())
   svg.addElement(t1)
   print svg.getXML()
   svg.saveSVG('c:\\test.svg')
