@@ -23,40 +23,9 @@ class StyleHelper:
   This will become a Helperclass like ObjectHelper
   """
   def __init__(self):
-    self.style_dict={
-      "font-family":"" ,
-      "font-size":"" ,
-      "font-style":"" ,
-      "font-family":"" ,
-      "color":"" ,
-      "stop-color":"" ,
-      "stop-opacity":"" ,
-      "stroke-dasharray":"" ,
-      "stroke-dashoffset":"" ,
-      "stroke-linecap":"" ,
-      "stroke-linejoin":"" ,
-      "stroke-miterlimit":"" ,
-      "stroke-opacity":"" ,
-      "stroke-width":"" ,
-      "stroke":"" ,
-      "color-rendering":"" ,
-      "image-rendering":"" ,
-      "shape-rendering":"" ,
-      "text-rendering":"" ,
-      "solid-color":"" ,
-      "solid-opacity":"" ,
-      "fill":"" ,
-      "fill-opacity":"" ,
-      "fill-rule:%s":"" ,
-      "vector-effect":"" ,
-      "viewport-fill":"" ,
-      "viewport-fill-opacity":"" ,
-      "display-align":"" ,
-      "line-increment":"" ,
-      "text-anchor":""                 
-    }
+    self.style_dict={}
 
-  #   Font properties:
+  # Font properties:
   # tested
   def setFontFamily(self, fontfamily="", fontsize="",fontstyle="",fontweight=""):
     self.style_dict["font-family"]=fontfamily
@@ -117,6 +86,7 @@ class StyleHelper:
   def getStyleDict(self):
     return self.style_dict
   
+  """
   def getXML(self):
     count=0;
     xml="style="
@@ -134,5 +104,5 @@ class StyleHelper:
       return xml
     else: #empty style
       return ""
-    
+  """  
     

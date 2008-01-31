@@ -96,8 +96,8 @@ class Group():
   def __init__(self,style_dict=None):
     """
     Initialization.
-    @type  style: Style
-    @param style: The style that should be applied to all elements within this container 
+    @type  style_dict: dict
+    @param style_dict: The style that should be applied to all elements within this container 
     """
     self.style_dict=style_dict
     self.elements=[]
