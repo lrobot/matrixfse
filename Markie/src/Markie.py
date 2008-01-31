@@ -235,7 +235,7 @@ class PyAUIFrame(wx.Frame):
       path='themes/'
       self.themes=[]
       for theme in os.listdir(path):
-        if os.path.isdir(os.path.join(path,theme)):
+        if theme.find('.svn')==-1 and os.path.isdir(os.path.join(path,theme)):
           self.themes.append(theme)
       print self.themes
       
@@ -392,12 +392,13 @@ class PyAUIFrame(wx.Frame):
       #delete old output
       if os.path.exists(dstpath):
         #try:
-        shutil.rmtree(dstpath)
+        shutil.rmtree(dstpath,ignore_errors=True)
         #except:
         #  print "unale to delete the tree will just copy files"
       
       #copy complete template 
-      shutil.copytree(self.currentTheme, dstpath)
+#      shutil.copytree(self.currentTheme, dstpath)
+      self.copytree(self.currentTheme, dstpath)
       
       #del .template files
       for file in os.listdir(dstpath):
@@ -437,10 +438,40 @@ class PyAUIFrame(wx.Frame):
         #doBind(tb.AddTool(ID_SelectTheme, wx.ArtProvider_GetBitmap(wx.ART_TICK_MARK, wx.ART_TOOLBAR, wx.Size(16, 16)),shortHelpString="Select Theme"),self.OnSelectTheme)
         tb.Realize()
         return tb
-                      
-  
+                       
         
-  
+    def copytree(self,src, dst):
+      """Ported from shutils to deal with .svn directories
+      """
+      names = os.listdir(src)
+      os.makedirs(dst)
+      errors = []
+      for name in names:
+          srcname = os.path.join(src, name)
+          dstname = os.path.join(dst, name)
+          try:
+            if srcname.find('.svn')>-1:
+                continue
+            if os.path.isdir(srcname):
+                shutil.copytree(srcname, dstname, symlinks)
+            else:
+                shutil.copy2(srcname, dstname)
+            # XXX What about devices, sockets etc.?
+          except (IOError, os.error), why:
+            errors.append((srcname, dstname, str(why)))
+          # catch the Error from the recursive copytree so that we can
+          # continue with other files
+          except Error, err:
+            errors.extend(err.args[0])
+      try:
+        shutil.copystat(src, dst)
+      except WindowsError:
+        # can't copy file access times on Windows
+        pass
+      except OSError, why:
+        errors.extend((src, dst, str(why)))
+      if errors:
+        raise Error, errors
       
 #---------------- run the program -----------------------
 def main(argv=None):
