@@ -56,6 +56,22 @@ def globaltest():
   g.addElement(circle(500,500,50))
   svg.addElement(g)
   
+  g=Group(style_dict)
+  style_dict = {"stroke":"#000000", "fill":"none" ,"stroke-width":"49" ,"stroke-opacity":"0.027276"}
+  p=path(pathData="M 300 100 A 1,1 0 0 1 802,800",style_dict=style_dict)
+  #p.appendArcToPath(25,100, 50,-25, -30, 0,1)
+  g.addElement(p)
+  svg.addElement(g)
+  print svg.getXML()
+  svg.saveSVG('c:\\test.svg')
+
+def testPath():
+  svg=SVG("test")
+  style_dict = {"stroke":"#000000", "fill":"none","stroke-width":"49" }
+  p=path(pathData="M 300 100 A 1,1 0 0 1 802,800",style_dict=style_dict)
+  #p.appendArcToPath(25,100, 50,-25, -30, 0,1)
+  
+  svg.addElement(p)
   print svg.getXML()
   svg.saveSVG('c:\\test.svg')
   
@@ -108,4 +124,4 @@ def textHelloWorld2():
   print svg.getXML()
   svg.saveSVG('c:\\test.svg')
   
-if __name__ == '__main__': globaltest()
+if __name__ == '__main__': testPath()

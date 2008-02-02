@@ -39,17 +39,18 @@ Viewport, transforms, gradients....
 """
 
 SVG_HEADER='''<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" '''
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" '''
 SVG_FOOTER='</svg>'
 END_TAG_LINE='>\n'
 
 class SVG:
   """ Base class for a SVG document """
-  def __init__(self,title="svg",description="", height=None,width=None):
+  def __init__(self,title="svg",description="", height=None,width=None, viewBox=None):
     self.title = title
     self.descr = description
     self.height = height
     self.width = width
+    self.viewBox=viewBox
     self.elements = []
     
   def getXML(self):
@@ -60,6 +61,16 @@ class SVG:
     @return:  the representation of the current SVG as an xml string
     """
     xml=SVG_HEADER
+    #print height, width etc on demand better that this
+    if self.height!= None:
+      xml+='height="%s" ' % (self.height)
+    
+    if self.width!= None:
+      xml+='width="%s" ' % (self.width)
+    
+    if self.viewBox!= None:
+      xml+='viewBox="%s" ' % (self.viewBox)
+      
     xml+=END_TAG_LINE
     for element in self.elements:
       xml+=element.getXML()
@@ -93,13 +104,14 @@ class Group():
   endTag=">\n"
   endXML="</g>\n"
 
-  def __init__(self,style_dict=None):
+  def __init__(self,style_dict=None, transform_dict=None):
     """
     Initialization.
     @type  style_dict: dict
     @param style_dict: The style that should be applied to all elements within this container 
     """
     self.style_dict=style_dict
+    self.transform_dict=transform_dict
     self.elements=[]
   
   
@@ -112,6 +124,8 @@ class Group():
     self.elements.append(element)
   
   def getXMLFromStyle(self):
+    if self.style_dict==None:
+      return""
     count=0;
     xml="style="
     for key in self.style_dict.keys():
@@ -128,7 +142,48 @@ class Group():
       return xml
     else: #empty style
       return ""
-      
+  
+  #todo: format is not nice
+  def getXMLFromTransform(self):
+    if self.transform_dict.keys()==None:
+      return""
+    count=0;
+    xml="transform="
+    for key in self.transform_dict.keys():
+      if self.transform_dict.get(key)=="":
+        continue
+      if count>0:
+        xml+='; '
+      else:
+        xml+='"'
+      xml+='%s' %(self.transform_dict.get(key))
+      count+=1
+    xml+='" '
+    if len(xml)>8:
+      return xml
+    else: #empty style
+      return ""
+  """
+  def getXMLFromDict(self, dict, dict_name='style'):
+    count=0;
+    if dict==None:
+      return""
+    xml="%s=" % (dict_name)
+    for key in dict.keys():
+      if dict.get(key)=="":
+        continue
+      if count>0:
+        xml+='; '
+      else:
+        xml+='"'
+      xml+='%s:%s' %(key,dict.get(key))
+      count+=1
+    xml+='" '
+    if len(xml)>8:
+      return xml
+    else: #empty style
+      return ""
+  """    
   def getXML(self):
     """
     Return a XML representation of the current SVG document.
@@ -138,14 +193,13 @@ class Group():
     """
     xml=self.startXML
     xml+=self.getXMLFromStyle()
+    xml+=self.getXMLFromTransform()
     xml+=self.endTag
     for element in self.elements:
       xml+=element.getXML()
     xml+=self.endXML
     return xml
 
-
-  
     
 class BaseObject:
   def __init__(self, startTag, style_dict=None, focusable=None,endTag="/>\n"):
@@ -260,10 +314,62 @@ class text(BaseObject):
     xml+=self.content
     xml+=self.endXML
     return xml
-          
+
+class path(BaseObject):
+  def __init__(self,pathData="",pathLength=None,style_dict=None, focusable=None):
+    BaseObject.__init__(self,"<"+self.__class__.__name__+" ", style_dict, focusable)
+    self.d=pathData
+    self.pathLength=pathLength
+
+  def appendLineToPath(self,endx,endy, relative=True):
+    if relative==True:
+      self.d.append("l %s %s") %(endx,endy)
+    else:
+      self.d.append("L %s %s") %(endx,endy)
+  
+  def appendHorizontalLineToPath(self,endx, relative=True):
+    if relative==True:
+      self.d.append("h %s ") %(endx)
+    else:
+      self.d.append("H %s ") %(endx)
+      
+  def appendVerticalLineToPath(self,endy, relative=True):
+    if relative==True:
+      self.d.append("v %s ") %(endy)
+    else:
+      self.d.append("V %s ") %(endy)
+  
+  def appendMoveToPath(self,endx,endy, relative=True):
+    if relative==True:
+      self.d.append("m %s %s") %(endx,endy)
+    else:
+      self.d.append("M %s %s") %(endx,endy)
+  
+  def appendArcToPath(self,rx,ry,x,y,x_axis_rotation=0,large_arc_flag=0,sweep_flag=1 ,relative=True):
+    if relative==True:
+      self.d+=("a %s,%s %s %s %s %s,%s ") %(rx,ry,x_axis_rotation,large_arc_flag,sweep_flag,x,y)
+    else:
+      self.d+=("A %s,%s %s %s %s %s,%s ") %(rx,ry,x_axis_rotation,large_arc_flag,sweep_flag,x,y)
+      
+      
+  def getXML(self):
+    #print dir(self)
+    xml=self.startXML
+    xml+='d=\"'+self.d+'" '
+    for item in dir(self):
+      if item.find('_')==-1 and item.find('XML') ==-1 and item.find('append')==-1 and item.find('d')!=0:
+        if getattr(self,item) != None:
+          xml+=item+"=\"%s\" " %(getattr(self,item))
+      elif item=='style_dict':
+          if getattr(self,item) != None:
+            xml+=self.getXMLFromStyle()
+    
+    #xml+='d=\"'+self.d+'"'
+    xml+=self.endXML
+    return xml
 #not supported as of yet
 """
-class Text:
+
 class Path:
 """
     
