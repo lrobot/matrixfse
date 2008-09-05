@@ -1,5 +1,6 @@
-#Sat Feb 02 12:37:50 CET 2008
+#Fri Sep 05 11:24:40 CEST 2008
 eclipse.preferences.version=1
+encoding//src/pySVGLogo.py=iso-8859-1
 encoding//src/pysvg/pysvg.py=iso-8859-1
 encoding//src/testDefaultpySVGScreen.py=iso-8859-1
 encoding//src/testpySVG.py=iso-8859-1

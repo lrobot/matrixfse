@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="100%" width="100%" >
+<g transform="rotate(-30)" >
+<text style="font-size:36px; stroke-width:1px; stroke:#00C; fill:none" x="0" y="100" >pySVG</text>
+</g>
+</svg>
