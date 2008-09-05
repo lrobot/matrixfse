@@ -184,6 +184,6 @@ def main():
   for element in createShapes():
     svg.addElement(element)
   print svg.getXML()
-  svg.saveSVG('c:\\test.svg')
+  svg.saveSVG('test.svg')
 if __name__ == '__main__': 
   main()
