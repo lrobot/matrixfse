@@ -37,19 +37,19 @@ Any color can be represented through the combination of these three colors.
 So defects can be determined by going through these three colors plus white and black.
 
 Black means that all transistors should be deactivated. 
-If you see something then there is at least one transistor defect and allways on. 
+If you see something then there is at least one transistor defect and always on. 
 
 White means that all transistors should be activated. 
-If you see some pixel in a different color then it means that at least one transistor is defect and allways off.
+If you see some pixel in a different color then it means that at least one transistor is defect and always off.
 
 Red means that only those transistors for red should be active. 
-If you see a different color then you know that at least one transistor is allways on/of and it is NOT the red one.
+If you see a different color then you know that at least one transistor is always on/of and it is NOT the red one.
 
 Blue means that only those transistors for blue should be active. 
-If you see a different color then you know that at least one transistor is allways on/of and it is NOT the blue one.
+If you see a different color then you know that at least one transistor is always on/of and it is NOT the blue one.
 
 Green means that only those transistors for green should be active. 
-If you see a different color then you know that at least one transistor is allways on/of and it is NOT the gren one.
+If you see a different color then you know that at least one transistor is always on/of and it is NOT the green one.
 
 So basically you can determine any defect by combining the results of these 5 tests.
 
