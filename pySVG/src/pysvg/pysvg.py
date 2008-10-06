@@ -124,6 +124,12 @@ class Group():
     self.elements.append(element)
   
   def getXMLFromStyle(self):
+    """
+    This method converts the information in the style 
+    dictionary into svg syntax for the style attribute
+    
+    @return:  the representation of the current style as an xml string
+    """
     if self.style_dict==None:
       return""
     count=0;
@@ -145,6 +151,12 @@ class Group():
   
   #todo: format is not nice
   def getXMLFromTransform(self):
+    """
+    This method converts the information in the transform 
+    dictionary into svg syntax for the transform attribute
+    
+    @return:  the representation of the current transformations as an xml string
+    """
     if self.transform_dict.keys()==None:
       return""
     count=0;
@@ -163,27 +175,7 @@ class Group():
       return xml
     else: #empty style
       return ""
-  """
-  def getXMLFromDict(self, dict, dict_name='style'):
-    count=0;
-    if dict==None:
-      return""
-    xml="%s=" % (dict_name)
-    for key in dict.keys():
-      if dict.get(key)=="":
-        continue
-      if count>0:
-        xml+='; '
-      else:
-        xml+='"'
-      xml+='%s:%s' %(key,dict.get(key))
-      count+=1
-    xml+='" '
-    if len(xml)>8:
-      return xml
-    else: #empty style
-      return ""
-  """    
+  
   def getXML(self):
     """
     Return a XML representation of the current SVG document.
@@ -201,8 +193,20 @@ class Group():
     return xml
 
     
-class BaseObject:
+class BaseElement:
+  """
+  This is the base class for all svg elements like elipses, texts, lines etc.
+  """
   def __init__(self, startTag, style_dict=None, focusable=None,endTag="/>\n"):
+    """
+    initializes the object
+    @type  startTag: string 
+    @param startTag:  the tag for the svg element name (e.g. <text ) 
+    @type  style_dict: dictionary
+    @param style_dict:  the style to use for this element 
+    @type  focusable: ??
+    @param focusable:  ?? 
+    """
     self.startXML=startTag
     self.endXML=endTag
     #self.style=style #deprecated
@@ -210,6 +214,12 @@ class BaseObject:
     self.style_dict=style_dict
   
   def getXMLFromStyle(self):
+    """
+    This method converts the information in the style 
+    dictionary into svg syntax for the style attribute
+    
+    @return:  the representation of the current style as an xml string
+    """
     count=0;
     xml="style="
     for key in self.style_dict.keys():
@@ -228,7 +238,12 @@ class BaseObject:
       return ""
     
   def getXML(self):
-    #print dir(self)
+    """
+    Return a XML representation of the current SVG document.
+    This function can be used for debugging purposes. It is also used by getXML in SVG
+
+    @return:  the representation of the current SVG as an xml string
+    """
     xml=self.startXML
     for item in dir(self):
       if item.find('_')==-1 and item.find('XML')==-1:# and item.find('getXML')==-1:
@@ -241,27 +256,53 @@ class BaseObject:
     return xml
 
 #NOT painted by default. you MUST supply a style including stroke and stroke-width !
-class line(BaseObject):
+class line(BaseElement):
+  """
+  Class representing the line element of an svg doc.
+  Note that this element is NOT painted VISIBLY by default UNLESS you provide
+  a style including STROKE and STROKE-WIDTH
+  """
   def __init__(self,x1=None,y1=None,x2=None,y2=None,style_dict=None,focusable=None):
-    BaseObject.__init__(self,"<"+self.__class__.__name__+" ", style_dict,focusable)
+    """
+    Creates a line
+    @type  x1: string or int
+    @param x1:  starting x-coordinate
+    @type  x1: string or int
+    @param y1:  starting y-coordinate
+    @type  y2: string or int
+    @param x2:  ending x-coordinate
+    @type  y2: string or int
+    @param y2:  ending y-coordinate
+    @type  style_dict: dictionary
+    @param style_dict:  style(s) to use for this element
+    @type  focusable: ???
+    @param focusable:  ??
+    """
+    BaseElement.__init__(self,"<"+self.__class__.__name__+" ", style_dict,focusable)
     self.x1 = x1
     self.y1 = y1
     self.x2=x2
     self.y2=y2
 
 
-class ellipse(BaseObject):
+class ellipse(BaseElement):
+  """
+  Class representing the ellipse element of an svg doc.
+  """
   def __init__(self,cx=None,cy=None,rx=None,ry=None,style_dict=None,focusable=None):
-    BaseObject.__init__(self,"<"+self.__class__.__name__+" ", style_dict, focusable)
+    BaseElement.__init__(self,"<"+self.__class__.__name__+" ", style_dict, focusable)
     self.cx = cx
     self.cy = cy
     self.rx=rx
     self.ry=ry
  
     
-class rect(BaseObject):
+class rect(BaseElement):
+  """
+  Class representing the rect element of an svg doc.
+  """
   def __init__(self,x=None,y=None,width=None,height=None, rx=None, ry=None,style_dict=None,focusable=None):
-    BaseObject.__init__(self,"<"+self.__class__.__name__+" ", style_dict, focusable)
+    BaseElement.__init__(self,"<"+self.__class__.__name__+" ", style_dict, focusable)
     self.x = x
     self.y = y
     self.height = height
@@ -270,30 +311,36 @@ class rect(BaseObject):
     self.ry=ry
 
     
-class circle(BaseObject):
+class circle(BaseElement):
+  """
+  Class representing the cirle element of an svg doc.
+  """
   def __init__(self,cx=None,cy=None,r=None,style_dict=None,focusable=None):
-    BaseObject.__init__(self,"<"+self.__class__.__name__+" ", style_dict, focusable)
+    BaseElement.__init__(self,"<"+self.__class__.__name__+" ", style_dict, focusable)
     self.cx = cx
     self.cy = cy
     self.r=r
 
     
-class polyline(BaseObject):
+class polyline(BaseElement):
+  """
+  Class representing the polyline element of an svg doc.
+  """
   def __init__(self,points=None,style_dict=None,focusable=None):
-    BaseObject.__init__(self,"<"+self.__class__.__name__+" ", style_dict, focusable)
+    BaseElement.__init__(self,"<"+self.__class__.__name__+" ", style_dict, focusable)
     self.points = points
 
-#todo: baseobject wont work here ... make this class seperate of the hirarchie or try
+#todo: BaseElement wont work here ... make this class seperate of the hirarchie or try
 #to make it work ?    
-class polygon(BaseObject):
+class polygon(BaseElement):
   def __init__(self,points=None,style_dict=None,focusable=None):
-    BaseObject.__init__(self,"<"+self.__class__.__name__+" ", style_dict, focusable)
+    BaseElement.__init__(self,"<"+self.__class__.__name__+" ", style_dict, focusable)
     self.points = points
 
 
-class text(BaseObject):
+class text(BaseElement):
   def __init__(self,content, x ,y, rotate=None,style_dict=None,editable=None, focusable=None):
-    BaseObject.__init__(self,"<"+self.__class__.__name__+" ", style_dict, focusable,endTag="</text>\n")
+    BaseElement.__init__(self,"<"+self.__class__.__name__+" ", style_dict, focusable,endTag="</text>\n")
     self.x=x
     self.y=y
     self.rotate=rotate
@@ -301,7 +348,12 @@ class text(BaseObject):
     self.content=content
 
   def getXML(self):
-    #print dir(self)
+    """
+    Return a XML representation of the current SVG document.
+    This function can be used for debugging purposes. It is also used by getXML in SVG
+
+    @return:  the representation of the current SVG as an xml string
+    """
     xml=self.startXML
     for item in dir(self):
       if item.find('_')==-1 and item.find('XML') ==-1 and item.find('content')==-1:
@@ -315,9 +367,9 @@ class text(BaseObject):
     xml+=self.endXML
     return xml
 
-class path(BaseObject):
+class path(BaseElement):
   def __init__(self,pathData="",pathLength=None,style_dict=None, focusable=None):
-    BaseObject.__init__(self,"<"+self.__class__.__name__+" ", style_dict, focusable)
+    BaseElement.__init__(self,"<"+self.__class__.__name__+" ", style_dict, focusable)
     self.d=pathData
     self.pathLength=pathLength
 
@@ -353,7 +405,12 @@ class path(BaseObject):
       
       
   def getXML(self):
-    #print dir(self)
+    """
+    Return a XML representation of the current SVG document.
+    This function can be used for debugging purposes. It is also used by getXML in SVG
+
+    @return:  the representation of the current SVG as an xml string
+    """
     xml=self.startXML
     xml+='d=\"'+self.d+'" '
     for item in dir(self):
