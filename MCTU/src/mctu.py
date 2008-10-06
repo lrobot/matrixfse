@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: iso-8859-1 -*-
-import threading as th 
-import Tkinter,tkMessageBox
+ 
+import Tkinter
 """
 License:
 Copyright (c) 2008 Kerim Mansour
