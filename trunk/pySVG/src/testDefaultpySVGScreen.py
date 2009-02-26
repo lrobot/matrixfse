@@ -170,6 +170,7 @@ def createPaths():
   sh.setFilling('#FFC')
   path2=path(style_dict=sh.getStyleDict())
   path2.appendMoveToPath(190, 520, False)
+  #as you can see we can mix strings and ints without trouble
   path2.appendCubicCurveToPath('+0', '+0', 30, 30, -60, 30, True)
   path2.appendCloseCurve()
   
