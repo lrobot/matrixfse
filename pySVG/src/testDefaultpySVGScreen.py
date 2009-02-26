@@ -111,6 +111,11 @@ def createShapes():
   l=oh.createLine(200,470,260,400, strokewidth='2px', stroke='#F00')
   elements.append(l)
   
+  #path
+  p=createPaths()
+  for e in p:
+    elements.append(e)
+  
   #polyline
   p=oh.createPolyline('250,325 200,345 250,365', strokewidth='2px', stroke='#090')
   elements.append(p)
@@ -149,11 +154,29 @@ def createShapes():
   return elements
   """
   
-  <!-- Pfade -->
-  <path d="M 40,530 L 100,560 L 60,520 Z" style="fill: #EEE; stroke: #00F; stroke-width: 2px"/>
-  <path d="M 190,520 c +0,+0,+30,+30,-60,+30 z" style="fill: #FFC; stroke: #00F; stroke-width: 2px"/>
-  <path d="M 230,530 q -0,+30,+30,+0 q +30,-30,+30,0 q -0,+30,+30,+0 q +30,-20,+30,+0" style="fill: none; stroke: #00F; stroke-width: 2px"/>
- 
+<!-- Pfade -->
+<path d="M 40,530 L 100,560 L 60,520 Z" style="fill: #EEE; stroke: #00F; stroke-width: 2px"/>
+<path d="M 190,520 c +0,+0,+30,+30,-60,+30 z" style="fill: #FFC; stroke: #00F; stroke-width: 2px"/>
+<path d="M 230,530 q -0,+30,+30,+0 q +30,-30,+30,0 q -0,+30,+30,+0 q +30,-20,+30,+0" style="fill: none; stroke: #00F; stroke-width: 2px"/>
+"""
+def createPaths():
+  elements=[]
+  sh=StyleHelper()
+  sh.setFilling('#EEE')
+  sh.setStroke('#00F')
+  sh.setStrokeWidth('2px')
+  path1=path('M 40,530 L 100,560 L 60,520 Z', style_dict=sh.getStyleDict())
+  
+  sh.setFilling('#FFC')
+  path2=path('M 190,520 c +0,+0,+30,+30,-60,+30 z',style_dict=sh.getStyleDict())
+  
+  sh.setFilling('none')
+  path3=path('M 230,530 q -0,+30,+30,+0 q +30,-30,+30,0 q -0,+30,+30,+0 q +30,-20,+30,+0', sh.getStyleDict())
+  elements.append(path1)
+  elements.append(path2)
+  elements.append(path3)
+  return elements
+"""
   <!-- Gradienten -->
   <rect x="400" y="70" width="180" height="30" style="fill: url(#lingra1)"/>
   <circle cx="450" cy="170" r="50" style="fill: url(#radgra1)"/>
