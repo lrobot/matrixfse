@@ -489,28 +489,43 @@ class path(BaseElement):
 
   def appendLineToPath(self,endx,endy, relative=True):
     if relative==True:
-      self.d.append("l %s %s") %(endx,endy)
+      self.d+="l %s %s " %(endx,endy)
     else:
-      self.d.append("L %s %s") %(endx,endy)
+      self.d+="L %s %s " %(endx,endy)
   
   def appendHorizontalLineToPath(self,endx, relative=True):
     if relative==True:
-      self.d.append("h %s ") %(endx)
+      self.d+="h %s " %(endx)
     else:
-      self.d.append("H %s ") %(endx)
+      self.d+="H %s " %(endx)
       
   def appendVerticalLineToPath(self,endy, relative=True):
     if relative==True:
-      self.d.append("v %s ") %(endy)
+      self.d+="v %s " %(endy)
     else:
-      self.d.append("V %s ") %(endy)
+      self.d+="V %s " %(endy)
   
   def appendMoveToPath(self,endx,endy, relative=True):
     if relative==True:
-      self.d.append("m %s %s") %(endx,endy)
+      self.d+="m %s %s " %(endx,endy)
     else:
-      self.d.append("M %s %s") %(endx,endy)
+      self.d+="M %s %s " %(endx,endy)
   
+  def appendCloseCurve(self):
+    self.d+="z"
+  
+  def appendCubicCurveToPath(self, controlstartx, controlstarty, controlendx, controlendy, endx,endy,relative=True):
+    if relative==True:
+      self.d+="c %s %s %s %s %s %s " %(controlstartx, controlstarty, controlendx, controlendy, endx,endy)
+    else:
+      self.d+="C %s %s %s %s %s %s " %(controlstartx, controlstarty, controlendx, controlendy, endx,endy)
+  
+  def appendCubicShorthandCurveToPath(self,  controlendx, controlendy, endx,endy,relative=True):
+    if relative==True:
+      self.d+="c %s %s %s %s " %(controlendx, controlendy, endx,endy)
+    else:
+      self.d+="C %s %s %s %s " %(controlendx, controlendy, endx,endy)
+      
   def appendArcToPath(self,rx,ry,x,y,x_axis_rotation=0,large_arc_flag=0,sweep_flag=1 ,relative=True):
     if relative==True:
       self.d+=("a %s,%s %s %s %s %s,%s ") %(rx,ry,x_axis_rotation,large_arc_flag,sweep_flag,x,y)
