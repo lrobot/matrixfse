@@ -51,8 +51,6 @@ class StyleHelper:
     self.style_dict["stroke-width"]=strokewidth
   def setStroke(self,stroke):
     self.style_dict["stroke"]=stroke
-    
-  
   
   #untested below  
   def setStrokeDashArray(self,strokedasharray):

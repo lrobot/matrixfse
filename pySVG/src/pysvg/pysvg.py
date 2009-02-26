@@ -95,7 +95,70 @@ class SVG:
     @param element:  the element to add to the doc
     """
     self.elements.append(element)
+
+class BaseElement:
+  """
+  This is the base class for all svg elements like elipses, texts, lines etc.
+  """
+  def __init__(self, startTag, style_dict=None, focusable=None,endTag="/>\n"):
+    """
+    initializes the object
+    @type  startTag: string 
+    @param startTag:  the tag for the svg element name (e.g. <text ) 
+    @type  style_dict: dictionary
+    @param style_dict:  the style to use for this element 
+    @type  focusable: ??
+    @param focusable:  ?? 
+    """
+    self.startXML=startTag
+    self.endXML=endTag
+    #self.style=style #deprecated
+    self.focusable=focusable
+    self.style_dict=style_dict
   
+  def getXMLFromStyle(self):
+    """
+    This method converts the information in the style 
+    dictionary into svg syntax for the style attribute
+    
+    @return:  the representation of the current style as an xml string
+    """
+    count=0;
+    xml="style="
+    for key in self.style_dict.keys():
+      if self.style_dict.get(key)=="":
+        continue
+      if count>0:
+        xml+='; '
+      else:
+        xml+='"'
+      xml+='%s:%s' %(key,self.style_dict.get(key))
+      count+=1
+    xml+='" '
+    if len(xml)>8:
+      return xml
+    else: #empty style
+      return ""
+    
+  def getXML(self):
+    """
+    Return a XML representation of the current SVG document.
+    This function can be used for debugging purposes. It is also used by getXML in SVG
+
+    @return:  the representation of the current SVG as an xml string
+    """
+    xml=self.startXML
+    for item in dir(self):
+      if item.find('_')==-1 and item.find('XML')==-1:# and item.find('getXML')==-1:
+        if getattr(self,item) != None:
+          xml+=item+"=\"%s\" " %(getattr(self,item))
+      elif item=='style_dict':
+          if getattr(self,item) != None:
+            xml+=self.getXMLFromStyle()
+    xml+=self.endXML
+    return xml
+
+ 
 class Group():
   """ Base class for a container element. Different shapes, paths and 
   text can be put together inside a container sharing the same style.
@@ -191,52 +254,55 @@ class Group():
       xml+=element.getXML()
     xml+=self.endXML
     return xml
-
-    
-class BaseElement:
+#------------new
+class Defs:
+  """ 
+  This class packs all definitions
   """
-  This is the base class for all svg elements like elipses, texts, lines etc.
-  """
-  def __init__(self, startTag, style_dict=None, focusable=None,endTag="/>\n"):
-    """
-    initializes the object
-    @type  startTag: string 
-    @param startTag:  the tag for the svg element name (e.g. <text ) 
-    @type  style_dict: dictionary
-    @param style_dict:  the style to use for this element 
-    @type  focusable: ??
-    @param focusable:  ?? 
-    """
-    self.startXML=startTag
-    self.endXML=endTag
-    #self.style=style #deprecated
-    self.focusable=focusable
-    self.style_dict=style_dict
+  startXML="<defs>\n"
   
-  def getXMLFromStyle(self):
-    """
-    This method converts the information in the style 
-    dictionary into svg syntax for the style attribute
+  endXML="</defs>\n"
+
+  def __init__(self):
+    self.definitions=[]
     
-    @return:  the representation of the current style as an xml string
-    """
-    count=0;
-    xml="style="
-    for key in self.style_dict.keys():
-      if self.style_dict.get(key)=="":
-        continue
-      if count>0:
-        xml+='; '
-      else:
-        xml+='"'
-      xml+='%s:%s' %(key,self.style_dict.get(key))
-      count+=1
-    xml+='" '
-    if len(xml)>8:
-      return xml
-    else: #empty style
-      return ""
+  def addDefinition(self,definition):
+    self.definitions.append(definition)
     
+  def removeDefinition(self,id):
+    for defintion in self.definitions:
+      if definition.find('id="'+id+'"')>-1:
+        self.definitions.remove(definition)
+    
+  def getXML(self):
+    """
+    Return a XML representation of the current SVG document.
+    This function can be used for debugging purposes. It is also used by getXML in SVG
+
+    @return:  the representation of the current SVG as an xml string
+    """
+    xml=self.startXML
+    xml+=self.getXMLFromStyle()
+    xml+=self.getXMLFromTransform()
+    
+    for element in self.elements:
+      xml+=element.getXML()
+    xml+=self.endXML
+    return xml
+  
+class LinearGradient:
+  startXML="<linearGradient "
+  endTag=">\n"
+  endXML="</linearGradient>\n"
+  
+  def __init__(self, id):
+    self.id=id
+    self.stop=[]
+  
+  def addStop(self,offset,color):
+    s=stop(offset,color)
+    self.stop.apend(s)
+  
   def getXML(self):
     """
     Return a XML representation of the current SVG document.
@@ -254,6 +320,46 @@ class BaseElement:
             xml+=self.getXMLFromStyle()
     xml+=self.endXML
     return xml
+
+class stop(BaseElement):
+  def __init__(self,offset,stopcolor):
+    """
+    Creates a line
+    @type  x1: string or int
+    @param x1:  starting x-coordinate
+    @type  x1: string or int
+    @param y1:  starting y-coordinate
+    @type  y2: string or int
+    @param x2:  ending x-coordinate
+    @type  y2: string or int
+    @param y2:  ending y-coordinate
+    @type  style_dict: dictionary
+    @param style_dict:  style(s) to use for this element
+    @type  focusable: ???
+    @param focusable:  ??
+    """
+    BaseElement.__init__(self,"<"+self.__class__.__name__+" ", None,None)
+    if offset.find('.')>-1:
+      offset=offset[offset.find('.')+1:]+'%'
+    self.offset = offset
+    self.stopcolor = stopcolor
+
+def getXML(self):
+    """
+    Return a XML representation of the current SVG document.
+    This function can be used for debugging purposes. It is also used by getXML in SVG
+
+    @return:  the representation of the current SVG as an xml string
+    """
+    xml=self.startXML
+    for item in dir(self):
+      if item.find('_')==-1 and item.find('XML')==-1:# and item.find('getXML')==-1:
+        if getattr(self,item) != None:
+          xml+=item+"=\"%s\" " %(getattr(self,item))
+    xml+=self.endXML
+    return xml 
+
+#---new 
 
 #NOT painted by default. you MUST supply a style including stroke and stroke-width !
 class line(BaseElement):
