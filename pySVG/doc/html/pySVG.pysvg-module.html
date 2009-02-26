@@ -125,6 +125,15 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
+        <a href="pySVG.pysvg.BaseElement-class.html" class="summary-name">BaseElement</a><br />
+      This is the base class for all svg elements like elipses, texts, 
+        lines etc.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
         <a href="pySVG.pysvg.Group-class.html" class="summary-name">Group</a><br />
       Base class for a container element.
     </td>
@@ -133,42 +142,62 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pySVG.pysvg.BaseObject-class.html" class="summary-name">BaseObject</a>
+        <a href="pySVG.pysvg.Defs-class.html" class="summary-name">Defs</a><br />
+      This class packs all definitions
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pySVG.pysvg.line-class.html" class="summary-name">line</a>
+        <a href="pySVG.pysvg.LinearGradient-class.html" class="summary-name">LinearGradient</a>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pySVG.pysvg.ellipse-class.html" class="summary-name">ellipse</a>
+        <a href="pySVG.pysvg.stop-class.html" class="summary-name">stop</a>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pySVG.pysvg.rect-class.html" class="summary-name">rect</a>
+        <a href="pySVG.pysvg.line-class.html" class="summary-name">line</a><br />
+      Class representing the line element of an svg doc.
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pySVG.pysvg.circle-class.html" class="summary-name">circle</a>
+        <a href="pySVG.pysvg.ellipse-class.html" class="summary-name">ellipse</a><br />
+      Class representing the ellipse element of an svg doc.
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pySVG.pysvg.polyline-class.html" class="summary-name">polyline</a>
+        <a href="pySVG.pysvg.rect-class.html" class="summary-name">rect</a><br />
+      Class representing the rect element of an svg doc.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pySVG.pysvg.circle-class.html" class="summary-name">circle</a><br />
+      Class representing the cirle element of an svg doc.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pySVG.pysvg.polyline-class.html" class="summary-name">polyline</a><br />
+      Class representing the polyline element of an svg doc.
     </td>
   </tr>
 <tr>
@@ -182,7 +211,8 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pySVG.pysvg.text-class.html" class="summary-name">text</a>
+        <a href="pySVG.pysvg.text-class.html" class="summary-name">text</a><br />
+      Class representing the text element of an svg doc.
     </td>
   </tr>
 <tr>
@@ -190,6 +220,41 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
         <a href="pySVG.pysvg.path-class.html" class="summary-name">path</a>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pySVG.pysvg-module.html#getXML" class="summary-sig-name">getXML</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Return a XML representation of the current element.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pySVG.pysvg-pysrc.html#getXML">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
     </td>
   </tr>
 </table>
@@ -234,6 +299,47 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
   </tr>
 </table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="getXML"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getXML</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pySVG.pysvg-pysrc.html#getXML">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return a XML representation of the current element. This function can 
+  be used for debugging purposes. It is also used by getXML in SVG</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>the representation of the current element as an xml string</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
 <!-- ==================== VARIABLES DETAILS ==================== -->
 <a name="section-VariablesDetails"></a>
 <table class="details" border="1" cellpadding="3"
@@ -304,7 +410,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Fri Sep 05 08:06:43 2008
+    Generated by Epydoc 3.0.1 on Thu Feb 26 17:44:54 2009
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"
