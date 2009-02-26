@@ -142,10 +142,10 @@ class BaseElement:
     
   def getXML(self):
     """
-    Return a XML representation of the current SVG document.
+    Return a XML representation of the current element.
     This function can be used for debugging purposes. It is also used by getXML in SVG
 
-    @return:  the representation of the current SVG as an xml string
+    @return:  the representation of the current element as an xml string
     """
     xml=self.startXML
     for item in dir(self):
@@ -241,10 +241,10 @@ class Group():
   
   def getXML(self):
     """
-    Return a XML representation of the current SVG document.
+    Return a XML representation of the current element.
     This function can be used for debugging purposes. It is also used by getXML in SVG
 
-    @return:  the representation of the current SVG as an xml string
+    @return:  the representation of the current element as an xml string
     """
     xml=self.startXML
     xml+=self.getXMLFromStyle()
@@ -260,7 +260,6 @@ class Defs:
   This class packs all definitions
   """
   startXML="<defs>\n"
-  
   endXML="</defs>\n"
 
   def __init__(self):
@@ -276,10 +275,10 @@ class Defs:
     
   def getXML(self):
     """
-    Return a XML representation of the current SVG document.
+    Return a XML representation of the current element.
     This function can be used for debugging purposes. It is also used by getXML in SVG
 
-    @return:  the representation of the current SVG as an xml string
+    @return:  the representation of the current element as an xml string
     """
     xml=self.startXML
     xml+=self.getXMLFromStyle()
@@ -305,10 +304,10 @@ class LinearGradient:
   
   def getXML(self):
     """
-    Return a XML representation of the current SVG document.
+    Return a XML representation of the current element.
     This function can be used for debugging purposes. It is also used by getXML in SVG
 
-    @return:  the representation of the current SVG as an xml string
+    @return:  the representation of the current element as an xml string
     """
     xml=self.startXML
     for item in dir(self):
@@ -346,10 +345,10 @@ class stop(BaseElement):
 
 def getXML(self):
     """
-    Return a XML representation of the current SVG document.
+    Return a XML representation of the current element.
     This function can be used for debugging purposes. It is also used by getXML in SVG
 
-    @return:  the representation of the current SVG as an xml string
+    @return:  the representation of the current element as an xml string
     """
     xml=self.startXML
     for item in dir(self):
@@ -359,9 +358,7 @@ def getXML(self):
     xml+=self.endXML
     return xml 
 
-#---new 
 
-#NOT painted by default. you MUST supply a style including stroke and stroke-width !
 class line(BaseElement):
   """
   Class representing the line element of an svg doc.
@@ -445,6 +442,17 @@ class polygon(BaseElement):
 
 
 class text(BaseElement):
+  """
+  Class representing the text element of an svg doc.
+  @type  content: string
+  @param content:  the text to display
+  @type  x: int 
+  @param x:  x-coordinate for the text
+  @type  y: int 
+  @param y:  y-coordinate for the text 
+  @type  rotate: int
+  @param rotate:  rotation in degrees (negative means counterclockwise) 
+  """
   def __init__(self,content, x ,y, rotate=None,style_dict=None,editable=None, focusable=None):
     BaseElement.__init__(self,"<"+self.__class__.__name__+" ", style_dict, focusable,endTag="</text>\n")
     self.x=x
@@ -455,10 +463,10 @@ class text(BaseElement):
 
   def getXML(self):
     """
-    Return a XML representation of the current SVG document.
+    Return a XML representation of the current element.
     This function can be used for debugging purposes. It is also used by getXML in SVG
 
-    @return:  the representation of the current SVG as an xml string
+    @return:  the representation of the current element as an xml string
     """
     xml=self.startXML
     for item in dir(self):
@@ -512,10 +520,10 @@ class path(BaseElement):
       
   def getXML(self):
     """
-    Return a XML representation of the current SVG document.
+    Return a XML representation of the current element.
     This function can be used for debugging purposes. It is also used by getXML in SVG
 
-    @return:  the representation of the current SVG as an xml string
+    @return:  the representation of the current element as an xml string
     """
     xml=self.startXML
     xml+='d=\"'+self.d+'" '
@@ -530,10 +538,7 @@ class path(BaseElement):
     #xml+='d=\"'+self.d+'"'
     xml+=self.endXML
     return xml
-#not supported as of yet
-"""
 
-class Path:
-"""
+
     
 
