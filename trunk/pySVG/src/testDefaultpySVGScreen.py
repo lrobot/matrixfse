@@ -168,7 +168,10 @@ def createPaths():
   path1=path('M 40,530 L 100,560 L 60,520 Z', style_dict=sh.getStyleDict())
   
   sh.setFilling('#FFC')
-  path2=path('M 190,520 c +0,+0,+30,+30,-60,+30 z',style_dict=sh.getStyleDict())
+  path2=path(style_dict=sh.getStyleDict())
+  path2.appendMoveToPath(190, 520, False)
+  path2.appendCubicCurveToPath('+0', '+0', 30, 30, -60, 30, True)
+  path2.appendCloseCurve()
   
   sh.setFilling('none')
   path3=path('M 230,530 q -0,+30,+30,+0 q +30,-30,+30,0 q -0,+30,+30,+0 q +30,-20,+30,+0', sh.getStyleDict())
