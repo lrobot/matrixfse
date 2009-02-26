@@ -485,7 +485,7 @@ class path(BaseElement):
   def __init__(self,pathData="",pathLength=None,style_dict=None, focusable=None):
     BaseElement.__init__(self,"<"+self.__class__.__name__+" ", style_dict, focusable)
     self.d=pathData
-    self.pathLength=pathLength
+    #self.pathLength=pathLength
 
   def __append__(self,command, params, relative=True):
     if relative==True:

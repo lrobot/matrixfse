@@ -3,7 +3,7 @@
           "DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>pySVG.pysvg.text</title>
+  <title>pySVG.pysvg.stop</title>
   <link rel="stylesheet" href="epydoc.css" type="text/css" />
   <script type="text/javascript" src="epydoc.js"></script>
 </head>
@@ -44,7 +44,7 @@
       <span class="breadcrumbs">
         <a href="pySVG-module.html">Package&nbsp;pySVG</a> ::
         <a href="pySVG.pysvg-module.html">Module&nbsp;pysvg</a> ::
-        Class&nbsp;text
+        Class&nbsp;stop
       </span>
     </td>
     <td>
@@ -54,23 +54,21 @@
     onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
         <tr><td align="right"><span class="options"
             >[<a href="frames.html" target="_top">frames</a
-            >]&nbsp;|&nbsp;<a href="pySVG.pysvg.text-class.html"
+            >]&nbsp;|&nbsp;<a href="pySVG.pysvg.stop-class.html"
             target="_top">no&nbsp;frames</a>]</span></td></tr>
       </table>
     </td>
   </tr>
 </table>
 <!-- ==================== CLASS DESCRIPTION ==================== -->
-<h1 class="epydoc">Class text</h1><p class="nomargin-top"><span class="codelink"><a href="pySVG.pysvg-pysrc.html#text">source&nbsp;code</a></span></p>
+<h1 class="epydoc">Class stop</h1><p class="nomargin-top"><span class="codelink"><a href="pySVG.pysvg-pysrc.html#stop">source&nbsp;code</a></span></p>
 <pre class="base-tree">
 <a href="pySVG.pysvg.BaseElement-class.html">BaseElement</a> --+
               |
-             <strong class="uidshort">text</strong>
+             <strong class="uidshort">stop</strong>
 </pre>
 
 <hr />
-<p>Class representing the text element of an svg doc.</p>
-
 <!-- ==================== INSTANCE METHODS ==================== -->
 <a name="section-InstanceMethods"></a>
 <table class="summary" border="1" cellpadding="3"
@@ -94,34 +92,12 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="pySVG.pysvg.text-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">content</span>,
-        <span class="summary-sig-arg">x</span>,
-        <span class="summary-sig-arg">y</span>,
-        <span class="summary-sig-arg">rotate</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">style_dict</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">editable</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">focusable</span>=<span class="summary-sig-default">None</span>)</span><br />
-      initializes the object</td>
+          <td><span class="summary-sig"><a href="pySVG.pysvg.stop-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">offset</span>,
+        <span class="summary-sig-arg">stopcolor</span>)</span><br />
+      Creates a line</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="pySVG.pysvg-pysrc.html#text.__init__">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a href="pySVG.pysvg.text-class.html#getXML" class="summary-sig-name">getXML</a>(<span class="summary-sig-arg">self</span>)</span><br />
-      Return a XML representation of the current element.</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="pySVG.pysvg-pysrc.html#text.getXML">source&nbsp;code</a></span>
+            <span class="codelink"><a href="pySVG.pysvg-pysrc.html#stop.__init__">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -132,6 +108,7 @@
   <tr>
     <td colspan="2" class="summary">
     <p class="indent-wrapped-lines"><b>Inherited from <code><a href="pySVG.pysvg.BaseElement-class.html">BaseElement</a></code></b>:
+      <code><a href="pySVG.pysvg.BaseElement-class.html#getXML">getXML</a></code>,
       <code><a href="pySVG.pysvg.BaseElement-class.html#getXMLFromStyle">getXMLFromStyle</a></code>
       </p>
     </td>
@@ -163,57 +140,28 @@
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">content</span>,
-        <span class="sig-arg">x</span>,
-        <span class="sig-arg">y</span>,
-        <span class="sig-arg">rotate</span>=<span class="sig-default">None</span>,
-        <span class="sig-arg">style_dict</span>=<span class="sig-default">None</span>,
-        <span class="sig-arg">editable</span>=<span class="sig-default">None</span>,
-        <span class="sig-arg">focusable</span>=<span class="sig-default">None</span>)</span>
+        <span class="sig-arg">offset</span>,
+        <span class="sig-arg">stopcolor</span>)</span>
     <br /><em class="fname">(Constructor)</em>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="pySVG.pysvg-pysrc.html#text.__init__">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="pySVG.pysvg-pysrc.html#stop.__init__">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
-  <p>initializes the object</p>
+  <p>Creates a line</p>
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>content</code></strong> (string) - the text to display</li>
-        <li><strong class="pname"><code>x</code></strong> (int) - x-coordinate for the text</li>
-        <li><strong class="pname"><code>y</code></strong> (int) - y-coordinate for the text</li>
-        <li><strong class="pname"><code>rotate</code></strong> (int) - rotation in degrees (negative means counterclockwise)</li>
+        <li><strong class="pname"><code>x1</code></strong> (string or int) - starting x-coordinate</li>
+        <li><strong class="pname"><code>y1</code></strong> - starting y-coordinate</li>
+        <li><strong class="pname"><code>x2</code></strong> - ending x-coordinate</li>
+        <li><strong class="pname"><code>y2</code></strong> (string or int) - ending y-coordinate</li>
+        <li><strong class="pname"><code>style_dict</code></strong> (dictionary) - style(s) to use for this element</li>
+        <li><strong class="pname"><code>focusable</code></strong> (???) - ??</li>
     </ul></dd>
     <dt>Overrides:
         <a href="pySVG.pysvg.BaseElement-class.html#__init__">BaseElement.__init__</a>
-        <dd><em class="note">(inherited documentation)</em></dd>
-    </dt>
-  </dl>
-</td></tr></table>
-</div>
-<a name="getXML"></a>
-<div>
-<table class="details" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr><td>
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">getXML</span>(<span class="sig-arg">self</span>)</span>
-  </h3>
-  </td><td align="right" valign="top"
-    ><span class="codelink"><a href="pySVG.pysvg-pysrc.html#text.getXML">source&nbsp;code</a></span>&nbsp;
-    </td>
-  </tr></table>
-  
-  <p>Return a XML representation of the current element. This function can 
-  be used for debugging purposes. It is also used by getXML in SVG</p>
-  <dl class="fields">
-    <dt>Returns:</dt>
-        <dd>the representation of the current element as an xml string</dd>
-    <dt>Overrides:
-        <a href="pySVG.pysvg.BaseElement-class.html#getXML">BaseElement.getXML</a>
     </dt>
   </dl>
 </td></tr></table>
