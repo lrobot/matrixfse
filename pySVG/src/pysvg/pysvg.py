@@ -487,52 +487,38 @@ class path(BaseElement):
     self.d=pathData
     self.pathLength=pathLength
 
-  def appendLineToPath(self,endx,endy, relative=True):
+  def __append__(self,command, params, relative=True):
     if relative==True:
-      self.d+="l %s %s " %(endx,endy)
+      self.d+=command.lower()
     else:
-      self.d+="L %s %s " %(endx,endy)
+      self.d+=command.upper()
+    for param in params:
+      self.d+=' %s ' %(param)
+        
+  def appendLineToPath(self,endx,endy, relative=True):
+    self.__append__('l',[endx,endy], relative)
   
   def appendHorizontalLineToPath(self,endx, relative=True):
-    if relative==True:
-      self.d+="h %s " %(endx)
-    else:
-      self.d+="H %s " %(endx)
+    self.__append__('h',[endx], relative)
       
   def appendVerticalLineToPath(self,endy, relative=True):
-    if relative==True:
-      self.d+="v %s " %(endy)
-    else:
-      self.d+="V %s " %(endy)
+    self.__append__('v',[endy], relative)
   
   def appendMoveToPath(self,endx,endy, relative=True):
-    if relative==True:
-      self.d+="m %s %s " %(endx,endy)
-    else:
-      self.d+="M %s %s " %(endx,endy)
-  
+    self.__append__('m',[endx,endy], relative)
+    
   def appendCloseCurve(self):
     self.d+="z"
   
   def appendCubicCurveToPath(self, controlstartx, controlstarty, controlendx, controlendy, endx,endy,relative=True):
-    if relative==True:
-      self.d+="c %s %s %s %s %s %s " %(controlstartx, controlstarty, controlendx, controlendy, endx,endy)
-    else:
-      self.d+="C %s %s %s %s %s %s " %(controlstartx, controlstarty, controlendx, controlendy, endx,endy)
+    self.__append__('c',[controlstartx, controlstarty, controlendx, controlendy, endx,endy], relative)
   
   def appendCubicShorthandCurveToPath(self,  controlendx, controlendy, endx,endy,relative=True):
-    if relative==True:
-      self.d+="c %s %s %s %s " %(controlendx, controlendy, endx,endy)
-    else:
-      self.d+="C %s %s %s %s " %(controlendx, controlendy, endx,endy)
-      
+    self.__append__('s',[controlendx, controlendy, endx,endy], relative)
+    
   def appendArcToPath(self,rx,ry,x,y,x_axis_rotation=0,large_arc_flag=0,sweep_flag=1 ,relative=True):
-    if relative==True:
-      self.d+=("a %s,%s %s %s %s %s,%s ") %(rx,ry,x_axis_rotation,large_arc_flag,sweep_flag,x,y)
-    else:
-      self.d+=("A %s,%s %s %s %s %s,%s ") %(rx,ry,x_axis_rotation,large_arc_flag,sweep_flag,x,y)
-      
-      
+    self.__append__('a',[rx,ry,x,y,x_axis_rotation,large_arc_flag,sweep_flag], relative)
+        
   def getXML(self):
     """
     Return a XML representation of the current element.
