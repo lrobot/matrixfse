@@ -69,7 +69,7 @@ def testPath():
   svg=SVG("test")
   style_dict = {"stroke":"#000000", "fill":"none","stroke-width":"49" }
   p=path(pathData="M 300 100 A 1,1 0 0 1 802,800",style_dict=style_dict)
-  #p.appendArcToPath(25,100, 50,-25, -30, 0,1)
+  p.appendArcToPath(25,100, 50,-25, -30, 0,1)
   
   svg.addElement(p)
   print svg.getXML()
