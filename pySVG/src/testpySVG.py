@@ -111,12 +111,7 @@ def textText():
   print svg.getXML()
   svg.saveSVG('c:\\test.svg')
   
-def textHelloWorld1():
-  svg=SVG("Hello World Example") # title is ignored still
-  t=text("Hello World",0,200)
-  svg.addElement(t)
-  print svg.getXML()
-  svg.saveSVG('c:\\test.svg')
+
 
 def textHelloWorld2():
   svg=SVG("Hello World Example") # title is ignored still
@@ -127,5 +122,16 @@ def textHelloWorld2():
   svg.addElement(t1)
   print svg.getXML()
   svg.saveSVG('c:\\test.svg')
+
+def HelloWorld1():
+  svg=SVG("Hello World Example") # title is ignored still
+  t=text("Hello World",0,200)
+  svg.addElement(t)
+  print svg.getXML()
+  svg.saveSVG('HelloWorld1.svg')
   
-if __name__ == '__main__': testPath()
+def tutorialChain():
+  HelloWorld1()
+  
+if __name__ == '__main__': 
+  tutorialChain()
