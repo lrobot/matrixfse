@@ -1,1 +1,1 @@
-C:\Python25\Scripts\epydoc.py --html pysvg --name pysvg -o ..\doc\html\ -v
+C:\Python25\Scripts\epydoc.py --html pySVG --name pysvg -o ..\doc\html\ -v

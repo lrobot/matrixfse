@@ -3,7 +3,7 @@
 from distutils.core import setup
 
 setup(name="pysvg",
-      version="0.1.5",
+      version="0.1.6",
       description="Python SVG Library",
       author="Kerim Mansour",
       author_email="kmansour@web.de",

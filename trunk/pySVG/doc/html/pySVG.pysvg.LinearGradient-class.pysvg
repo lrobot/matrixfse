@@ -3,7 +3,7 @@
           "DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>pySVG.pysvg.BaseElement</title>
+  <title>pysvg.pysvg.LinearGradient</title>
   <link rel="stylesheet" href="epydoc.css" type="text/css" />
   <script type="text/javascript" src="epydoc.js"></script>
 </head>
@@ -16,7 +16,7 @@
   <tr valign="middle">
   <!-- Home link -->
       <th>&nbsp;&nbsp;&nbsp;<a
-        href="pySVG-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+        href="pysvg-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
 
   <!-- Tree link -->
       <th>&nbsp;&nbsp;&nbsp;<a
@@ -42,9 +42,9 @@
   <tr valign="top">
     <td width="100%">
       <span class="breadcrumbs">
-        <a href="pySVG-module.html">Package&nbsp;pySVG</a> ::
-        <a href="pySVG.pysvg-module.html">Module&nbsp;pysvg</a> ::
-        Class&nbsp;BaseElement
+        <a href="pysvg-module.html">Package&nbsp;pysvg</a> ::
+        <a href="pysvg.pysvg-module.html">Module&nbsp;pysvg</a> ::
+        Class&nbsp;LinearGradient
       </span>
     </td>
     <td>
@@ -54,17 +54,14 @@
     onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
         <tr><td align="right"><span class="options"
             >[<a href="frames.html" target="_top">frames</a
-            >]&nbsp;|&nbsp;<a href="pySVG.pysvg.BaseElement-class.html"
+            >]&nbsp;|&nbsp;<a href="pysvg.pysvg.LinearGradient-class.html"
             target="_top">no&nbsp;frames</a>]</span></td></tr>
       </table>
     </td>
   </tr>
 </table>
 <!-- ==================== CLASS DESCRIPTION ==================== -->
-<h1 class="epydoc">Class BaseElement</h1><p class="nomargin-top"><span class="codelink"><a href="pySVG.pysvg-pysrc.html#BaseElement">source&nbsp;code</a></span></p>
-<p>This is the base class for all svg elements like elipses, texts, lines
-  etc.</p>
-
+<h1 class="epydoc">Class LinearGradient</h1><p class="nomargin-top"><span class="codelink"><a href="pysvg.pysvg-pysrc.html#LinearGradient">source&nbsp;code</a></span></p>
 <!-- ==================== INSTANCE METHODS ==================== -->
 <a name="section-InstanceMethods"></a>
 <table class="summary" border="1" cellpadding="3"
@@ -88,14 +85,10 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="pySVG.pysvg.BaseElement-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">startTag</span>,
-        <span class="summary-sig-arg">style_dict</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">focusable</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">endTag</span>=<span class="summary-sig-default">&quot;/&gt;\n&quot;</span>)</span><br />
-      initializes the object</td>
+          <td><span class="summary-sig"><a name="__init__"></a><span class="summary-sig-name">__init__</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">id</span>)</span></td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="pySVG.pysvg-pysrc.html#BaseElement.__init__">source&nbsp;code</a></span>
+            <span class="codelink"><a href="pysvg.pysvg-pysrc.html#LinearGradient.__init__">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -109,11 +102,11 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="pySVG.pysvg.BaseElement-class.html#getXMLFromStyle" class="summary-sig-name">getXMLFromStyle</a>(<span class="summary-sig-arg">self</span>)</span><br />
-      This method converts the information in the style dictionary into svg
-      syntax for the style attribute</td>
+          <td><span class="summary-sig"><a name="addStop"></a><span class="summary-sig-name">addStop</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">offset</span>,
+        <span class="summary-sig-arg">color</span>)</span></td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="pySVG.pysvg-pysrc.html#BaseElement.getXMLFromStyle">source&nbsp;code</a></span>
+            <span class="codelink"><a href="pysvg.pysvg-pysrc.html#LinearGradient.addStop">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -127,15 +120,56 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="pySVG.pysvg.BaseElement-class.html#getXML" class="summary-sig-name">getXML</a>(<span class="summary-sig-arg">self</span>)</span><br />
+          <td><span class="summary-sig"><a href="pysvg.pysvg.LinearGradient-class.html#getXML" class="summary-sig-name">getXML</a>(<span class="summary-sig-arg">self</span>)</span><br />
       Return a XML representation of the current element.</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="pySVG.pysvg-pysrc.html#BaseElement.getXML">source&nbsp;code</a></span>
+            <span class="codelink"><a href="pysvg.pysvg-pysrc.html#LinearGradient.getXML">source&nbsp;code</a></span>
             
           </td>
         </tr>
       </table>
       
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="startXML"></a><span class="summary-name">startXML</span> = <code title="'&lt;linearGradient '"><code class="variable-quote">'</code><code class="variable-string">&lt;linearGradient </code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="endTag"></a><span class="summary-name">endTag</span> = <code title="'''&gt;
+'''"><code class="variable-quote">'</code><code class="variable-string">&gt;\n</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="endXML"></a><span class="summary-name">endXML</span> = <code title="'''&lt;/linearGradient&gt;
+'''"><code class="variable-quote">'</code><code class="variable-string">&lt;/linearGradient&gt;\n</code><code class="variable-quote">'</code></code>
     </td>
   </tr>
 </table>
@@ -157,58 +191,6 @@
   </td>
 </tr>
 </table>
-<a name="__init__"></a>
-<div>
-<table class="details" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr><td>
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">startTag</span>,
-        <span class="sig-arg">style_dict</span>=<span class="sig-default">None</span>,
-        <span class="sig-arg">focusable</span>=<span class="sig-default">None</span>,
-        <span class="sig-arg">endTag</span>=<span class="sig-default">&quot;/&gt;\n&quot;</span>)</span>
-    <br /><em class="fname">(Constructor)</em>
-  </h3>
-  </td><td align="right" valign="top"
-    ><span class="codelink"><a href="pySVG.pysvg-pysrc.html#BaseElement.__init__">source&nbsp;code</a></span>&nbsp;
-    </td>
-  </tr></table>
-  
-  <p>initializes the object</p>
-  <dl class="fields">
-    <dt>Parameters:</dt>
-    <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>startTag</code></strong> (string) - the tag for the svg element name (e.g. &lt;text )</li>
-        <li><strong class="pname"><code>style_dict</code></strong> (dictionary) - the style to use for this element</li>
-        <li><strong class="pname"><code>focusable</code></strong> (??) - ??</li>
-    </ul></dd>
-  </dl>
-</td></tr></table>
-</div>
-<a name="getXMLFromStyle"></a>
-<div>
-<table class="details" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr><td>
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">getXMLFromStyle</span>(<span class="sig-arg">self</span>)</span>
-  </h3>
-  </td><td align="right" valign="top"
-    ><span class="codelink"><a href="pySVG.pysvg-pysrc.html#BaseElement.getXMLFromStyle">source&nbsp;code</a></span>&nbsp;
-    </td>
-  </tr></table>
-  
-  <p>This method converts the information in the style dictionary into svg 
-  syntax for the style attribute</p>
-  <dl class="fields">
-    <dt>Returns:</dt>
-        <dd>the representation of the current style as an xml string</dd>
-  </dl>
-</td></tr></table>
-</div>
 <a name="getXML"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
@@ -219,7 +201,7 @@
   <h3 class="epydoc"><span class="sig"><span class="sig-name">getXML</span>(<span class="sig-arg">self</span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="pySVG.pysvg-pysrc.html#BaseElement.getXML">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="pysvg.pysvg-pysrc.html#LinearGradient.getXML">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
@@ -238,7 +220,7 @@
   <tr valign="middle">
   <!-- Home link -->
       <th>&nbsp;&nbsp;&nbsp;<a
-        href="pySVG-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+        href="pysvg-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
 
   <!-- Tree link -->
       <th>&nbsp;&nbsp;&nbsp;<a
@@ -263,7 +245,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Fri Feb 27 11:15:16 2009
+    Generated by Epydoc 3.0.1 on Fri Feb 27 11:13:24 2009
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"
