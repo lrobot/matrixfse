@@ -484,6 +484,8 @@ class text(BaseElement):
 class path(BaseElement):
   def __init__(self,pathData="",pathLength=None,style_dict=None, focusable=None):
     BaseElement.__init__(self,"<"+self.__class__.__name__+" ", style_dict, focusable)
+    if pathData!='' and not pathData.endswith(' '):
+      pathData+=' '
     self.d=pathData
     #self.pathLength=pathLength
 
@@ -515,6 +517,12 @@ class path(BaseElement):
   
   def appendCubicShorthandCurveToPath(self,  controlendx, controlendy, endx,endy,relative=True):
     self.__append__('s',[controlendx, controlendy, endx,endy], relative)
+    
+  def appendQuadraticCurveToPath(self, controlx, controly, endx,endy,relative=True):
+    self.__append__('q',[controlx, controly, endx,endy], relative)
+  
+  def appendQuadraticShorthandCurveToPath(self, endx,endy,relative=True):
+    self.__append__('t',[endx,endy], relative)
     
   def appendArcToPath(self,rx,ry,x,y,x_axis_rotation=0,large_arc_flag=0,sweep_flag=1 ,relative=True):
     self.__append__('a',[rx,ry,x,y,x_axis_rotation,large_arc_flag,sweep_flag], relative)
