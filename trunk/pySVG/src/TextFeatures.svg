@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<text style="font-size:5em; font-family:Verdana; fill:blue" x="0" y="100" >Verdana, blue, 5em</text>
+<text x="0" y="200" >pySVG simple</text>
+<rect height="100" style="stroke:black; stroke-width:1; fill:green" width="100" x="350" y="250" />
+<text style="font-size:2em; font-family:Times; fill-opacity:0.5; fill-rule:evenodd; font-weight:bold; font-style:italic; fill:red" x="0" y="300" >Times, italic, 2em, bold, opacity=0.5, fillrule=evenodd</text>
+<text style="fill-opacity:0.5; font-size:2em; font-family:Times; font-style:italic; fill:red" x="0" y="400" >Times, italic, 2em, non bold, opacity=0.5</text>
+</svg>

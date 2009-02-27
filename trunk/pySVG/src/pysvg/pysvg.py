@@ -220,7 +220,7 @@ class Group():
     
     @return:  the representation of the current transformations as an xml string
     """
-    if self.transform_dict.keys()==None:
+    if self.transform_dict==None or self.transform_dict.keys()==None:
       return""
     count=0;
     xml="transform="
