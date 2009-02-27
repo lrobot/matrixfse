@@ -132,4 +132,5 @@ class ObjectHelper:
     """
     points=""
     for tuple in arrayOfPointTuples:
-      points+=tuple[0]+","+tuple[1]+" "
+      points+=str(tuple[0])+","+str(tuple[1])+" "
+    return points
