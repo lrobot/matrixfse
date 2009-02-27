@@ -1,6 +1,10 @@
 #!/usr/bin/python
 # -*- coding: iso-8859-1 -*-
 
+"""
+DEPRECATED ::: NOT UP TO DATE :::: NOT WORKING !!!
+"""
+
 from pysvg.pysvg import *
 from pysvg.objecthelper import *
 from pysvg.stylehelper import *
