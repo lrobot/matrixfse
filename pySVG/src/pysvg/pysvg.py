@@ -2,7 +2,7 @@
 # -*- coding: iso-8859-1 -*-
 """
 License:
-Copyright (c) 2008 Kerim Mansour
+Copyright (c) 2008,2009 Kerim Mansour
 All rights reserved.
 
 COMMERCIAL USAGE:
@@ -255,7 +255,7 @@ class Group():
     xml+=self.endXML
     return xml
 #------------new
-class Defs:
+class Definition():
   """ 
   This class packs all definitions
   """
@@ -263,15 +263,15 @@ class Defs:
   endXML="</defs>\n"
 
   def __init__(self):
-    self.definitions=[]
+    self.elements=[]
     
   def addDefinition(self,definition):
-    self.definitions.append(definition)
+    self.elements.append(definition)
     
   def removeDefinition(self,id):
-    for defintion in self.definitions:
+    for defintion in self.elements:
       if definition.find('id="'+id+'"')>-1:
-        self.definitions.remove(definition)
+        self.elements.remove(definition)
     
   def getXML(self):
     """
@@ -281,26 +281,32 @@ class Defs:
     @return:  the representation of the current element as an xml string
     """
     xml=self.startXML
-    xml+=self.getXMLFromStyle()
-    xml+=self.getXMLFromTransform()
+    #xml+=self.getXMLFromStyle()
+    #xml+=self.getXMLFromTransform()
     
     for element in self.elements:
       xml+=element.getXML()
     xml+=self.endXML
     return xml
-  
-class LinearGradient:
-  startXML="<linearGradient "
+
+class radialGradient:
+  startXML="<radialGradient "
   endTag=">\n"
-  endXML="</linearGradient>\n"
+  endXML="</radialGradient>\n"
   
-  def __init__(self, id):
+  def __init__(self, id,cx='50%',cy='50%',r='50%', fx='50%',fy='50%'):
     self.id=id
-    self.stop=[]
+    self._stop=[]
+    self.cx=cx
+    self.cy=cy
+    self.r=r
+    self.fx=fx
+    self.fy=fy
+    
   
-  def addStop(self,offset,color):
-    s=stop(offset,color)
-    self.stop.apend(s)
+  def addStop(self,offset,color, opacity):
+    s=stop(offset,color, opacity)
+    self._stop.append(s)
   
   def getXML(self):
     """
@@ -311,39 +317,34 @@ class LinearGradient:
     """
     xml=self.startXML
     for item in dir(self):
-      if item.find('_')==-1 and item.find('XML')==-1:# and item.find('getXML')==-1:
+      if item.find('_')==-1 and item.find('XML')==-1 and item.find('addStop')==-1 and item.find('end')==-1:
         if getattr(self,item) != None:
           xml+=item+"=\"%s\" " %(getattr(self,item))
-      elif item=='style_dict':
-          if getattr(self,item) != None:
-            xml+=self.getXMLFromStyle()
+    xml+=self.endTag
+    for element in self._stop:
+      xml+=element.getXML()
     xml+=self.endXML
     return xml
-
-class stop(BaseElement):
-  def __init__(self,offset,stopcolor):
-    """
-    Creates a line
-    @type  x1: string or int
-    @param x1:  starting x-coordinate
-    @type  x1: string or int
-    @param y1:  starting y-coordinate
-    @type  y2: string or int
-    @param x2:  ending x-coordinate
-    @type  y2: string or int
-    @param y2:  ending y-coordinate
-    @type  style_dict: dictionary
-    @param style_dict:  style(s) to use for this element
-    @type  focusable: ???
-    @param focusable:  ??
-    """
-    BaseElement.__init__(self,"<"+self.__class__.__name__+" ", None,None)
-    if offset.find('.')>-1:
-      offset=offset[offset.find('.')+1:]+'%'
-    self.offset = offset
-    self.stopcolor = stopcolor
-
-def getXML(self):
+  
+class linearGradient:
+  startXML="<linearGradient "
+  endTag=">\n"
+  endXML="</linearGradient>\n"
+  
+  def __init__(self, id,x1='0',y1='0',x2='100%',y2='0'):
+    self.id=id
+    self._stop=[]
+    self.x1=x1
+    self.y1=y1
+    self.x2=x2
+    self.y2=y2
+    
+  
+  def addStop(self,offset,color, opacity):
+    s=stop(offset,color, opacity)
+    self._stop.append(s)
+  
+  def getXML(self):
     """
     Return a XML representation of the current element.
     This function can be used for debugging purposes. It is also used by getXML in SVG
@@ -352,9 +353,54 @@ def getXML(self):
     """
     xml=self.startXML
     for item in dir(self):
+      if item.find('_')==-1 and item.find('XML')==-1 and item.find('addStop')==-1 and item.find('end')==-1:
+        if getattr(self,item) != None:
+          xml+=item+"=\"%s\" " %(getattr(self,item))
+    xml+=self.endTag
+    for element in self._stop:
+      xml+=element.getXML()
+    xml+=self.endXML
+    return xml
+
+class stop(BaseElement):
+  def __init__(self,offset,stopcolor, opacity):
+    """
+    Creates a line
+    @type  offset: string
+    @param offset:  offset as either percentage or decimal between 0 and 1
+    @type  stopcolor: string or int
+    @param stopcolor:  starting y-coordinate
+    @type  opacity: string or int
+    @param opacity:  ending x-coordinate
+    """
+    BaseElement.__init__(self,"<"+self.__class__.__name__+" ", None,None)
+    if offset.find('%')==-1 and offset.find('.')==-1:
+      offset=offset+'%'
+    self.offset = offset
+    self.stopcolor = stopcolor
+    self.stopopacity=opacity
+
+  def getXML(self):
+    """
+    Return a XML representation of the current element.
+    This function can be used for debugging purposes. It is also used by getXML in SVG
+
+    @return:  the representation of the current element as an xml string
+    """
+    xml=self.startXML
+    if self.offset!= None:
+      xml+="offset=\"%s\" " %(self.offset)
+    if self.stopcolor!= None:
+      xml+="stop-color=\"%s\" " %(self.stopcolor)
+    if self.stopopacity!= None:
+      xml+="stop-opacity=\"%s\" " %(self.stopopacity)
+    
+    """
+    for item in dir(self):
       if item.find('_')==-1 and item.find('XML')==-1:# and item.find('getXML')==-1:
         if getattr(self,item) != None:
           xml+=item+"=\"%s\" " %(getattr(self,item))
+    """
     xml+=self.endXML
     return xml 
 
@@ -548,6 +594,45 @@ class path(BaseElement):
     xml+=self.endXML
     return xml
 
+class image(BaseElement):
+  def __init__(self,x=None,y=None,width=None,height=None,xlink_=None,embedded_=False):
+      BaseElement.__init__(self,"<"+self.__class__.__name__+" ")
+      self.x = x
+      self.y = y
+      self.height = height
+      self.width = width
+      self.xlink_ = xlink_
+      self.embedded_ = embedded_
 
+  def getXML(self):
+    """
+    Return a XML representation of the current element.
+    This function can be used for debugging purposes. It is also used by getXML in SVG
+    
+    @return: the representation of the current element as an xml string
+    """
+    xml=self.startXML
+    for item in dir(self):
+        if item.find('_')==-1 and item.find('XML')==-1:
+            if getattr(self,item) != None:
+                xml+=item+"=\"%s\" " %(getattr(self,item))
+        elif item=='xlink_':
+            if (getattr(self,item) != None) and self.embedded_:
+                import base64
+                try:
+                    infile = open(getattr(self,item),'rb')
+                    imdata = base64.b64encode(infile.read())
+                    infile.close()
+                    fext = getattr(self,item)[-3:]
+                    if fext == 'jpg':
+                        fext = 'jpeg'
+                    imdata = ('data:image/%s;base64,' % fext) + imdata
+                    xml+="xlink:href=\"%s\" " %imdata
+                except IOError:
+                    self.embedded_ = False
+            if (getattr(self,item) != None) and not self.embedded_:
+                xml+="xlink:href=\"%s\" " %(getattr(self,item))
+    xml+=self.endXML
+    return xml
     
 

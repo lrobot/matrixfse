@@ -70,7 +70,6 @@ class StyleHelper:
   #is used to provide a potential indirect value (currentColor) for the 'fill', 'stroke', 'stop-color' properties.
   def setCurrentColor(self, color):
     self.style_dict["color"]=color
-     
    
   # Gradient properties:
   def setStopColor(self, stopcolor):
