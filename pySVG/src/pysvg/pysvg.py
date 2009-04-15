@@ -595,6 +595,8 @@ class path(BaseElement):
     return xml
 
 class image(BaseElement):
+  """ contributed by Kevin, April 2009
+  """
   def __init__(self,x=None,y=None,width=None,height=None,xlink_=None,embedded_=False):
       BaseElement.__init__(self,"<"+self.__class__.__name__+" ")
       self.x = x
