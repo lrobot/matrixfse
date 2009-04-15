@@ -9,6 +9,51 @@ from pysvg.pysvg import *
 from pysvg.objecthelper import *
 from pysvg.stylehelper import *
 
+def Image():
+  svg=SVG("test")
+  i=image(x=800,y=250,width=88,height=31,xlink_='http://img0.gmodules.com/ig/images/googlemail.gif',embedded_=False)
+  svg.addElement(i)
+  i=image(x=900,y=250,width=88,height=31,xlink_='../images.jpg',embedded_=True)
+  svg.addElement(i)
+  print svg.getXML()
+  svg.saveSVG('Image.svg')
+    
+      
+
+def LinearGradient():
+  svg=SVG("test")
+  d=Definition()
+  
+  lg=linearGradient("orange_red")
+  lg.addStop(offset='0%',color='rgb(255,255,0)', opacity=1)
+  lg.addStop(offset='100%',color='rgb(255,0,0)', opacity=1)
+  d.addDefinition(lg)
+  
+  oh=ObjectHelper()
+  e=oh.createEllipse(cx="200", cy="190", rx="85", ry="55", fill="url(#orange_red)")
+  
+  svg.addElement(d)
+  svg.addElement(e)
+  print svg.getXML()
+  svg.saveSVG('LinearGradient.svg')
+  
+def RadialGradient():
+  svg=SVG("test")
+  d=Definition()
+   
+  lg=radialGradient("grey_blue")
+  lg.addStop(offset='0%',color='rgb(200,200,200)', opacity=1)
+  lg.addStop(offset='100%',color='rgb(0,0,255)', opacity=1)
+  d.addDefinition(lg)
+  
+  oh=ObjectHelper()
+  e=oh.createEllipse(cx="230", cy="200", rx="110", ry="100", fill="url(#grey_blue)")
+  
+  svg.addElement(d)
+  svg.addElement(e)
+  print svg.getXML()
+  svg.saveSVG('RadialGradient.svg')
+  
 def Grouping():
   oh=ObjectHelper()
   svg=SVG("test")
@@ -173,6 +218,9 @@ def tutorialChain():
   Line()
   ComplexShapes()
   Grouping()
+  LinearGradient()
+  RadialGradient()
+  Image()
   
 if __name__ == '__main__': 
   tutorialChain()

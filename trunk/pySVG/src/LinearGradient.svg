@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<defs>
+<linearGradient id="orange_red" x1="0" x2="100%" y1="0" y2="0" >
+<stop offset="0%" stop-color="rgb(255,255,0)" stop-opacity="1" />
+<stop offset="100%" stop-color="rgb(255,0,0)" stop-opacity="1" />
+</linearGradient>
+</defs>
+<ellipse cx="200" cy="190" rx="85" ry="55" style="stroke:black; stroke-width:1; fill:url(#orange_red)" />
+</svg>
