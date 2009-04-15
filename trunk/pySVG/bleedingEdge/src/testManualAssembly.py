@@ -25,5 +25,4 @@ l.set_style("stroke:#00C;stroke-width:2px")
 s.addElement(l)
 
 f=open('c:\\test.svg','wb')
-#s.export(f, level=0, namespace_='',namespacedef_='xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"', name_='')
-s.exportLiteral(f, level=0, name_='')
+s.export(f, level=0, namespace_='',namespacedef_='xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"', name_='')
