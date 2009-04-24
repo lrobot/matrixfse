@@ -846,8 +846,7 @@
     <attribute name="attributeType" type="string" use="optional"/>
   </attributeGroup>
   <attributeGroup name="animTargetAttrs">
-    <attributeGroup ref="svg:xlinkRefAttrs"/>
-    <attribute ref="xlink:href" type="anyURI" use="optional"/>
+    <attributeGroup ref="svg:animElementAttrs"/>
     <attributeGroup ref="svg:animAttributeAttrs"/>
   </attributeGroup>
   <attributeGroup name="animTimingAttrs">
@@ -1101,20 +1100,7 @@
     <attribute name="externalResourcesRequired" type="boolean" use="optional"/>
     <attribute name="class" type="svg:ClassListType" use="optional"/>
     <attribute name="style" type="svg:StyleSheetType" use="optional"/>
-    <attributeGroup ref="svg:PresentationAttributes-Color"/>
-    <attributeGroup ref="svg:PresentationAttributes-Containers"/>
-    <attributeGroup ref="svg:PresentationAttributes-feFlood"/>
-    <attributeGroup ref="svg:PresentationAttributes-FillStroke"/>
-    <attributeGroup ref="svg:PresentationAttributes-FilterPrimitives"/>
-    <attributeGroup ref="svg:PresentationAttributes-FontSpecification"/>
-    <attributeGroup ref="svg:PresentationAttributes-Gradients"/>
-    <attributeGroup ref="svg:PresentationAttributes-Graphics"/>
-    <attributeGroup ref="svg:PresentationAttributes-Images"/>
-    <attributeGroup ref="svg:PresentationAttributes-LightingEffects"/>
-    <attributeGroup ref="svg:PresentationAttributes-Markers"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextContentElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-Viewports"/>
+    <attributeGroup ref="svg:PresentationAttributes-All"/>
     <attribute name="viewBox" type="svg:ViewBoxSpecType" use="optional"/>
     <attribute name="preserveAspectRatio" type="svg:PreserveAspectRatioSpecType" default="xMidYMid meet"/>
     <attribute name="zoomAndPan" default="magnify">
@@ -1183,20 +1169,7 @@
     <attribute name="externalResourcesRequired" type="boolean" use="optional"/>
     <attribute name="class" type="svg:ClassListType" use="optional"/>
     <attribute name="style" type="svg:StyleSheetType" use="optional"/>
-    <attributeGroup ref="svg:PresentationAttributes-Color"/>
-    <attributeGroup ref="svg:PresentationAttributes-Containers"/>
-    <attributeGroup ref="svg:PresentationAttributes-feFlood"/>
-    <attributeGroup ref="svg:PresentationAttributes-FillStroke"/>
-    <attributeGroup ref="svg:PresentationAttributes-FilterPrimitives"/>
-    <attributeGroup ref="svg:PresentationAttributes-FontSpecification"/>
-    <attributeGroup ref="svg:PresentationAttributes-Gradients"/>
-    <attributeGroup ref="svg:PresentationAttributes-Graphics"/>
-    <attributeGroup ref="svg:PresentationAttributes-Images"/>
-    <attributeGroup ref="svg:PresentationAttributes-LightingEffects"/>
-    <attributeGroup ref="svg:PresentationAttributes-Markers"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextContentElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-Viewports"/>
+    <attributeGroup ref="svg:PresentationAttributes-All"/>
     <attribute name="transform" type="svg:TransformListType" use="optional"/>
     <attributeGroup ref="svg:graphicsElementEvents"/>
   </complexType>
@@ -1248,20 +1221,7 @@
     <attribute name="externalResourcesRequired" type="boolean" use="optional"/>
     <attribute name="class" type="svg:ClassListType" use="optional"/>
     <attribute name="style" type="svg:StyleSheetType" use="optional"/>
-    <attributeGroup ref="svg:PresentationAttributes-Color"/>
-    <attributeGroup ref="svg:PresentationAttributes-Containers"/>
-    <attributeGroup ref="svg:PresentationAttributes-feFlood"/>
-    <attributeGroup ref="svg:PresentationAttributes-FillStroke"/>
-    <attributeGroup ref="svg:PresentationAttributes-FilterPrimitives"/>
-    <attributeGroup ref="svg:PresentationAttributes-FontSpecification"/>
-    <attributeGroup ref="svg:PresentationAttributes-Gradients"/>
-    <attributeGroup ref="svg:PresentationAttributes-Graphics"/>
-    <attributeGroup ref="svg:PresentationAttributes-Images"/>
-    <attributeGroup ref="svg:PresentationAttributes-LightingEffects"/>
-    <attributeGroup ref="svg:PresentationAttributes-Markers"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextContentElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-Viewports"/>
+    <attributeGroup ref="svg:PresentationAttributes-All"/>
     <attribute name="transform" type="svg:TransformListType" use="optional"/>
     <attributeGroup ref="svg:graphicsElementEvents"/>
   </complexType>
@@ -1326,20 +1286,7 @@
     <attribute name="externalResourcesRequired" type="boolean" use="optional"/>
     <attribute name="class" type="svg:ClassListType" use="optional"/>
     <attribute name="style" type="svg:StyleSheetType" use="optional"/>
-    <attributeGroup ref="svg:PresentationAttributes-Color"/>
-    <attributeGroup ref="svg:PresentationAttributes-Containers"/>
-    <attributeGroup ref="svg:PresentationAttributes-feFlood"/>
-    <attributeGroup ref="svg:PresentationAttributes-FillStroke"/>
-    <attributeGroup ref="svg:PresentationAttributes-FilterPrimitives"/>
-    <attributeGroup ref="svg:PresentationAttributes-FontSpecification"/>
-    <attributeGroup ref="svg:PresentationAttributes-Gradients"/>
-    <attributeGroup ref="svg:PresentationAttributes-Graphics"/>
-    <attributeGroup ref="svg:PresentationAttributes-Images"/>
-    <attributeGroup ref="svg:PresentationAttributes-LightingEffects"/>
-    <attributeGroup ref="svg:PresentationAttributes-Markers"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextContentElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-Viewports"/>
+    <attributeGroup ref="svg:PresentationAttributes-All"/>
     <attribute name="viewBox" type="svg:ViewBoxSpecType" use="optional"/>
     <attribute name="preserveAspectRatio" type="svg:PreserveAspectRatioSpecType" default="xMidYMid meet"/>
     <attributeGroup ref="svg:graphicsElementEvents"/>
@@ -1363,20 +1310,7 @@
     <attribute name="externalResourcesRequired" type="boolean" use="optional"/>
     <attribute name="class" type="svg:ClassListType" use="optional"/>
     <attribute name="style" type="svg:StyleSheetType" use="optional"/>
-    <attributeGroup ref="svg:PresentationAttributes-Color"/>
-    <attributeGroup ref="svg:PresentationAttributes-Containers"/>
-    <attributeGroup ref="svg:PresentationAttributes-feFlood"/>
-    <attributeGroup ref="svg:PresentationAttributes-FillStroke"/>
-    <attributeGroup ref="svg:PresentationAttributes-FilterPrimitives"/>
-    <attributeGroup ref="svg:PresentationAttributes-FontSpecification"/>
-    <attributeGroup ref="svg:PresentationAttributes-Gradients"/>
-    <attributeGroup ref="svg:PresentationAttributes-Graphics"/>
-    <attributeGroup ref="svg:PresentationAttributes-Images"/>
-    <attributeGroup ref="svg:PresentationAttributes-LightingEffects"/>
-    <attributeGroup ref="svg:PresentationAttributes-Markers"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextContentElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-Viewports"/>
+    <attributeGroup ref="svg:PresentationAttributes-All"/>
     <attribute name="transform" type="svg:TransformListType" use="optional"/>
     <attributeGroup ref="svg:graphicsElementEvents"/>
     <attribute name="x" type="svg:CoordinateType" use="optional"/>
@@ -1446,20 +1380,7 @@
     <attribute name="externalResourcesRequired" type="boolean" use="optional"/>
     <attribute name="class" type="svg:ClassListType" use="optional"/>
     <attribute name="style" type="svg:StyleSheetType" use="optional"/>
-    <attributeGroup ref="svg:PresentationAttributes-Color"/>
-    <attributeGroup ref="svg:PresentationAttributes-Containers"/>
-    <attributeGroup ref="svg:PresentationAttributes-feFlood"/>
-    <attributeGroup ref="svg:PresentationAttributes-FillStroke"/>
-    <attributeGroup ref="svg:PresentationAttributes-FilterPrimitives"/>
-    <attributeGroup ref="svg:PresentationAttributes-FontSpecification"/>
-    <attributeGroup ref="svg:PresentationAttributes-Gradients"/>
-    <attributeGroup ref="svg:PresentationAttributes-Graphics"/>
-    <attributeGroup ref="svg:PresentationAttributes-Images"/>
-    <attributeGroup ref="svg:PresentationAttributes-LightingEffects"/>
-    <attributeGroup ref="svg:PresentationAttributes-Markers"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextContentElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-Viewports"/>
+    <attributeGroup ref="svg:PresentationAttributes-All"/>
     <attribute name="transform" type="svg:TransformListType" use="optional"/>
     <attributeGroup ref="svg:graphicsElementEvents"/>
   </complexType>
@@ -1927,20 +1848,7 @@
     <attribute name="externalResourcesRequired" type="boolean" use="optional"/>
     <attribute name="class" type="svg:ClassListType" use="optional"/>
     <attribute name="style" type="svg:StyleSheetType" use="optional"/>
-    <attributeGroup ref="svg:PresentationAttributes-Color"/>
-    <attributeGroup ref="svg:PresentationAttributes-Containers"/>
-    <attributeGroup ref="svg:PresentationAttributes-feFlood"/>
-    <attributeGroup ref="svg:PresentationAttributes-FillStroke"/>
-    <attributeGroup ref="svg:PresentationAttributes-FilterPrimitives"/>
-    <attributeGroup ref="svg:PresentationAttributes-FontSpecification"/>
-    <attributeGroup ref="svg:PresentationAttributes-Gradients"/>
-    <attributeGroup ref="svg:PresentationAttributes-Graphics"/>
-    <attributeGroup ref="svg:PresentationAttributes-Images"/>
-    <attributeGroup ref="svg:PresentationAttributes-LightingEffects"/>
-    <attributeGroup ref="svg:PresentationAttributes-Markers"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextContentElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-Viewports"/>
+    <attributeGroup ref="svg:PresentationAttributes-All"/>
     <attribute name="viewBox" type="svg:ViewBoxSpecType" use="optional"/>
     <attribute name="preserveAspectRatio" type="svg:PreserveAspectRatioSpecType" default="xMidYMid meet"/>
     <attribute name="refX" type="svg:CoordinateType" use="optional"/>
@@ -2120,20 +2028,7 @@
     <attribute name="externalResourcesRequired" type="boolean" use="optional"/>
     <attribute name="class" type="svg:ClassListType" use="optional"/>
     <attribute name="style" type="svg:StyleSheetType" use="optional"/>
-    <attributeGroup ref="svg:PresentationAttributes-Color"/>
-    <attributeGroup ref="svg:PresentationAttributes-Containers"/>
-    <attributeGroup ref="svg:PresentationAttributes-feFlood"/>
-    <attributeGroup ref="svg:PresentationAttributes-FillStroke"/>
-    <attributeGroup ref="svg:PresentationAttributes-FilterPrimitives"/>
-    <attributeGroup ref="svg:PresentationAttributes-FontSpecification"/>
-    <attributeGroup ref="svg:PresentationAttributes-Gradients"/>
-    <attributeGroup ref="svg:PresentationAttributes-Graphics"/>
-    <attributeGroup ref="svg:PresentationAttributes-Images"/>
-    <attributeGroup ref="svg:PresentationAttributes-LightingEffects"/>
-    <attributeGroup ref="svg:PresentationAttributes-Markers"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextContentElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-Viewports"/>
+    <attributeGroup ref="svg:PresentationAttributes-All"/>
     <attribute name="viewBox" type="svg:ViewBoxSpecType" use="optional"/>
     <attribute name="preserveAspectRatio" type="svg:PreserveAspectRatioSpecType" default="xMidYMid meet"/>
     <attribute name="patternUnits" use="optional">
@@ -2243,20 +2138,7 @@
     <attribute name="externalResourcesRequired" type="boolean" use="optional"/>
     <attribute name="class" type="svg:ClassListType" use="optional"/>
     <attribute name="style" type="svg:StyleSheetType" use="optional"/>
-    <attributeGroup ref="svg:PresentationAttributes-Color"/>
-    <attributeGroup ref="svg:PresentationAttributes-Containers"/>
-    <attributeGroup ref="svg:PresentationAttributes-feFlood"/>
-    <attributeGroup ref="svg:PresentationAttributes-FillStroke"/>
-    <attributeGroup ref="svg:PresentationAttributes-FilterPrimitives"/>
-    <attributeGroup ref="svg:PresentationAttributes-FontSpecification"/>
-    <attributeGroup ref="svg:PresentationAttributes-Gradients"/>
-    <attributeGroup ref="svg:PresentationAttributes-Graphics"/>
-    <attributeGroup ref="svg:PresentationAttributes-Images"/>
-    <attributeGroup ref="svg:PresentationAttributes-LightingEffects"/>
-    <attributeGroup ref="svg:PresentationAttributes-Markers"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextContentElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-Viewports"/>
+    <attributeGroup ref="svg:PresentationAttributes-All"/>
     <attribute name="transform" type="svg:TransformListType" use="optional"/>
     <attribute name="maskUnits" use="optional">
       <simpleType>
@@ -2303,20 +2185,7 @@
     <attribute name="externalResourcesRequired" type="boolean" use="optional"/>
     <attribute name="class" type="svg:ClassListType" use="optional"/>
     <attribute name="style" type="svg:StyleSheetType" use="optional"/>
-    <attributeGroup ref="svg:PresentationAttributes-Color"/>
-    <attributeGroup ref="svg:PresentationAttributes-Containers"/>
-    <attributeGroup ref="svg:PresentationAttributes-feFlood"/>
-    <attributeGroup ref="svg:PresentationAttributes-FillStroke"/>
-    <attributeGroup ref="svg:PresentationAttributes-FilterPrimitives"/>
-    <attributeGroup ref="svg:PresentationAttributes-FontSpecification"/>
-    <attributeGroup ref="svg:PresentationAttributes-Gradients"/>
-    <attributeGroup ref="svg:PresentationAttributes-Graphics"/>
-    <attributeGroup ref="svg:PresentationAttributes-Images"/>
-    <attributeGroup ref="svg:PresentationAttributes-LightingEffects"/>
-    <attributeGroup ref="svg:PresentationAttributes-Markers"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextContentElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-Viewports"/>
+    <attributeGroup ref="svg:PresentationAttributes-All"/>
     <attribute name="filterUnits" use="optional">
       <simpleType>
         <restriction base="string">
@@ -2381,8 +2250,7 @@
       <element ref="svg:set"/>
     </choice>
     <attributeGroup ref="svg:stdAttrs"/>
-    <attributeGroup ref="svg:filter_primitive_attributes"/>
-    <attribute name="in" type="string" use="optional"/>
+    <attributeGroup ref="svg:filter_primitive_attributes_with_in"/>
     <attribute name="in2" type="string" use="required"/>
     <attribute name="mode" default="normal">
       <simpleType>
@@ -2402,8 +2270,7 @@
       <element ref="svg:set"/>
     </choice>
     <attributeGroup ref="svg:stdAttrs"/>
-    <attributeGroup ref="svg:filter_primitive_attributes"/>
-    <attribute name="in" type="string" use="optional"/>
+    <attributeGroup ref="svg:filter_primitive_attributes_with_in"/>
     <attribute name="type" default="matrix">
       <simpleType>
         <restriction base="string">
@@ -2424,8 +2291,7 @@
       <element ref="svg:feFuncA" minOccurs="0"/>
     </sequence>
     <attributeGroup ref="svg:stdAttrs"/>
-    <attributeGroup ref="svg:filter_primitive_attributes"/>
-    <attribute name="in" type="string" use="optional"/>
+    <attributeGroup ref="svg:filter_primitive_attributes_with_in"/>
   </complexType>
   <complexType name="feFuncRType">
     <choice minOccurs="0" maxOccurs="unbounded">
@@ -2510,8 +2376,7 @@
       <element ref="svg:set"/>
     </choice>
     <attributeGroup ref="svg:stdAttrs"/>
-    <attributeGroup ref="svg:filter_primitive_attributes"/>
-    <attribute name="in" type="string" use="optional"/>
+    <attributeGroup ref="svg:filter_primitive_attributes_with_in"/>
     <attribute name="in2" type="string" use="required"/>
     <attribute name="operator" default="over">
       <simpleType>
@@ -2535,8 +2400,7 @@
       <element ref="svg:animate"/>
       <element ref="svg:set"/>
     </choice>
-    <attributeGroup ref="svg:filter_primitive_attributes"/>
-    <attribute name="in" type="string" use="optional"/>
+    <attributeGroup ref="svg:filter_primitive_attributes_with_in"/>
     <attribute name="order" type="string" use="required"/>
     <attribute name="kernelMatrix" type="string" use="required"/>
     <attribute name="divisor" type="double" use="optional"/>
@@ -2572,8 +2436,7 @@
     <attribute name="class" type="svg:ClassListType" use="optional"/>
     <attribute name="style" type="svg:StyleSheetType" use="optional"/>
     <attributeGroup ref="svg:PresentationAttributes-LightingEffects"/>
-    <attributeGroup ref="svg:filter_primitive_attributes"/>
-    <attribute name="in" type="string" use="optional"/>
+    <attributeGroup ref="svg:filter_primitive_attributes_with_in"/>
     <attribute name="surfaceScale" type="double" use="optional"/>
     <attribute name="diffuseConstant" type="double" use="optional"/>
   </complexType>
@@ -2583,8 +2446,7 @@
       <element ref="svg:set"/>
     </choice>
     <attributeGroup ref="svg:stdAttrs"/>
-    <attributeGroup ref="svg:filter_primitive_attributes"/>
-    <attribute name="in" type="string" use="optional"/>
+    <attributeGroup ref="svg:filter_primitive_attributes_with_in"/>
     <attribute name="in2" type="string" use="required"/>
     <attribute name="scale" type="double" use="optional"/>
     <attribute name="xChannelSelector" default="A">
@@ -2618,8 +2480,7 @@
     <attribute name="class" type="svg:ClassListType" use="optional"/>
     <attribute name="style" type="svg:StyleSheetType" use="optional"/>
     <attributeGroup ref="svg:PresentationAttributes-feFlood"/>
-    <attributeGroup ref="svg:filter_primitive_attributes"/>
-    <attribute name="in" type="string" use="optional"/>
+    <attributeGroup ref="svg:filter_primitive_attributes_with_in"/>
   </complexType>
   <complexType name="feGaussianBlurType">
     <choice minOccurs="0" maxOccurs="unbounded">
@@ -2627,8 +2488,7 @@
       <element ref="svg:set"/>
     </choice>
     <attributeGroup ref="svg:stdAttrs"/>
-    <attributeGroup ref="svg:filter_primitive_attributes"/>
-    <attribute name="in" type="string" use="optional"/>
+    <attributeGroup ref="svg:filter_primitive_attributes_with_in"/>
     <attribute name="stdDeviation" type="string" use="optional"/>
   </complexType>
   <complexType name="feImageType">
@@ -2644,20 +2504,7 @@
     <attribute name="externalResourcesRequired" type="boolean" use="optional"/>
     <attribute name="class" type="svg:ClassListType" use="optional"/>
     <attribute name="style" type="svg:StyleSheetType" use="optional"/>
-    <attributeGroup ref="svg:PresentationAttributes-Color"/>
-    <attributeGroup ref="svg:PresentationAttributes-Containers"/>
-    <attributeGroup ref="svg:PresentationAttributes-feFlood"/>
-    <attributeGroup ref="svg:PresentationAttributes-FillStroke"/>
-    <attributeGroup ref="svg:PresentationAttributes-FilterPrimitives"/>
-    <attributeGroup ref="svg:PresentationAttributes-FontSpecification"/>
-    <attributeGroup ref="svg:PresentationAttributes-Gradients"/>
-    <attributeGroup ref="svg:PresentationAttributes-Graphics"/>
-    <attributeGroup ref="svg:PresentationAttributes-Images"/>
-    <attributeGroup ref="svg:PresentationAttributes-LightingEffects"/>
-    <attributeGroup ref="svg:PresentationAttributes-Markers"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextContentElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-Viewports"/>
+    <attributeGroup ref="svg:PresentationAttributes-All"/>
     <attribute name="transform" type="svg:TransformListType" use="optional"/>
     <attributeGroup ref="svg:filter_primitive_attributes"/>
   </complexType>
@@ -2682,8 +2529,7 @@
       <element ref="svg:set"/>
     </choice>
     <attributeGroup ref="svg:stdAttrs"/>
-    <attributeGroup ref="svg:filter_primitive_attributes"/>
-    <attribute name="in" type="string" use="optional"/>
+    <attributeGroup ref="svg:filter_primitive_attributes_with_in"/>
     <attribute name="operator" default="erode">
       <simpleType>
         <restriction base="string">
@@ -2700,8 +2546,7 @@
       <element ref="svg:set"/>
     </choice>
     <attributeGroup ref="svg:stdAttrs"/>
-    <attributeGroup ref="svg:filter_primitive_attributes"/>
-    <attribute name="in" type="string" use="optional"/>
+    <attributeGroup ref="svg:filter_primitive_attributes_with_in"/>
     <attribute name="dx" type="svg:LengthType" use="optional"/>
     <attribute name="dy" type="svg:LengthType" use="optional"/>
   </complexType>
@@ -2722,8 +2567,7 @@
     <attribute name="class" type="svg:ClassListType" use="optional"/>
     <attribute name="style" type="svg:StyleSheetType" use="optional"/>
     <attributeGroup ref="svg:PresentationAttributes-LightingEffects"/>
-    <attributeGroup ref="svg:filter_primitive_attributes"/>
-    <attribute name="in" type="string" use="optional"/>
+    <attributeGroup ref="svg:filter_primitive_attributes_with_in"/>
     <attribute name="surfaceScale" type="double" use="optional"/>
     <attribute name="specularConstant" type="double" use="optional"/>
     <attribute name="specularExponent" type="double" use="optional"/>
@@ -2734,8 +2578,7 @@
       <element ref="svg:set"/>
     </choice>
     <attributeGroup ref="svg:stdAttrs"/>
-    <attributeGroup ref="svg:filter_primitive_attributes"/>
-    <attribute name="in" type="string" use="optional"/>
+    <attributeGroup ref="svg:filter_primitive_attributes_with_in"/>
   </complexType>
   <complexType name="feTurbulenceType">
     <choice minOccurs="0" maxOccurs="unbounded">
@@ -2829,20 +2672,7 @@
     <attribute name="externalResourcesRequired" type="boolean" use="optional"/>
     <attribute name="class" type="svg:ClassListType" use="optional"/>
     <attribute name="style" type="svg:StyleSheetType" use="optional"/>
-    <attributeGroup ref="svg:PresentationAttributes-Color"/>
-    <attributeGroup ref="svg:PresentationAttributes-Containers"/>
-    <attributeGroup ref="svg:PresentationAttributes-feFlood"/>
-    <attributeGroup ref="svg:PresentationAttributes-FillStroke"/>
-    <attributeGroup ref="svg:PresentationAttributes-FilterPrimitives"/>
-    <attributeGroup ref="svg:PresentationAttributes-FontSpecification"/>
-    <attributeGroup ref="svg:PresentationAttributes-Gradients"/>
-    <attributeGroup ref="svg:PresentationAttributes-Graphics"/>
-    <attributeGroup ref="svg:PresentationAttributes-Images"/>
-    <attributeGroup ref="svg:PresentationAttributes-LightingEffects"/>
-    <attributeGroup ref="svg:PresentationAttributes-Markers"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextContentElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-Viewports"/>
+    <attributeGroup ref="svg:PresentationAttributes-All"/>
     <attribute name="transform" type="svg:TransformListType" use="optional"/>
     <attributeGroup ref="svg:graphicsElementEvents"/>
     <attribute name="target" type="NMTOKEN" use="optional"/>
@@ -2881,9 +2711,7 @@
     <attributeGroup ref="svg:testAttrs"/>
     <attribute name="externalResourcesRequired" type="boolean" use="optional"/>
     <attributeGroup ref="svg:animationEvents"/>
-    <attributeGroup ref="svg:xlinkRefAttrs"/>
-    <attribute ref="xlink:href" type="anyURI" use="optional"/>
-    <attributeGroup ref="svg:animAttributeAttrs"/>
+    <attributeGroup ref="svg:animTargetAttrs"/>
     <attributeGroup ref="svg:animTimingAttrs"/>
     <attributeGroup ref="svg:animValueAttrs"/>
     <attributeGroup ref="svg:animAdditionAttrs"/>
@@ -2894,9 +2722,7 @@
     <attributeGroup ref="svg:testAttrs"/>
     <attribute name="externalResourcesRequired" type="boolean" use="optional"/>
     <attributeGroup ref="svg:animationEvents"/>
-    <attributeGroup ref="svg:xlinkRefAttrs"/>
-    <attribute ref="xlink:href" type="anyURI" use="optional"/>
-    <attributeGroup ref="svg:animAttributeAttrs"/>
+    <attributeGroup ref="svg:animTargetAttrs"/>
     <attributeGroup ref="svg:animTimingAttrs"/>
     <attribute name="to" type="string" use="optional"/>
   </complexType>
@@ -2909,8 +2735,7 @@
     <attributeGroup ref="svg:testAttrs"/>
     <attribute name="externalResourcesRequired" type="boolean" use="optional"/>
     <attributeGroup ref="svg:animationEvents"/>
-    <attributeGroup ref="svg:xlinkRefAttrs"/>
-    <attribute ref="xlink:href" type="anyURI" use="optional"/>
+    <attributeGroup ref="svg:animElementAttrs"/>
     <attributeGroup ref="svg:animTimingAttrs"/>
     <attributeGroup ref="svg:animValueAttrs"/>
     <attributeGroup ref="svg:animAdditionAttrs"/>
@@ -2932,9 +2757,7 @@
     <attributeGroup ref="svg:testAttrs"/>
     <attribute name="externalResourcesRequired" type="boolean" use="optional"/>
     <attributeGroup ref="svg:animationEvents"/>
-    <attributeGroup ref="svg:xlinkRefAttrs"/>
-    <attribute ref="xlink:href" type="anyURI" use="optional"/>
-    <attributeGroup ref="svg:animAttributeAttrs"/>
+    <attributeGroup ref="svg:animTargetAttrs"/>
     <attributeGroup ref="svg:animTimingAttrs"/>
     <attributeGroup ref="svg:animValueAttrs"/>
     <attributeGroup ref="svg:animAdditionAttrs"/>
@@ -2945,9 +2768,7 @@
     <attributeGroup ref="svg:testAttrs"/>
     <attribute name="externalResourcesRequired" type="boolean" use="optional"/>
     <attributeGroup ref="svg:animationEvents"/>
-    <attributeGroup ref="svg:xlinkRefAttrs"/>
-    <attribute ref="xlink:href" type="anyURI" use="optional"/>
-    <attributeGroup ref="svg:animAttributeAttrs"/>
+    <attributeGroup ref="svg:animTargetAttrs"/>
     <attributeGroup ref="svg:animTimingAttrs"/>
     <attributeGroup ref="svg:animValueAttrs"/>
     <attributeGroup ref="svg:animAdditionAttrs"/>
@@ -2978,20 +2799,7 @@
     <attribute name="externalResourcesRequired" type="boolean" use="optional"/>
     <attribute name="class" type="svg:ClassListType" use="optional"/>
     <attribute name="style" type="svg:StyleSheetType" use="optional"/>
-    <attributeGroup ref="svg:PresentationAttributes-Color"/>
-    <attributeGroup ref="svg:PresentationAttributes-Containers"/>
-    <attributeGroup ref="svg:PresentationAttributes-feFlood"/>
-    <attributeGroup ref="svg:PresentationAttributes-FillStroke"/>
-    <attributeGroup ref="svg:PresentationAttributes-FilterPrimitives"/>
-    <attributeGroup ref="svg:PresentationAttributes-FontSpecification"/>
-    <attributeGroup ref="svg:PresentationAttributes-Gradients"/>
-    <attributeGroup ref="svg:PresentationAttributes-Graphics"/>
-    <attributeGroup ref="svg:PresentationAttributes-Images"/>
-    <attributeGroup ref="svg:PresentationAttributes-LightingEffects"/>
-    <attributeGroup ref="svg:PresentationAttributes-Markers"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextContentElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-Viewports"/>
+    <attributeGroup ref="svg:PresentationAttributes-All"/>
     <attribute name="horiz-origin-x" type="double" use="optional"/>
     <attribute name="horiz-origin-y" type="double" use="optional"/>
     <attribute name="horiz-adv-x" type="double" use="required"/>
@@ -3044,20 +2852,7 @@
     <attributeGroup ref="svg:stdAttrs"/>
     <attribute name="class" type="svg:ClassListType" use="optional"/>
     <attribute name="style" type="svg:StyleSheetType" use="optional"/>
-    <attributeGroup ref="svg:PresentationAttributes-Color"/>
-    <attributeGroup ref="svg:PresentationAttributes-Containers"/>
-    <attributeGroup ref="svg:PresentationAttributes-feFlood"/>
-    <attributeGroup ref="svg:PresentationAttributes-FillStroke"/>
-    <attributeGroup ref="svg:PresentationAttributes-FilterPrimitives"/>
-    <attributeGroup ref="svg:PresentationAttributes-FontSpecification"/>
-    <attributeGroup ref="svg:PresentationAttributes-Gradients"/>
-    <attributeGroup ref="svg:PresentationAttributes-Graphics"/>
-    <attributeGroup ref="svg:PresentationAttributes-Images"/>
-    <attributeGroup ref="svg:PresentationAttributes-LightingEffects"/>
-    <attributeGroup ref="svg:PresentationAttributes-Markers"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextContentElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-Viewports"/>
+    <attributeGroup ref="svg:PresentationAttributes-All"/>
     <attribute name="unicode" type="string" use="optional"/>
     <attribute name="glyph-name" type="string" use="optional"/>
     <attribute name="d" type="svg:PathDataType" use="optional"/>
@@ -3112,20 +2907,7 @@
     <attributeGroup ref="svg:stdAttrs"/>
     <attribute name="class" type="svg:ClassListType" use="optional"/>
     <attribute name="style" type="svg:StyleSheetType" use="optional"/>
-    <attributeGroup ref="svg:PresentationAttributes-Color"/>
-    <attributeGroup ref="svg:PresentationAttributes-Containers"/>
-    <attributeGroup ref="svg:PresentationAttributes-feFlood"/>
-    <attributeGroup ref="svg:PresentationAttributes-FillStroke"/>
-    <attributeGroup ref="svg:PresentationAttributes-FilterPrimitives"/>
-    <attributeGroup ref="svg:PresentationAttributes-FontSpecification"/>
-    <attributeGroup ref="svg:PresentationAttributes-Gradients"/>
-    <attributeGroup ref="svg:PresentationAttributes-Graphics"/>
-    <attributeGroup ref="svg:PresentationAttributes-Images"/>
-    <attributeGroup ref="svg:PresentationAttributes-LightingEffects"/>
-    <attributeGroup ref="svg:PresentationAttributes-Markers"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextContentElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-Viewports"/>
+    <attributeGroup ref="svg:PresentationAttributes-All"/>
     <attribute name="d" type="svg:PathDataType" use="optional"/>
     <attribute name="horiz-adv-x" type="double" use="optional"/>
     <attribute name="vert-adv-y" type="double" use="optional"/>
@@ -3225,20 +3007,7 @@
     <attribute name="externalResourcesRequired" type="boolean" use="optional"/>
     <attribute name="class" type="svg:ClassListType" use="optional"/>
     <attribute name="style" type="svg:StyleSheetType" use="optional"/>
-    <attributeGroup ref="svg:PresentationAttributes-Color"/>
-    <attributeGroup ref="svg:PresentationAttributes-Containers"/>
-    <attributeGroup ref="svg:PresentationAttributes-feFlood"/>
-    <attributeGroup ref="svg:PresentationAttributes-FillStroke"/>
-    <attributeGroup ref="svg:PresentationAttributes-FilterPrimitives"/>
-    <attributeGroup ref="svg:PresentationAttributes-FontSpecification"/>
-    <attributeGroup ref="svg:PresentationAttributes-Gradients"/>
-    <attributeGroup ref="svg:PresentationAttributes-Graphics"/>
-    <attributeGroup ref="svg:PresentationAttributes-Images"/>
-    <attributeGroup ref="svg:PresentationAttributes-LightingEffects"/>
-    <attributeGroup ref="svg:PresentationAttributes-Markers"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextContentElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-TextElements"/>
-    <attributeGroup ref="svg:PresentationAttributes-Viewports"/>
+    <attributeGroup ref="svg:PresentationAttributes-All"/>
     <attribute name="transform" type="svg:TransformListType" use="optional"/>
     <attributeGroup ref="svg:graphicsElementEvents"/>
     <attribute name="x" type="svg:CoordinateType" use="optional"/>
