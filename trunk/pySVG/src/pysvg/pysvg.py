@@ -571,7 +571,8 @@ class path(BaseElement):
     self.__append__('t',[endx,endy], relative)
     
   def appendArcToPath(self,rx,ry,x,y,x_axis_rotation=0,large_arc_flag=0,sweep_flag=1 ,relative=True):
-    self.__append__('a',[rx,ry,x,y,x_axis_rotation,large_arc_flag,sweep_flag], relative)
+    #self.__append__('a',[rx,ry,x,y,x_axis_rotation,large_arc_flag,sweep_flag], relative)
+    self.__append__('a',[rx,ry,x_axis_rotation,large_arc_flag,sweep_flag,x,y], relative)
         
   def getXML(self):
     """
