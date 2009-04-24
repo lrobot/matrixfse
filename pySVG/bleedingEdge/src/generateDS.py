@@ -730,6 +730,8 @@ class XschemaElement(XschemaElementBase):
                         key = key1
             if key is not None:
                 attrGroup = AttributeGroups[key]
+                if len(attrGroup.getKeys())==0:
+                    print "Attribute %s is empty" % (key)
                 for name in attrGroup.getKeys():
                     attr = attrGroup.get(name)
                     self.attributeDefs[name] = attr
@@ -1085,6 +1087,7 @@ class XschemaHandler(handler.ContentHandler):
             # fixlist
             if self.inSimpleType and self.inRestrictionType:
                 self.stack[-1].setListType(1)
+                
         logging.debug("Start element stack: %d" % len(self.stack))
 
     def endElement(self, name):
