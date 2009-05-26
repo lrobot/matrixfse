@@ -4,42 +4,26 @@
 This module is used to create the pySVG Logo.
 """
 
-from pysvg.pysvg import *
-from pysvg.objecthelper import *
-from pysvg.transformhelper import *
-from pysvg.stylehelper import *
-
-def createText(content, x,y, actions=None):
-  t=text(content,x,y)
-  return t
-
-def createShapes():
-  oh=ObjectHelper()
-  sh=StyleHelper()
-  elements=[]
-  
-  #group + transform
-  th=TransformHelper()
-  th.setRotation('-30')
-  g=Group(transform_dict=th.getTransformDict())
-  
-  sh=StyleHelper()
-  sh.setFilling('none')
-  sh.setFontSize('36px')
-  sh.setStrokeWidth('1px')
-  sh.setStroke('#00C')
-  t=text('pySVG',0, 100,style_dict=sh.getStyleDict())
-  g.addElement(t)
-  elements.append(g)
-  
-  
-  return elements
+from pysvg.core import *
 
 def main():
-  svg=SVG("pySVG Logo", "", height="100%", width="100%")
-  for element in createShapes():
-    svg.addElement(element)
-  print svg.getXML()
-  svg.saveSVG('pySVGLogo.svg')
+  mySVG=svg(0,0, width="100%", height="100%")
+  
+  t=text("pySVG", x=0,y=100)
+  group=g()
+  group.set_transform("rotate(-30)")
+  t.set_stroke_width('1px')
+  t.set_stroke('#00C')
+  t.set_fill('none')
+  t.set_font_size("36")
+  group.addElement(t)
+  
+  mySVG.addElement(group)
+  
+  print mySVG.getXML()
+  f = open('pySVGLogo.svg', 'w')
+  f.write(wrap_xml(mySVG.getXML()))
+  f.close()
+  
 if __name__ == '__main__': 
   main()

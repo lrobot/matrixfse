@@ -14,7 +14,10 @@ from attributedelements import *
 def wrap_xml(xml):
     return '''<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>'''+xml
 
-
+def save(element,filename):
+    f = open(filename, 'w')
+    f.write(wrap_xml(element.getXML()))
+    f.close()
 
 class style(BaseElement):
     def __init__(self, ):
@@ -198,9 +201,31 @@ class linearGradient(CommonGradientElement):
     def get_y2(self):
         return self._attributes.get('y2')
 
-
+class stop(GradientElement):
+    def __init__(self, offset=None):
+        GradientElement.__init__(self,'stop')
+        self.set_offset(offset)
+        
+    def set_offset(self, offset):
+        self._attributes['offset']=offset
+    
+    def get_offset(self):
+        return self._attributes.get('offset')
+    
+    def set_opacity(self, opacity):
+        self._attributes['stop-opacity']=opacity
+    
+    def get_opacity(self):
+        return self._attributes.get('stop-opacity')
+    
+    def set_color(self, color):
+        self._attributes['stop-color']=color
+    
+    def get_color(self):
+        return self._attributes.get('stop-color')
+    
 class radialGradient(CommonGradientElement):
-    def __init__(self, cx=None, cy=None, fx=None, fy=None, r=None):
+    def __init__(self, cx='50%',cy='50%',r='50%', fx='50%',fy='50%'):
         CommonGradientElement.__init__(self,'radialGradient')
         self.set_cx(cx)
         self.set_cy(cy)
@@ -486,8 +511,9 @@ class text(ShapeElement):
     """
     Class representing the text element of an svg doc.
     """
-    def __init__(self, x=None, y=None, dx=None, dy=None, rotate=None, textLength=None, lengthAdjust=None, elementName='text'):
+    def __init__(self, content=None, x=None, y=None, dx=None, dy=None, rotate=None, textLength=None, lengthAdjust=None, elementName='text'):
         ShapeElement.__init__(self,elementName)
+        self.appendTextContent(content)
         self.set_x(x)
         self.set_y(y)
         self.set_dx(dx)
@@ -537,6 +563,12 @@ class text(ShapeElement):
     
     def get_lengthAdjust(self):
         return self._attributes.get('lengthAdjust')
+    
+    def set_font_size(self, fontSize):
+        self._attributes['font-size']=fontSize
+    
+    def get_font_size(self):
+        return self._attributes.get('font-size')
 
 class tspan(text):
     """
