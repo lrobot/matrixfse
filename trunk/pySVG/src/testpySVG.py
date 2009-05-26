@@ -5,12 +5,13 @@
 DEPRECATED ::: NOT UP TO DATE :::: NOT WORKING !!!
 """
 
-from pysvg.pysvg import *
-from pysvg.objecthelper import *
+from pysvg.core import *
 from pysvg.stylehelper import *
+from pysvg.objecthelper import *
 
+"""
 def Image():
-  svg=SVG("test")
+  svg=svg("test")
   i=image(x=800,y=250,width=88,height=31,xlink_='http://img0.gmodules.com/ig/images/googlemail.gif',embedded_=False)
   svg.addElement(i)
   i=image(x=900,y=250,width=88,height=31,xlink_='../images.jpg',embedded_=True)
@@ -19,69 +20,87 @@ def Image():
   svg.saveSVG('Image.svg')
     
       
-
+"""
 def LinearGradient():
-  svg=SVG("test")
-  d=Definition()
+  mySVG=svg("test")
+  d=defs()
   
-  lg=linearGradient("orange_red")
-  lg.addStop(offset='0%',color='rgb(255,255,0)', opacity=1)
-  lg.addStop(offset='100%',color='rgb(255,0,0)', opacity=1)
-  d.addDefinition(lg)
+  lg=linearGradient()
+  lg.set_id("orange_red")
+  s=stop(offset="0%")
+  s.set_color('rgb(255,255,0)')
+  s.set_opacity(1)
+  lg.addElement(s)
+  s=stop(offset="100%")
+  s.set_color('rgb(255,0,0)')
+  s.set_opacity(1)
+  lg.addElement(s)
+  d.addElement(lg)
   
   oh=ObjectHelper()
   e=oh.createEllipse(cx="200", cy="190", rx="85", ry="55", fill="url(#orange_red)")
   
-  svg.addElement(d)
-  svg.addElement(e)
-  print svg.getXML()
-  svg.saveSVG('LinearGradient.svg')
-  
+  mySVG.addElement(d)
+  mySVG.addElement(e)
+  print mySVG.getXML()
+  save(mySVG,'LinearGradient.svg')
+ 
 def RadialGradient():
-  svg=SVG("test")
-  d=Definition()
+  mySVG=svg()
+  d=defs()
    
-  lg=radialGradient("grey_blue")
-  lg.addStop(offset='0%',color='rgb(200,200,200)', opacity=1)
-  lg.addStop(offset='100%',color='rgb(0,0,255)', opacity=1)
-  d.addDefinition(lg)
+  lg=radialGradient()
+  lg.set_id("grey_blue")
+  s=stop(offset='0%')
+  s.set_color('rgb(200,200,200)')
+  s.set_opacity(1)
+  lg.addElement(s)
+  s=stop(offset='100%')
+  s.set_color('rgb(0,0,255)')
+  s.set_opacity(1)
+  lg.addElement(s)
+  d.addElement(lg)
   
   oh=ObjectHelper()
   e=oh.createEllipse(cx="230", cy="200", rx="110", ry="100", fill="url(#grey_blue)")
   
-  svg.addElement(d)
-  svg.addElement(e)
-  print svg.getXML()
-  svg.saveSVG('RadialGradient.svg')
-  
+  mySVG.addElement(d)
+  mySVG.addElement(e)
+  print mySVG.getXML()
+  save(mySVG,'RadialGradient.svg')
+
 def Grouping():
   oh=ObjectHelper()
-  svg=SVG("test")
+  s=svg()
   
   #testing container
-  style=StyleHelper()
-  style.setStrokeWidth(2)
-  style.setStroke("green")
-  style_dict=style.getStyleDict()
-  g=Group(style_dict)
-  g.addElement(line(300,300,600,600))
-  g.addElement(circle(500,500,50))
-  svg.addElement(g)
+  myStyle=StyleHelper()
+  myStyle.setStrokeWidth(2)
+  myStyle.setStroke("green")
+
+  group=g()
+  group.set_style(myStyle.getStyle())
+  group.addElement(line(300,300,600,600))
+  group.addElement(circle(500,500,50))
+  s.addElement(group)
   
-  g=Group(style_dict)
+  group=g()
+  group.set_style(myStyle.getStyle())
   style_dict = {"stroke":"#000000", "fill":"none" ,"stroke-width":"49" ,"stroke-opacity":"0.027276"}
-  p=path(pathData="M 300 100 A 1,1 0 0 1 802,800",style_dict=style_dict)
-  p2=path(pathData="M 100 300 A 1,1 0 0 1 802,800",style_dict=style_dict)
-  g.addElement(p)
-  g.addElement(p2)
-  svg.addElement(g)
-  print svg.getXML()
-  svg.saveSVG('Grouping.svg')
+  p=path(pathData="M 300 100 A 1,1 0 0 1 802,800")
+  p.set_style(StyleHelper(style_dict).getStyle())
+  p2=path(pathData="M 100 300 A 1,1 0 0 1 802,800")
+  p2.set_style(StyleHelper(style_dict).getStyle())
+  group.addElement(p)
+  group.addElement(p2)
+  s.addElement(group)
+  print s.getXML()
+  save(s,'Grouping.svg')
 
-
+"""
 def ComplexShapes():
   oh=ObjectHelper()
-  svg=SVG("test")
+  svg=svg("test")
   pl=oh.createPolyline(points="50,375 150,375 150,325 250,325 250,375 350,375 350,250 450,250 450,375 \
 550,375 550,175 650,175 650,375 750,375 750,100 850,100 850,375 950,375 \
 950,25 1050,25 1050,375 1150,375 ",strokewidth=10, stroke='blue')
@@ -123,92 +142,99 @@ def ComplexShapes():
   
   svg.saveSVG('ComplexShapes.svg')
 
-  
+"""  
 def Shapes():
   oh=ObjectHelper()
-  svg=SVG("test")
+  s=svg("test")
   
-  svg.addElement(oh.createRect(0,0,400,200,12,12,strokewidth=2, stroke='navy'))
-  svg.addElement(oh.createRect(100,50,200,100,strokewidth=2, stroke='navy', fill='yellow'))
-  svg.addElement(oh.createCircle(700,500,50,strokewidth=5, stroke='red'))
-  svg.addElement(oh.createCircle(810,500,50,strokewidth=5, stroke='yellow', fill='#AAAAAA'))
-  svg.addElement(oh.createEllipse(600,50,50,30,strokewidth=5, stroke='red'))
-  svg.addElement(oh.createEllipse(700,50,50,30,strokewidth=5, stroke='yellow', fill='#00AABB'))
-  svg.addElement(oh.createLine(0,0,300,300,strokewidth=2,stroke="black"))
-  svg.saveSVG('Shapes.svg')
+  s.addElement(oh.createRect(0,0,400,200,12,12,strokewidth=2, stroke='navy'))
+  s.addElement(oh.createRect(100,50,200,100,strokewidth=2, stroke='navy', fill='yellow'))
+  s.addElement(oh.createCircle(700,500,50,strokewidth=5, stroke='red'))
+  s.addElement(oh.createCircle(810,500,50,strokewidth=5, stroke='yellow', fill='#AAAAAA'))
+  s.addElement(oh.createEllipse(600,50,50,30,strokewidth=5, stroke='red'))
+  s.addElement(oh.createEllipse(700,50,50,30,strokewidth=5, stroke='yellow', fill='#00AABB'))
+  s.addElement(oh.createLine(0,0,300,300,strokewidth=2,stroke="black"))
+  save(s,'Shapes.svg')
   
 def Line():
-  svg=SVG("test")
-  style=StyleHelper()
-  style.setStrokeWidth(2)
-  style.setStroke('black')
-  l=line(0,0,300,300, style.getStyleDict())
-  svg.addElement(l)
-  #second method is easier
+  s=svg("test")
+  myStyle=StyleHelper()
+  myStyle.setStrokeWidth(2)
+  myStyle.setStroke('black')
+  l=line(0,0,300,300)
+  l.set_style(myStyle.getStyle())
+  s.addElement(l)
+  #easier method with objecthelper
   oh=ObjectHelper()
-  svg.addElement(oh.createLine(10,0,300,300,strokewidth=2,stroke="blue"))
-  svg.saveSVG('Line.svg')
+  s.addElement(oh.createLine(10,0,300,300,strokewidth=2,stroke="blue"))
   
+  
+  save(s,'Line.svg')
+
 def TextFeatures():
-  oh=ObjectHelper()
-  svg=SVG("test")
-  style=StyleHelper()
-  style.setFontFamily(fontfamily="Verdana")
-  style.setFontSize('5em')
-  style.setFilling(fill="blue")
-  t1=text("Verdana, blue, 5em",0,100,style_dict=style.getStyleDict())
+  s=svg("test")
+  myStyle=StyleHelper()
+  myStyle.setFontFamily(fontfamily="Verdana")
+  myStyle.setFontSize('5em')
+  myStyle.setFilling(fill="blue")
+  t1=text("Verdana, blue, 5em",0,100)
+  t1.set_style(myStyle.getStyle())
   t2=text("pySVG simple",0,200)
-  svg.addElement(t1)
-  svg.addElement(t2)
+  s.addElement(t1)
+  s.addElement(t2)
   
-  rect=oh.createRect(350, 250, 100, 100, fill='green')
-  svg.addElement(rect)
+  r=rect(350, 250, 100, 100)
+  r.set_fill("green")
+  s.addElement(r)
   
-  style=StyleHelper()
-  style.setFontFamily(fontfamily="Times")
-  style.setFontSize('2em')
-  style.setFontStyle('italic')
-  style.setFontWeight('bold')
-  style.setFilling(fill="red")
-  style.setFillOpacity('0.5')
-  style.setFillRule('evenodd')
+  myStyle=StyleHelper()
+  myStyle.setFontFamily(fontfamily="Times")
+  myStyle.setFontSize('2em')
+  myStyle.setFontStyle('italic')
+  myStyle.setFontWeight('bold')
+  myStyle.setFilling(fill="red")
+  myStyle.setFillOpacity('0.5')
+  myStyle.setFillRule('evenodd')
   
-  t3=text("Times, italic, 2em, bold, opacity=0.5, fillrule=evenodd",0,300,style_dict=style.getStyleDict())
-  svg.addElement(t3)
+  t3=text("Times, italic, 2em, bold, opacity=0.5, fillrule=evenodd",0,300)
+  t3.set_style(myStyle.getStyle())
+  s.addElement(t3)
 
-  style=StyleHelper()
-  style.setFontFamily(fontfamily="Times")
-  style.setFontSize('2em')
-  style.setFontStyle('italic')
-  style.setFilling(fill="red")
-  style.setFillOpacity('0.5')
-  #style.fill="blue"
-  t4=text("Times, italic, 2em, non bold, opacity=0.5",0,400,style_dict=style.getStyleDict())
-  svg.addElement(t4)
+  myStyle=StyleHelper()
+  myStyle.setFontFamily(fontfamily="Times")
+  myStyle.setFontSize('2em')
+  myStyle.setFontStyle('italic')
+  myStyle.setFilling(fill="red")
+  myStyle.setFillOpacity('0.5')
+  #myStyle.fill="blue"
+  t4=text("Times, italic, 2em, non bold, opacity=0.5",0,400)
+  t4.set_style(myStyle.getStyle())
+  s.addElement(t4)
 
   
-  print svg.getXML()
-  svg.saveSVG('TextFeatures.svg')
-  
+  print s.getXML()
+  save(s,'TextFeatures.svg')
+
 
 
 def HelloWorld2():
-  svg=SVG("Hello World Example") # title is ignored still
-  style=StyleHelper()
-  style.setFontFamily(fontfamily="Verdana")
-  style.setFontSize('5em') #no need for the keywords all the time
-  style.setFilling("blue")
-  t1=text("Hello World",0,100,style_dict=style.getStyleDict())
-  svg.addElement(t1)
-  print svg.getXML()
-  svg.saveSVG('HelloWorld2.svg')
+  s=svg() # title is ignored still
+  myStyle=StyleHelper()
+  myStyle.setFontFamily(fontfamily="Verdana")
+  myStyle.setFontSize('5em') #no need for the keywords all the time
+  myStyle.setFilling("blue")
+  t1=text("Hello World",0,100)
+  t1.set_style(myStyle.getStyle())
+  s.addElement(t1)
+  print s.getXML()
+  save(s,'HelloWorld2.svg')
 
 def HelloWorld1():
-  svg=SVG("Hello World Example") # title is ignored still
+  s=svg() # title is ignored still
   t=text("Hello World",0,200)
-  svg.addElement(t)
-  print svg.getXML()
-  svg.saveSVG('HelloWorld1.svg')
+  s.addElement(t)
+  print s.getXML()
+  save(s,'HelloWorld1.svg')
   
 def tutorialChain():
   HelloWorld1()
@@ -216,11 +242,11 @@ def tutorialChain():
   TextFeatures()
   Shapes()
   Line()
-  ComplexShapes()
+  #ComplexShapes()
   Grouping()
   LinearGradient()
   RadialGradient()
-  Image()
+  #Image()
   
 if __name__ == '__main__': 
   tutorialChain()

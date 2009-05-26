@@ -49,7 +49,7 @@ def build(node_, object, packageprefix='core.'):
     return object
 
 #TODO: packageprefix ?
-def parse(inFileName='..\TMs10kSVGDemo.svg',):
+def parse(inFileName):
     doc = minidom.parse(inFileName)
     rootNode = doc.documentElement
     rootObj = core.svg()
@@ -60,7 +60,3 @@ def parse(inFileName='..\TMs10kSVGDemo.svg',):
     return rootObj
 
 
-o=parse()
-f=open('..\out.svg','w')
-f.write(core.wrap_xml(o.getXML()))
-f.close()
