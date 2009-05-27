@@ -212,17 +212,7 @@ class stop(GradientElement):
     def get_offset(self):
         return self._attributes.get('offset')
     
-    def set_opacity(self, opacity):
-        self._attributes['stop-opacity']=opacity
     
-    def get_opacity(self):
-        return self._attributes.get('stop-opacity')
-    
-    def set_color(self, color):
-        self._attributes['stop-color']=color
-    
-    def get_color(self):
-        return self._attributes.get('stop-color')
     
 class radialGradient(CommonGradientElement):
     def __init__(self, cx='50%',cy='50%',r='50%', fx='50%',fy='50%'):
@@ -716,7 +706,51 @@ class svg(DocumentElement):
     def get_contentStyleType(self):
         return self._attributes['contentStyleType']
     
-         
+class image(ShapeElement, script):
+    def __init__(self, x=None, y=None, width=None, height=None):
+        ShapeElement.__init__(self,'image')  
+        self.set_x(x)
+        self.set_y(y)
+        self.set_height(height)
+        self.set_width(width)
+        self.set_preserveAspectRatio
+
+    def set_x(self, x):
+        self._attributes['x']=x
+    
+    def get_x(self):
+        return self._attributes.get('x')
+    
+    def set_y(self, y):
+        self._attributes['y']=y
+    
+    def get_y(self):
+        return self._attributes.get('y')   
+    
+    def set_height(self, height):
+        self._attributes['height']=height
+    
+    def get_height(self):
+        return self._attributes.get('height')
+    
+    def set_width(self, width):
+        self._attributes['width']=width
+    
+    def get_width(self):
+        return self._attributes.get('width')
+    
+    def set_embedded(self, embedded):
+        self._attributes['embedded']=embedded
+    
+    def get_embedded(self):
+        return self._attributes.get('embedded')
+    
+    def set_preserveAspectRatio(self, preserveAspectRatio):
+        self._attributes['preserveAspectRatio']=preserveAspectRatio
+    
+    def get_preserveAspectRatio(self):
+        return self._attributes.get('preserveAspectRatio')
+             
 class desc(BaseElement):
     def __init__(self):
         BaseElement.__init__(self,'desc')  

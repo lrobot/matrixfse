@@ -9,18 +9,23 @@ from pysvg.core import *
 from pysvg.stylehelper import *
 from pysvg.objecthelper import *
 
-"""
+
 def Image():
-  svg=svg("test")
-  i=image(x=800,y=250,width=88,height=31,xlink_='http://img0.gmodules.com/ig/images/googlemail.gif',embedded_=False)
-  svg.addElement(i)
-  i=image(x=900,y=250,width=88,height=31,xlink_='../images.jpg',embedded_=True)
-  svg.addElement(i)
-  print svg.getXML()
-  svg.saveSVG('Image.svg')
+  s=svg()
+  i=image(x=800,y=250,width=88,height=31)
+  i.set_xlink_href('http://img0.gmodules.com/ig/images/googlemail.gif')
+  i.set_embedded("False")
+  
+  
+  s.addElement(i)
+  i=image(x=900,y=250,width=88,height=31)
+  i.set_xlink_href('../images.jpg')
+  i.set_embedded("True")
+  s.addElement(i)
+  print s.getXML()
+  save(s,'Image.svg')
     
       
-"""
 def LinearGradient():
   mySVG=svg("test")
   d=defs()
@@ -28,12 +33,12 @@ def LinearGradient():
   lg=linearGradient()
   lg.set_id("orange_red")
   s=stop(offset="0%")
-  s.set_color('rgb(255,255,0)')
-  s.set_opacity(1)
+  s.set_stop_color('rgb(255,255,0)')
+  s.set_stop_opacity(1)
   lg.addElement(s)
   s=stop(offset="100%")
-  s.set_color('rgb(255,0,0)')
-  s.set_opacity(1)
+  s.set_stop_color('rgb(255,0,0)')
+  s.set_stop_opacity(1)
   lg.addElement(s)
   d.addElement(lg)
   
@@ -52,12 +57,12 @@ def RadialGradient():
   lg=radialGradient()
   lg.set_id("grey_blue")
   s=stop(offset='0%')
-  s.set_color('rgb(200,200,200)')
-  s.set_opacity(1)
+  s.set_stop_color('rgb(200,200,200)')
+  s.set_stop_opacity(1)
   lg.addElement(s)
   s=stop(offset='100%')
-  s.set_color('rgb(0,0,255)')
-  s.set_opacity(1)
+  s.set_stop_color('rgb(0,0,255)')
+  s.set_stop_opacity(1)
   lg.addElement(s)
   d.addElement(lg)
   
@@ -246,7 +251,7 @@ def tutorialChain():
   Grouping()
   LinearGradient()
   RadialGradient()
-  #Image()
+  Image()
   
 if __name__ == '__main__': 
   tutorialChain()
