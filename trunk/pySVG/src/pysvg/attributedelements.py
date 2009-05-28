@@ -76,7 +76,7 @@ class BaseElement:
             xml+=' >\n'
             #if self._textContent==None:
             for subelement in self._subElements:
-                xml+=subelement.getXML()
+                xml+=str(subelement.getXML())
             #else:
             #if self._textContent!=None:
             #    xml+=self._textContent

@@ -503,7 +503,8 @@ class text(ShapeElement):
     """
     def __init__(self, content=None, x=None, y=None, dx=None, dy=None, rotate=None, textLength=None, lengthAdjust=None, elementName='text'):
         ShapeElement.__init__(self,elementName)
-        self.appendTextContent(content)
+        if content <> None:
+            self.appendTextContent(content)
         self.set_x(x)
         self.set_y(y)
         self.set_dx(dx)

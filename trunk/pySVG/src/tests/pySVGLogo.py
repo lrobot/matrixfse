@@ -21,7 +21,7 @@ def main():
   mySVG.addElement(group)
   
   print mySVG.getXML()
-  f = open('pySVGLogo.svg', 'w')
+  f = open('./testoutput/pySVGLogo.svg', 'w')
   f.write(wrap_xml(mySVG.getXML()))
   f.close()
   
