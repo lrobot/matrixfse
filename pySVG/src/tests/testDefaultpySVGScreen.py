@@ -1,10 +1,11 @@
 #!/usr/bin/python
 # -*- coding: iso-8859-1 -*-
 
-from pysvg.pysvg import *
+from pysvg.core import *
 from pysvg.objecthelper import *
-from pysvg.transformhelper import *
 from pysvg.stylehelper import *
+from pysvg.transformhelper import *
+
 #actions not working
 def createText(content, x,y, actions=None):
   t=text(content,x,y)
@@ -18,11 +19,13 @@ def createMainBorderAndTexts():
   elements.append(r)
   sh.setFilling("#000")
   sh.setFontSize("24px")
-  t=text("Objects and Effects in ...", 30, 40, style_dict=sh.getStyleDict())
+  t=text("Objects and Effects in ...", 30, 40)
+  t.set_style(sh.getStyle())
   elements.append(t)
   sh=StyleHelper()
   sh.setFontSize("13px")
-  t=text("[The red circle, explanation texts and textlinks WILL (but are not yet) connected to JavaScript.]", 360, 35, style_dict=sh.getStyleDict())
+  t=text("[The red circle, explanation texts and textlinks WILL (but are not yet) connected to JavaScript.]", 360, 35)
+  t.set_style(sh.getStyle())
   elements.append(t)
   
   elements.append(createText("Rectangle",230,90))
@@ -112,9 +115,9 @@ def createShapes():
   elements.append(l)
   
   #path
-  p=createPaths()
-  for e in p:
-    elements.append(e)
+  #p=createPaths()
+  #for e in p:
+  #  elements.append(e)
   
   #polyline
   p=oh.createPolyline('250,325 200,345 250,365', strokewidth='2px', stroke='#090')
@@ -124,31 +127,35 @@ def createShapes():
   sh=StyleHelper()
   sh.setFilling('#00C')
   sh.setFillOpacity(0.5)
-  c=circle(450, 290, 50, style_dict=sh.getStyleDict())
+  c=circle(450, 290, 50)
+  c.set_style(sh.getStyle())
   elements.append(c)
   sh=StyleHelper()
   sh.setFilling('#00C')
   sh.setFillOpacity(0.2)
   sh.setStroke('#00C')
   sh.setStrokeOpacity(0.3)
-  c=circle(475, 325, 50, style_dict=sh.getStyleDict())
+  c=circle(475, 325, 50)
+  c.set_style(sh.getStyle())
   elements.append(c)
   
   #group + transform
   th=TransformHelper()
   th.setRotation('-30')
-  g=Group(transform_dict=th.getTransformDict())
+  group=g()
+  group.set_transform(th.getTransform())
   r=oh.createRect(620, 500, width='100', height='50', rx=10, ry=10, stroke='#F00',strokewidth='2px',fill='none')
-  g.addElement(r)
+  group.addElement(r)
   
   sh=StyleHelper()
   sh.setFilling('none')
   sh.setFontSize('36px')
   sh.setStrokeWidth('1px')
   sh.setStroke('#00C')
-  t=text('Text',635, 537,style_dict=sh.getStyleDict())
-  g.addElement(t)
-  elements.append(g)
+  t=text('Text',635, 537)
+  t.set_style(sh.getStyle())
+  group.addElement(t)
+  elements.append(group)
   
   
   return elements
@@ -215,12 +222,13 @@ def createPaths():
   <a xlink:href="http://www.datenverdrahten.de" target="_top"><text id="textlink" x="600" y="495" style="fill: #F00" onmouseover="TextHover('textlink','#00C','underline')" onmouseout="TextHover('textlink','#F00','none')">http://www.datenverdrahten.de</text></a>
   """
 def main():
-  svg=SVG("Main Test Screen", "Showing all main features that work as example", height="100%", width="100%", viewBox="0 0 950 630")
+  s=svg(height="100%", width="100%")
+  s.set_viewBox("0 0 950 630")
   for element in createMainBorderAndTexts():
-    svg.addElement(element)
+    s.addElement(element)
   for element in createShapes():
-    svg.addElement(element)
-  print svg.getXML()
-  svg.saveSVG('test.svg')
+    s.addElement(element)
+  print s.getXML()
+  save(s,'./testoutput/test.svg')
 if __name__ == '__main__': 
   main()

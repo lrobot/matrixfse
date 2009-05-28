@@ -6,7 +6,7 @@ This module was provided by joel duet to demonstrate Python 3.0 compatibility.
 It plays around with transformations: skew, scaling and matrix
 """
 
-from pysvg.pysvg import *
+from pysvg.core import *
 from pysvg.objecthelper import *
 from pysvg.transformhelper import *
 from pysvg.stylehelper import *
@@ -37,61 +37,68 @@ def createShapes():
   #skewX
   th=TransformHelper()
   th.setSkewX('-40.0')
-  g=Group(transform_dict=th.getTransformDict())
+  group=g()
+  group.set_transform(th.getTransform())
   r=oh.createRect(620, 300, width='100', height='50', rx=10, ry=10, stroke='#F00',strokewidth='2px',fill='none')
-  g.addElement(r)
+  group.addElement(r)
   
   sh=StyleHelper()
   sh.setFilling('none')
   sh.setFontSize('36px')
   sh.setStrokeWidth('1px')
   sh.setStroke('#00C')
-  t=text('Text',635, 337,style_dict=sh.getStyleDict())
-  g.addElement(t)
-  elements.append(g)
+  t=text('Text',635, 337)
+  t.set_style(sh.getStyle())
+  group.addElement(t)
+  elements.append(group)
   
   #scaling
   th=TransformHelper()
   th.setScaling('1.0','0.5')
-  g=Group(transform_dict=th.getTransformDict())
+  group=g()
+  group.set_transform(th.getTransform())
   r=oh.createRect(620, 300, width='100', height='50', rx=10, ry=10, stroke='#F00',strokewidth='2px',fill='none')
-  g.addElement(r)
+  group.addElement(r)
   
   sh=StyleHelper()
   sh.setFilling('none')
   sh.setFontSize('36px')
   sh.setStrokeWidth('1px')
   sh.setStroke('#00C')
-  t=text('Text',635, 337,style_dict=sh.getStyleDict())
-  g.addElement(t)
-  elements.append(g)
+  t=text('Text',635, 337)
+  t.set_style(sh.getStyle())
+  group.addElement(t)
+  elements.append(group)
   
   #matrix
   th=TransformHelper()
   th.setMatrix('0.866','0.5','-0.5','0.866','-300.0','-200.0')
-  g=Group(transform_dict=th.getTransformDict())
+  group=g()
+  group.set_transform(th.getTransform())
   r=oh.createRect(620, 300, width='100', height='50', rx=10, ry=10, stroke='#F00',strokewidth='2px',fill='none')
-  g.addElement(r)
+  group.addElement(r)
   
   sh=StyleHelper()
   sh.setFilling('none')
   sh.setFontSize('36px')
   sh.setStrokeWidth('1px')
   sh.setStroke('#00C')
-  t=text('Text',635, 337,style_dict=sh.getStyleDict())
-  g.addElement(t)
-  elements.append(g)
+  t=text('Text',635, 337)
+  t.set_style(sh.getStyle())
+  group.addElement(t)
+  elements.append(group)
   
   
   return elements
  
 def main():
-  svg=SVG("Main Test Screen", "Showing some transforms as example", height="100%", width="100%", viewBox="0 0 950 630")
+  s=svg(height="100%", width="100%")
+  s.set_viewBox("0 0 950 630")
   for element in createMainBorderAndTexts():
-    svg.addElement(element)
+    s.addElement(element)
   for element in createShapes():
-    svg.addElement(element)
-  print(svg.getXML())
-  svg.saveSVG('testtransforms.svg')
+    s.addElement(element)
+  print(s.getXML())
+  save(s,'./testoutput/testtransforms.svg')
 if __name__ == '__main__': 
   main()

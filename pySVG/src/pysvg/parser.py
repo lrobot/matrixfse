@@ -41,7 +41,8 @@ def build(node_, object, packageprefix='core.'):
             #else:
             print "TextNode is:"+child_.nodeValue
             #object.setTextContent(child_.nodeValue)
-            object.appendTextContent(child_.nodeValue)
+            if child_.nodeValue <> None:
+                object.appendTextContent(child_.nodeValue)
         elif child_.nodeType == Node.CDATA_SECTION_NODE:  
             object.setTextContent('<![CDATA['+child_.nodeValue+']]>')          
         else:

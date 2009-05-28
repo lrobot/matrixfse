@@ -23,7 +23,7 @@ def Image():
   i.set_embedded("True")
   s.addElement(i)
   print s.getXML()
-  save(s,'Image.svg')
+  save(s,'./testoutput/Image.svg')
     
       
 def LinearGradient():
@@ -100,7 +100,7 @@ def Grouping():
   group.addElement(p2)
   s.addElement(group)
   print s.getXML()
-  save(s,'Grouping.svg')
+  save(s,'./testoutput/Grouping.svg')
 
 """
 def ComplexShapes():
@@ -159,7 +159,7 @@ def Shapes():
   s.addElement(oh.createEllipse(600,50,50,30,strokewidth=5, stroke='red'))
   s.addElement(oh.createEllipse(700,50,50,30,strokewidth=5, stroke='yellow', fill='#00AABB'))
   s.addElement(oh.createLine(0,0,300,300,strokewidth=2,stroke="black"))
-  save(s,'Shapes.svg')
+  save(s,'./testoutput/Shapes.svg')
   
 def Line():
   s=svg("test")
@@ -174,7 +174,7 @@ def Line():
   s.addElement(oh.createLine(10,0,300,300,strokewidth=2,stroke="blue"))
   
   
-  save(s,'Line.svg')
+  save(s,'./testoutput/Line.svg')
 
 def TextFeatures():
   s=svg("test")
@@ -218,7 +218,7 @@ def TextFeatures():
 
   
   print s.getXML()
-  save(s,'TextFeatures.svg')
+  save(s,'./testoutput/TextFeatures.svg')
 
 
 
@@ -232,14 +232,14 @@ def HelloWorld2():
   t1.set_style(myStyle.getStyle())
   s.addElement(t1)
   print s.getXML()
-  save(s,'HelloWorld2.svg')
+  save(s,'./testoutput/HelloWorld2.svg')
 
 def HelloWorld1():
   s=svg() # title is ignored still
   t=text("Hello World",0,200)
   s.addElement(t)
   print s.getXML()
-  save(s,'HelloWorld1.svg')
+  save(s,'./testoutput/HelloWorld1.svg')
   
 def tutorialChain():
   HelloWorld1()

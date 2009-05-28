@@ -9,7 +9,7 @@ from pysvg import parser, core
 
 def main():
     o = parser.parse('TMs10kSVGDemo.svg')
-    f = open('out.svg', 'w')
+    f = open('./testoutput/out.svg', 'w')
     f.write(core.wrap_xml(o.getXML()))
     f.close()
 
