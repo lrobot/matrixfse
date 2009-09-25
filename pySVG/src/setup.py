@@ -9,6 +9,7 @@ setup(name="pysvg",
       author_email="kmansour@web.de",
       url="http://codeboje.de/pysvg/",
       packages=['pysvg'],
+      package_dir={"pysvg":"pysvg"},
       classifiers = [
           'Development Status :: 4 - Beta',
           'Intended Audience :: Developers',
