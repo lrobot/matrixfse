@@ -5,7 +5,7 @@
 Es werden wichtige Grundelemente von SVG demonstriert.</desc>
 
 
-  
+  <!-- ### Definitionen (CSS, JavaScript, SVG) ### -->
 
   <defs  >
 
@@ -131,7 +131,7 @@ Es werden wichtige Grundelemente von SVG demonstriert.</desc>
   </defs>
 
 
-  
+  <!-- ### Hauptrahmen und Textinhalte ### -->
 
   <rect style="fill: #FFF; stroke: #00C; stroke-width: 2px" height="626" width="946" y="0" x="0"  />
 
@@ -207,41 +207,41 @@ externes Bild</text>
 Textlink</text>
 
 
-  
+  <!-- ### SVG-Objekte ### -->
 
-  
+  <!--  Rechteck  -->
   <rect style="fill: #090" height="30" width="80" y="70" x="30"  />
 
   <rect style="fill: #FFC; stroke: #00C; stroke-width: 2px" height="30" width="80" y="70" x="120"  />
 
 
-  
+  <!--  Kreis  -->
   <circle style="fill: #F00" onmouseout="FillHover('kreis1','#F00','none','0px')" cy="170" cx="60" onmouseover="FillHover('kreis1','#FF0','#00C','5px')" r="30" id="kreis1"  />
 
   <circle cy="170" cx="150" r="30" style="fill: #FF0; stroke: #000; stroke-width: 2px"  />
 
 
-  
+  <!--  Ellipse  -->
   <ellipse cy="270" cx="60" rx="30" ry="15" style="fill: #F00"  />
 
   <ellipse cy="270" cx="150" rx="30" ry="15" style="fill: #CCC; stroke: #000; stroke-width: 2px"  />
 
 
-  
+  <!--  Polygon  -->
   <polygon style="fill: #FFF;  stroke: #000; stroke-width: 2px" points="60,370, 70,360, 80,400, 50,440, 40,330"  />
 
 
-  
+  <!--  Linie  -->
   <line y1="470" x2="180" style="stroke: #00C; stroke-width: 2px" x1="60" y2="470"  />
 
   <line y1="470" x2="260" style="stroke: #F00; stroke-width: 2px" x1="200" y2="400"  />
 
 
-  
+  <!--  Polylinie  -->
   <polyline style="fill: none; stroke: #090; stroke-width: 2px" points="250,325 200,345 250,365"  />
 
 
-  
+  <!--  Pfade  -->
   <path style="fill: #EEE; stroke: #00F; stroke-width: 2px" d="M 40,530 L 100,560 L 60,520 Z"  />
 
   <path style="fill: #FFC; stroke: #00F; stroke-width: 2px" d="M 190,520 c +0,+0,+30,+30,-60,+30 z"  />
@@ -249,27 +249,27 @@ Textlink</text>
   <path style="fill: none; stroke: #00F; stroke-width: 2px" d="M 230,530 q -0,+30,+30,+0 q +30,-30,+30,0 q -0,+30,+30,+0 q +30,-20,+30,+0"  />
 
  
-  
+  <!--  Gradienten  -->
   <rect style="fill: url(#lingra1)" height="30" width="180" y="70" x="400"  />
 
   <circle cy="170" cx="450" r="50" style="fill: url(#radgra1)"  />
 
 
-  
+  <!--  Filter  -->
   <circle cy="440" cx="450" r="50" style="fill: #090; filter: url(#filter1)"  />
 
 
-  
+  <!--  Muster  -->
   <rect style="fill: url(#muster1)" height="50" width="150" y="520" x="400"  />
 
 
-  
+  <!--  Opazität  -->
   <circle cy="290" cx="450" r="50" style="fill: #00C; fill-opacity: 0.5"  />
 
   <circle cy="325" cx="475" r="50" style="fill: #00C; stroke: #00C; fill-opacity: 0.2; stroke-opacity: 0.3"  />
 
 
-  
+  <!--  Gruppe und Transformation  -->
   <g transform="rotate(-30)"  >
 
     <rect style="fill: none; stroke: #F00; stroke-width: 2px" rx="10" ry="10" height="50" width="100" y="500" x="620"  />
@@ -280,18 +280,19 @@ Text</text>
   </g>
 
 
-  
+  <!--  Animation  -->
   <rect style="fill: #F00; fill-opacity: 0.6" height="20" width="0" y="360" x="600"  >
 
-    
+    <animate begin="0s" from="0" attributeName="width" to="180" attributeType="XML" dur="10s" fill="freeze"  />
+
   </rect>
 
 
-  
-  <image y="250" x="800" xlink:href="http://l.yimg.com/eur.yimg.com/i/de/hp/yahoo1.png" width="88" height="31"  />
+  <!--  externes Bild  -->
+  <image xlink:href="http://l.yimg.com/eur.yimg.com/i/de/hp/yahoo1.png" height="31" width="88" y="250" x="800"  />
  
 
-  
+  <!--  Textlink  -->
   <a xlink:href="http://www.datenverdrahten.de" target="_top"  >
 <text style="fill: #F00" onmouseout="TextHover('textlink','#F00','none')" id="textlink" onmouseover="TextHover('textlink','#00C','underline')" y="495" x="600"  >
 http://www.datenverdrahten.de</text>

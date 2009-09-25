@@ -10,7 +10,7 @@ setup(name="pysvg",
       url="http://codeboje.de/pysvg/",
       packages=['pysvg'],
       classifiers = [
-          'Development Status :: 3 - Alpha',
+          'Development Status :: 4 - Beta',
           'Intended Audience :: Developers',
           'License :: Free for non-commercial use',
           'Operating System :: MacOS :: MacOS X',

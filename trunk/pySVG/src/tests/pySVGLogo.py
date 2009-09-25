@@ -4,11 +4,12 @@
 This module is used to create the pySVG Logo.
 """
 
+from pysvg.structure import *
 from pysvg.core import *
+from pysvg.text import *
 
 def main():
   mySVG=svg(0,0, width="100%", height="100%")
-  
   t=text("pySVG", x=0,y=100)
   group=g()
   group.set_transform("rotate(-30)")
@@ -21,9 +22,8 @@ def main():
   mySVG.addElement(group)
   
   print mySVG.getXML()
-  f = open('./testoutput/pySVGLogo.svg', 'w')
-  f.write(wrap_xml(mySVG.getXML()))
-  f.close()
+  mySVG.save('./testoutput/pySVGLogo.svg')
+  
   
 if __name__ == '__main__': 
   main()

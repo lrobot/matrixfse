@@ -4,16 +4,16 @@ Created on 26.05.2009
 @author: kerim
 '''
 
-from pysvg import parser, core
-
+from pysvg import parser
+from pysvg.structure import svg
 
 def main():
-    o = parser.parse('TMs10kSVGDemo.svg')
-    f = open('./testoutput/out.svg', 'w')
-    f.write(core.wrap_xml(o.getXML()))
-    f.close()
-
-
+    anSVG = parser.parse('./sourceimages/TMs10kSVGDemo.svg')
+    anSVG.save('./testoutput/TMs10kSVGDemo.svg')
+    
+    anSVG = parser.parse('./sourceimages/clock.svg')
+    anSVG.save('./testoutput/clock.svg')
+    
 
 if __name__ == "__main__":
     main()

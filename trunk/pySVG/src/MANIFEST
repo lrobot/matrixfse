@@ -1,5 +1,15 @@
 setup.py
 pysvg\__init__.py
-pysvg\pysvg.py
+pysvg\attributes.py
+pysvg\core.py
+pysvg\filter.py
+pysvg\gradient.py
+pysvg\linking.py
+pysvg\objecthelper.py
+pysvg\parser.py
+pysvg\script.py
+pysvg\structure.py
 pysvg\style.py
-pysvg\transform.py
+pysvg\stylehelper.py
+pysvg\text.py
+pysvg\transformhelper.py

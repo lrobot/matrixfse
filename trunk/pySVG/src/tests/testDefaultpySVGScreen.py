@@ -1,10 +1,8 @@
 #!/usr/bin/python
 # -*- coding: iso-8859-1 -*-
 
-from pysvg.core import *
-from pysvg.objecthelper import *
-from pysvg.stylehelper import *
-from pysvg.transformhelper import *
+from pysvg.structure import *
+from pysvg.builders import *
 
 #actions not working
 def createText(content, x,y, actions=None):
@@ -12,8 +10,8 @@ def createText(content, x,y, actions=None):
   return t
 
 def createMainBorderAndTexts():
-  oh=ObjectHelper()
-  sh=StyleHelper()
+  oh=ShapeBuilder()
+  sh=StyleBuilder()
   elements=[]
   r=oh.createRect("0", "0", "946", "626", strokewidth="2px", stroke="#00C", fill="#FFF")
   elements.append(r)
@@ -22,7 +20,7 @@ def createMainBorderAndTexts():
   t=text("Objects and Effects in ...", 30, 40)
   t.set_style(sh.getStyle())
   elements.append(t)
-  sh=StyleHelper()
+  sh=StyleBuilder()
   sh.setFontSize("13px")
   t=text("[The red circle, explanation texts and textlinks WILL (but are not yet) connected to JavaScript.]", 360, 35)
   t.set_style(sh.getStyle())
@@ -81,8 +79,8 @@ nok  <text id="info" x="0" y="620" style="fill: #000; visibility: hidden">Text</
   <text x="800" y="495" onmouseover="InfoText('&lt;a xlink:href=&quot;...&quot;&gt;&lt;text x=&quot;...&quot; y=&quot;...&quot; style=&quot;...&quot;&gt;...&lt;/text&gt;&lt;/a&gt;','v')" onmouseout="InfoText('','h')">Textlink</text>
   """
 def createShapes():
-  oh=ObjectHelper()
-  sh=StyleHelper()
+  oh=ShapeBuilder()
+  sh=StyleBuilder()
   elements=[]
   #rectangles
   r=oh.createRect(30, 70, 80, 30, strokewidth='0',fill='#090')
@@ -115,22 +113,22 @@ def createShapes():
   elements.append(l)
   
   #path
-  #p=createPaths()
-  #for e in p:
-  #  elements.append(e)
+  p=createPaths()
+  for e in p:
+    elements.append(e)
   
   #polyline
   p=oh.createPolyline('250,325 200,345 250,365', strokewidth='2px', stroke='#090')
   elements.append(p)
 
   #opacity
-  sh=StyleHelper()
+  sh=StyleBuilder()
   sh.setFilling('#00C')
   sh.setFillOpacity(0.5)
   c=circle(450, 290, 50)
   c.set_style(sh.getStyle())
   elements.append(c)
-  sh=StyleHelper()
+  sh=StyleBuilder()
   sh.setFilling('#00C')
   sh.setFillOpacity(0.2)
   sh.setStroke('#00C')
@@ -140,14 +138,14 @@ def createShapes():
   elements.append(c)
   
   #group + transform
-  th=TransformHelper()
+  th=TransformBuilder()
   th.setRotation('-30')
   group=g()
   group.set_transform(th.getTransform())
   r=oh.createRect(620, 500, width='100', height='50', rx=10, ry=10, stroke='#F00',strokewidth='2px',fill='none')
   group.addElement(r)
   
-  sh=StyleHelper()
+  sh=StyleBuilder()
   sh.setFilling('none')
   sh.setFontSize('36px')
   sh.setStrokeWidth('1px')
@@ -159,36 +157,31 @@ def createShapes():
   
   
   return elements
-  """
+
   
-<!-- Pfade -->
-<path d="M 40,530 L 100,560 L 60,520 Z" style="fill: #EEE; stroke: #00F; stroke-width: 2px"/>
-<path d="M 190,520 c +0,+0,+30,+30,-60,+30 z" style="fill: #FFC; stroke: #00F; stroke-width: 2px"/>
-<path d="M 230,530 q -0,+30,+30,+0 q +30,-30,+30,0 q -0,+30,+30,+0 q +30,-20,+30,+0" style="fill: none; stroke: #00F; stroke-width: 2px"/>
-"""
 def createPaths():
   elements=[]
-  sh=StyleHelper()
+  sh=StyleBuilder()
   sh.setFilling('#EEE')
   sh.setStroke('#00F')
   sh.setStrokeWidth('2px')
-  path1=path('M 40,530 L 100,560 L 60,520 Z', style_dict=sh.getStyleDict())
+  path1=path('M 40,530 L 100,560 L 60,520 Z', style=sh.getStyle())
   
-  sh2=StyleHelper()
+  sh2=StyleBuilder()
   sh2.setFilling('#FFC')
   sh2.setStroke('#00F')
   sh2.setStrokeWidth('2px')
-  path2=path(style_dict=sh2.getStyleDict())
+  path2=path(style=sh2.getStyle())
   path2.appendMoveToPath(190, 520, False)
   #as you can see we can mix strings and ints without trouble
   path2.appendCubicCurveToPath('+0', '+0', 30, 30, -60, 30, True)
   path2.appendCloseCurve()
   
-  sh3=StyleHelper()
+  sh3=StyleBuilder()
   sh3.setFilling('none')
   sh3.setStroke('#00F')
   sh3.setStrokeWidth('2px')
-  path3=path('M 230,530', style_dict=sh3.getStyleDict())
+  path3=path('M 230,530', style=sh3.getStyle())
   path3.appendQuadraticCurveToPath(0, 30, 30, 0)
   path3.appendQuadraticCurveToPath(30, -30, 30, 0)
   path3.appendQuadraticCurveToPath(-0, 30, 30, 0)
@@ -201,11 +194,39 @@ def createPaths():
   <!-- Gradienten -->
   <rect x="400" y="70" width="180" height="30" style="fill: url(#lingra1)"/>
   <circle cx="450" cy="170" r="50" style="fill: url(#radgra1)"/>
-
   <!-- Filter -->
 
   <circle cx="450" cy="440" r="50" style="fill: #090; filter: url(#filter1)"/>
+"""  
+def getLinearGradient():
+    lg=linearGradient();
+    lg.set_id('lingra1')
+    stop1=stop('0%')
+    stop2=stop('50%')
+    stop3=stop('100%')
+    stop1.set_style("stop-color: #000")
+    stop2.set_style("stop-color: #00F")
+    stop3.set_style("stop-color: #FFF")
+    lg.addElement(stop1)
+    lg.addElement(stop2)
+    lg.addElement(stop3)
+    return lg
 
+def getRadialGradient():
+    rg=radialGradient();
+    rg.set_id('radgra1')
+    stop1=stop('0%')
+    stop2=stop('60%')
+    stop3=stop('100%')
+    stop1.set_style("stop-color: #FFF")
+    stop2.set_style("stop-color: #FF9")
+    stop3.set_style("stop-color: #F00")
+    rg.addElement(stop1)
+    rg.addElement(stop2)
+    rg.addElement(stop3)
+    return rg
+    
+"""
   <!-- Muster -->
   <rect x="400" y="520" width="150" height="50" style="fill: url(#muster1)"/>
   
@@ -214,13 +235,29 @@ def createPaths():
   <rect x="600" y="360" width="0" height="20" style="fill: #F00; fill-opacity: 0.6">
     <animate attributeType="XML" attributeName="width" begin="0s" dur="10s" fill="freeze" from="0" to="180"/>
   </rect>
+"""
+def createImageAndLink():
+    """
+    <!-- externes Bild -->
+    <image x="800" y="250" xlink:href="bilder/adobesvg.gif" width="88" height="31"/> 
 
-  <!-- externes Bild -->
-  <image x="800" y="250" xlink:href="bilder/adobesvg.gif" width="88" height="31"/> 
+    <!-- Textlink -->
+    <a xlink:href="http://www.datenverdrahten.de" target="_top"><text id="textlink" x="600" y="495" style="fill: #F00" onmouseover="TextHover('textlink','#00C','underline')" onmouseout="TextHover('textlink','#F00','none')">http://www.datenverdrahten.de</text></a>
+    """
+    elements=[]
+    myImage=image(800, 250, 88, 31)
+    myImage.set_xlink_href('http://www.google.de/intl/de_de/images/logo.gif')
+    elements.append(myImage)
+    
+    myHyperlink = a('_top')
+    myHyperlink.set_xlink_href('http://codeboje.de/pysvg')
+    linkText=text('http://codeboje.de/pysvg', 600, 495)
+    linkText.set_id='textlink'
+    linkText.set_style('fill: #F00')
+    myHyperlink.addElement(linkText)
+    elements.append(myHyperlink)
+    return elements
 
-  <!-- Textlink -->
-  <a xlink:href="http://www.datenverdrahten.de" target="_top"><text id="textlink" x="600" y="495" style="fill: #F00" onmouseover="TextHover('textlink','#00C','underline')" onmouseout="TextHover('textlink','#F00','none')">http://www.datenverdrahten.de</text></a>
-  """
 def main():
   s=svg(height="100%", width="100%")
   s.set_viewBox("0 0 950 630")
@@ -228,7 +265,9 @@ def main():
     s.addElement(element)
   for element in createShapes():
     s.addElement(element)
+  for element in createImageAndLink():
+    s.addElement(element)
   print s.getXML()
-  save(s,'./testoutput/test.svg')
+  s.save('./testoutput/testDefaultpySVGScreen.svg')
 if __name__ == '__main__': 
   main()
