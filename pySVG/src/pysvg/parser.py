@@ -1,11 +1,20 @@
+#!/usr/bin/python
+# -*- coding: iso-8859-1 -*-
 '''
-Created on 09.05.2009
-
-@author: kerim
+(C) 2008, 2009 Kerim Mansour
+For licensing information please refer to license.txt
 '''
 from xml.dom import minidom
 from xml.dom import Node
-import core
+from pysvg.animate import *
+from pysvg.filter import *
+from pysvg.gradient import *
+from pysvg.linking import *
+from pysvg.script import *
+from pysvg.shape import *
+from pysvg.structure import *
+from pysvg.style import *
+from pysvg.text import *
 
 def calculateMethodName(attr):
     name=attr
@@ -21,7 +30,7 @@ def setAttributes(attrs,obj):
         else:
             print calculateMethodName(attr)+' not found in:'+obj._elementName
         
-def build(node_, object, packageprefix='core.'):
+def build(node_, object):
     attrs = node_.attributes
     if attrs != None:
         setAttributes(attrs, object)
@@ -29,7 +38,7 @@ def build(node_, object, packageprefix='core.'):
         nodeName_ = child_.nodeName.split(':')[-1]
         if child_.nodeType == Node.ELEMENT_NODE:
             try:
-                objectinstance=eval(packageprefix+nodeName_) ()                
+                objectinstance=eval(nodeName_) ()                
             except:
                 print 'no class for: '+nodeName_
                 continue
@@ -39,21 +48,23 @@ def build(node_, object, packageprefix='core.'):
             #if child_.nodeValue.startswith('\n'):
             #    print "TextNode starts with return:"+child_.nodeValue
             #else:
-            print "TextNode is:"+child_.nodeValue
+#            print "TextNode is:"+child_.nodeValue
             #object.setTextContent(child_.nodeValue)
             if child_.nodeValue <> None:
                 object.appendTextContent(child_.nodeValue)
         elif child_.nodeType == Node.CDATA_SECTION_NODE:  
-            object.setTextContent('<![CDATA['+child_.nodeValue+']]>')          
+            object.appendTextContent('<![CDATA['+child_.nodeValue+']]>')          
+        elif child_.nodeType == Node.COMMENT_NODE:  
+            object.appendTextContent('<!-- '+child_.nodeValue+' -->')          
         else:
-            print "Some node:"+nodeName_
+            print "Some node:"+nodeName_+" value: "+child_.nodeValue
     return object
 
 #TODO: packageprefix ?
 def parse(inFileName):
     doc = minidom.parse(inFileName)
     rootNode = doc.documentElement
-    rootObj = core.svg()
+    rootObj = svg()
     build(rootNode,rootObj)
     # Enable Python to collect the space used by the DOM.
     doc = None

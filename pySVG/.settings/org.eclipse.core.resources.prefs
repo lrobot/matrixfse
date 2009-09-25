@@ -1,7 +1,20 @@
-#Fri Sep 05 12:58:26 CEST 2008
+#Fri Sep 25 13:16:51 CEST 2009
 eclipse.preferences.version=1
-encoding//src/pySVGLogo.py=iso-8859-1
-encoding//src/pysvg/pysvg.py=iso-8859-1
-encoding//src/testDefaultpySVGScreen.py=iso-8859-1
-encoding//src/testpySVG.py=iso-8859-1
-encoding//src/testtransforms.py=iso-8859-1
+encoding//src/pysvg/animate.py=iso-8859-1
+encoding//src/pysvg/attributes.py=iso-8859-1
+encoding//src/pysvg/builders.py=iso-8859-1
+encoding//src/pysvg/core.py=iso-8859-1
+encoding//src/pysvg/filter.py=iso-8859-1
+encoding//src/pysvg/gradient.py=iso-8859-1
+encoding//src/pysvg/linking.py=iso-8859-1
+encoding//src/pysvg/parser.py=iso-8859-1
+encoding//src/pysvg/script.py=iso-8859-1
+encoding//src/pysvg/shape.py=iso-8859-1
+encoding//src/pysvg/structure.py=iso-8859-1
+encoding//src/pysvg/style.py=iso-8859-1
+encoding//src/pysvg/text.py=iso-8859-1
+encoding//src/tests/pySVGLogo.py=iso-8859-1
+encoding//src/tests/pySVGTutorial.py=iso-8859-1
+encoding//src/tests/testDefaultpySVGScreen.py=iso-8859-1
+encoding//src/tests/testSpiral.py=iso-8859-1
+encoding//src/tests/testtransforms.py=iso-8859-1

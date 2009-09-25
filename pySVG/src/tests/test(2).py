@@ -1,6 +1,6 @@
 import pysvg
 
-from pysvg.pysvg import *
+from pysvg.structure import *
 from pysvg.objecthelper import *
 from pysvg.transformhelper import *
 from pysvg.stylehelper import *
