@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pySVG.shape</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pySVG-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >pysvg</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pySVG-module.html">Package&nbsp;pySVG</a> ::
+        Module&nbsp;shape
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pySVG.shape-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="pySVG.shape-module.html">Module pySVG.shape</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#!/usr/bin/python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># -*- coding: iso-8859-1 -*-</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-docstring">'''</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">(C) 2008, 2009 Kerim Mansour</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring">For licensing information please refer to license.txt</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-docstring">'''</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Module pySVG.attributes=pySVG.attributes-module.html"><a title="pySVG.attributes" class="py-name" href="#" onclick="return doclink('link-0', 'attributes', 'link-0');">attributes</a></tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-1" class="py-name" targets="Module pySVG.core=pySVG.core-module.html"><a title="pySVG.core" class="py-name" href="#" onclick="return doclink('link-1', 'core', 'link-1');">core</a></tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line">   </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line">         </tt>
+<a name="rect"></a><div id="rect-def"><a name="L12"></a><tt class="py-lineno"> 12</tt> <a class="py-toggle" href="#" id="rect-toggle" onclick="return toggle('rect');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pySVG.shape.rect-class.html">rect</a><tt class="py-op">(</tt><tt class="py-base-class">BaseShape</tt><tt class="py-op">,</tt> <tt class="py-base-class">PointAttrib</tt><tt class="py-op">,</tt> <tt class="py-base-class">DimensionAttrib</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="rect-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="rect-expanded"><a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-docstring">    Class representing the rect element of an svg doc.</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="rect.__init__"></a><div id="rect.__init__-def"><a name="L16"></a><tt class="py-lineno"> 16</tt> <a class="py-toggle" href="#" id="rect.__init__-toggle" onclick="return toggle('rect.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.rect-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">x</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">y</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">width</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">height</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">rx</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">ry</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="rect.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="rect.__init__-expanded"><a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">        <tt id="link-2" class="py-name" targets="Class pySVG.core.BaseElement=pySVG.core.BaseElement-class.html"><a title="pySVG.core.BaseElement" class="py-name" href="#" onclick="return doclink('link-2', 'BaseElement', 'link-2');">BaseElement</a></tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Method pySVG.animate.animate.__init__()=pySVG.animate.animate-class.html#__init__,Method pySVG.animate.animateColor.__init__()=pySVG.animate.animateColor-class.html#__init__,Method pySVG.animate.animateMotion.__init__()=pySVG.animate.animateMotion-class.html#__init__,Method pySVG.animate.animateTransform.__init__()=pySVG.animate.animateTransform-class.html#__init__,Method pySVG.animate.mpath.__init__()=pySVG.animate.mpath-class.html#__init__,Method pySVG.animate.set.__init__()=pySVG.animate.set-class.html#__init__,Method pySVG.builders.StyleBuilder.__init__()=pySVG.builders.StyleBuilder-class.html#__init__,Method pySVG.builders.TransformBuilder.__init__()=pySVG.builders.TransformBuilder-class.html#__init__,Method pySVG.core.BaseElement.__init__()=pySVG.core.BaseElement-class.html#__init__,Method pySVG.core.TextContent.__init__()=pySVG.core.TextContent-class.html#__init__,Method pySVG.filter.feBlend.__init__()=pySVG.filter.feBlend-class.html#__init__,Method pySVG.filter.feColorMatrix.__init__()=pySVG.filter.feColorMatrix-class.html#__init__,Method pySVG.filter.feComponentTransfer.__init__()=pySVG.filter.feComponentTransfer-class.html#__init__,Method pySVG.filter.feComposite.__init__()=pySVG.filter.feComposite-class.html#__init__,Method pySVG.filter.feConvolveMatrix.__init__()=pySVG.filter.feConvolveMatrix-class.html#__init__,Method pySVG.filter.feDiffuseLighting.__init__()=pySVG.filter.feDiffuseLighting-class.html#__init__,Method pySVG.filter.feDisplacementMap.__init__()=pySVG.filter.feDisplacementMap-class.html#__init__,Method pySVG.filter.feDistantLight.__init__()=pySVG.filter.feDistantLight-class.html#__init__,Method pySVG.filter.feFlood.__init__()=pySVG.filter.feFlood-class.html#__init__,Method pySVG.filter.feFuncA.__init__()=pySVG.filter.feFuncA-class.html#__init__,Method pySVG.filter.feFuncB.__init__()=pySVG.filter.feFuncB-class.html#__init__,Method pySVG.filter.feFuncG.__init__()=pySVG.filter.feFuncG-class.html#__init__,Method pySVG.filter.feFuncR.__init__()=pySVG.filter.feFuncR-class.html#__init__,Method pySVG.filter.feGaussianBlur.__init__()=pySVG.filter.feGaussianBlur-class.html#__init__,Method pySVG.filter.feImage.__init__()=pySVG.filter.feImage-class.html#__init__,Method pySVG.filter.feMerge.__init__()=pySVG.filter.feMerge-class.html#__init__,Method pySVG.filter.feMergeNode.__init__()=pySVG.filter.feMergeNode-class.html#__init__,Method pySVG.filter.feMorphology.__init__()=pySVG.filter.feMorphology-class.html#__init__,Method pySVG.filter.feOffset.__init__()=pySVG.filter.feOffset-class.html#__init__,Method pySVG.filter.fePointLight.__init__()=pySVG.filter.fePointLight-class.html#__init__,Method pySVG.filter.feSpecularLighting.__init__()=pySVG.filter.feSpecularLighting-class.html#__init__,Method pySVG.filter.feSpotLight.__init__()=pySVG.filter.feSpotLight-class.html#__init__,Method pySVG.filter.feTile.__init__()=pySVG.filter.feTile-class.html#__init__,Method pySVG.filter.feTurbulence.__init__()=pySVG.filter.feTurbulence-class.html#__init__,Method pySVG.filter.filter.__init__()=pySVG.filter.filter-class.html#__init__,Method pySVG.gradient.linearGradient.__init__()=pySVG.gradient.linearGradient-class.html#__init__,Method pySVG.gradient.pattern.__init__()=pySVG.gradient.pattern-class.html#__init__,Method pySVG.gradient.radialGradient.__init__()=pySVG.gradient.radialGradient-class.html#__init__,Method pySVG.gradient.stop.__init__()=pySVG.gradient.stop-class.html#__init__,Method pySVG.linking.a.__init__()=pySVG.linking.a-class.html#__init__,Method pySVG.linking.view.__init__()=pySVG.linking.view-class.html#__init__,Method pySVG.shape.circle.__init__()=pySVG.shape.circle-class.html#__init__,Method pySVG.shape.ellipse.__init__()=pySVG.shape.ellipse-class.html#__init__,Method pySVG.shape.line.__init__()=pySVG.shape.line-class.html#__init__,Method pySVG.shape.path.__init__()=pySVG.shape.path-class.html#__init__,Method pySVG.shape.polygon.__init__()=pySVG.shape.polygon-class.html#__init__,Method pySVG.shape.polyline.__init__()=pySVG.shape.polyline-class.html#__init__,Method pySVG.shape.rect.__init__()=pySVG.shape.rect-class.html#__init__,Method pySVG.structure.defs.__init__()=pySVG.structure.defs-class.html#__init__,Method pySVG.structure.desc.__init__()=pySVG.structure.desc-class.html#__init__,Method pySVG.structure.g.__init__()=pySVG.structure.g-class.html#__init__,Method pySVG.structure.image.__init__()=pySVG.structure.image-class.html#__init__,Method pySVG.structure.metadata.__init__()=pySVG.structure.metadata-class.html#__init__,Method pySVG.structure.svg.__init__()=pySVG.structure.svg-class.html#__init__,Method pySVG.structure.switch.__init__()=pySVG.structure.switch-class.html#__init__,Method pySVG.structure.symbol.__init__()=pySVG.structure.symbol-class.html#__init__,Method pySVG.structure.title.__init__()=pySVG.structure.title-class.html#__init__,Method pySVG.structure.use.__init__()=pySVG.structure.use-class.html#__init__,Method pySVG.style.style.__init__()=pySVG.style.style-class.html#__init__"><a title="pySVG.animate.animate.__init__
+pySVG.animate.animateColor.__init__
+pySVG.animate.animateMotion.__init__
+pySVG.animate.animateTransform.__init__
+pySVG.animate.mpath.__init__
+pySVG.animate.set.__init__
+pySVG.builders.StyleBuilder.__init__
+pySVG.builders.TransformBuilder.__init__
+pySVG.core.BaseElement.__init__
+pySVG.core.TextContent.__init__
+pySVG.filter.feBlend.__init__
+pySVG.filter.feColorMatrix.__init__
+pySVG.filter.feComponentTransfer.__init__
+pySVG.filter.feComposite.__init__
+pySVG.filter.feConvolveMatrix.__init__
+pySVG.filter.feDiffuseLighting.__init__
+pySVG.filter.feDisplacementMap.__init__
+pySVG.filter.feDistantLight.__init__
+pySVG.filter.feFlood.__init__
+pySVG.filter.feFuncA.__init__
+pySVG.filter.feFuncB.__init__
+pySVG.filter.feFuncG.__init__
+pySVG.filter.feFuncR.__init__
+pySVG.filter.feGaussianBlur.__init__
+pySVG.filter.feImage.__init__
+pySVG.filter.feMerge.__init__
+pySVG.filter.feMergeNode.__init__
+pySVG.filter.feMorphology.__init__
+pySVG.filter.feOffset.__init__
+pySVG.filter.fePointLight.__init__
+pySVG.filter.feSpecularLighting.__init__
+pySVG.filter.feSpotLight.__init__
+pySVG.filter.feTile.__init__
+pySVG.filter.feTurbulence.__init__
+pySVG.filter.filter.__init__
+pySVG.gradient.linearGradient.__init__
+pySVG.gradient.pattern.__init__
+pySVG.gradient.radialGradient.__init__
+pySVG.gradient.stop.__init__
+pySVG.linking.a.__init__
+pySVG.linking.view.__init__
+pySVG.shape.circle.__init__
+pySVG.shape.ellipse.__init__
+pySVG.shape.line.__init__
+pySVG.shape.path.__init__
+pySVG.shape.polygon.__init__
+pySVG.shape.polyline.__init__
+pySVG.shape.rect.__init__
+pySVG.structure.defs.__init__
+pySVG.structure.desc.__init__
+pySVG.structure.g.__init__
+pySVG.structure.image.__init__
+pySVG.structure.metadata.__init__
+pySVG.structure.svg.__init__
+pySVG.structure.switch.__init__
+pySVG.structure.symbol.__init__
+pySVG.structure.title.__init__
+pySVG.structure.use.__init__
+pySVG.style.style.__init__" class="py-name" href="#" onclick="return doclink('link-3', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt><tt class="py-string">'rect'</tt><tt class="py-op">)</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name" targets="Method pySVG.attributes.FilterPrimitiveAttrib.set_x()=pySVG.attributes.FilterPrimitiveAttrib-class.html#set_x,Method pySVG.core.PointAttrib.set_x()=pySVG.core.PointAttrib-class.html#set_x"><a title="pySVG.attributes.FilterPrimitiveAttrib.set_x
+pySVG.core.PointAttrib.set_x" class="py-name" href="#" onclick="return doclink('link-4', 'set_x', 'link-4');">set_x</a></tt><tt class="py-op">(</tt><tt class="py-name">x</tt><tt class="py-op">)</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Method pySVG.attributes.FilterPrimitiveAttrib.set_y()=pySVG.attributes.FilterPrimitiveAttrib-class.html#set_y,Method pySVG.core.PointAttrib.set_y()=pySVG.core.PointAttrib-class.html#set_y"><a title="pySVG.attributes.FilterPrimitiveAttrib.set_y
+pySVG.core.PointAttrib.set_y" class="py-name" href="#" onclick="return doclink('link-5', 'set_y', 'link-5');">set_y</a></tt><tt class="py-op">(</tt><tt class="py-name">y</tt><tt class="py-op">)</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Method pySVG.attributes.FilterPrimitiveAttrib.set_height()=pySVG.attributes.FilterPrimitiveAttrib-class.html#set_height,Method pySVG.core.DimensionAttrib.set_height()=pySVG.core.DimensionAttrib-class.html#set_height"><a title="pySVG.attributes.FilterPrimitiveAttrib.set_height
+pySVG.core.DimensionAttrib.set_height" class="py-name" href="#" onclick="return doclink('link-6', 'set_height', 'link-6');">set_height</a></tt><tt class="py-op">(</tt><tt class="py-name">height</tt><tt class="py-op">)</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Method pySVG.attributes.FilterPrimitiveAttrib.set_width()=pySVG.attributes.FilterPrimitiveAttrib-class.html#set_width,Method pySVG.core.DimensionAttrib.set_width()=pySVG.core.DimensionAttrib-class.html#set_width"><a title="pySVG.attributes.FilterPrimitiveAttrib.set_width
+pySVG.core.DimensionAttrib.set_width" class="py-name" href="#" onclick="return doclink('link-7', 'set_width', 'link-7');">set_width</a></tt><tt class="py-op">(</tt><tt class="py-name">width</tt><tt class="py-op">)</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Method pySVG.shape.ellipse.set_rx()=pySVG.shape.ellipse-class.html#set_rx,Method pySVG.shape.rect.set_rx()=pySVG.shape.rect-class.html#set_rx"><a title="pySVG.shape.ellipse.set_rx
+pySVG.shape.rect.set_rx" class="py-name" href="#" onclick="return doclink('link-8', 'set_rx', 'link-8');">set_rx</a></tt><tt class="py-op">(</tt><tt class="py-name">rx</tt><tt class="py-op">)</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Method pySVG.shape.ellipse.set_ry()=pySVG.shape.ellipse-class.html#set_ry,Method pySVG.shape.rect.set_ry()=pySVG.shape.rect-class.html#set_ry"><a title="pySVG.shape.ellipse.set_ry
+pySVG.shape.rect.set_ry" class="py-name" href="#" onclick="return doclink('link-9', 'set_ry', 'link-9');">set_ry</a></tt><tt class="py-op">(</tt><tt class="py-name">ry</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">         </tt>
+<a name="rect.set_rx"></a><div id="rect.set_rx-def"><a name="L25"></a><tt class="py-lineno"> 25</tt> <a class="py-toggle" href="#" id="rect.set_rx-toggle" onclick="return toggle('rect.set_rx');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.rect-class.html#set_rx">set_rx</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">rx</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="rect.set_rx-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="rect.set_rx-expanded"><a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'rx'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">rx</tt> </tt>
+</div><a name="rect.get_rx"></a><div id="rect.get_rx-def"><a name="L27"></a><tt class="py-lineno"> 27</tt> <a class="py-toggle" href="#" id="rect.get_rx-toggle" onclick="return toggle('rect.get_rx');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.rect-class.html#get_rx">get_rx</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="rect.get_rx-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="rect.get_rx-expanded"><a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'rx'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">     </tt>
+<a name="rect.set_ry"></a><div id="rect.set_ry-def"><a name="L30"></a><tt class="py-lineno"> 30</tt> <a class="py-toggle" href="#" id="rect.set_ry-toggle" onclick="return toggle('rect.set_ry');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.rect-class.html#set_ry">set_ry</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">ry</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="rect.set_ry-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="rect.set_ry-expanded"><a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'ry'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">ry</tt> </tt>
+</div><a name="rect.get_ry"></a><div id="rect.get_ry-def"><a name="L32"></a><tt class="py-lineno"> 32</tt> <a class="py-toggle" href="#" id="rect.get_ry-toggle" onclick="return toggle('rect.get_ry');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.rect-class.html#get_ry">get_ry</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="rect.get_ry-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="rect.get_ry-expanded"><a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'ry'</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"> </tt>
+<a name="circle"></a><div id="circle-def"><a name="L35"></a><tt class="py-lineno"> 35</tt> <a class="py-toggle" href="#" id="circle-toggle" onclick="return toggle('circle');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pySVG.shape.circle-class.html">circle</a><tt class="py-op">(</tt><tt class="py-base-class">BaseShape</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="circle-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="circle-expanded"><a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-docstring">    Class representing the circle element of an svg doc.</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="circle.__init__"></a><div id="circle.__init__-def"><a name="L39"></a><tt class="py-lineno"> 39</tt> <a class="py-toggle" href="#" id="circle.__init__-toggle" onclick="return toggle('circle.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.circle-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">cx</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt><tt class="py-param">cy</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt><tt class="py-param">r</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="circle.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="circle.__init__-expanded"><a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">        <tt id="link-10" class="py-name"><a title="pySVG.core.BaseElement" class="py-name" href="#" onclick="return doclink('link-10', 'BaseElement', 'link-2');">BaseElement</a></tt><tt class="py-op">.</tt><tt id="link-11" class="py-name"><a title="pySVG.animate.animate.__init__
+pySVG.animate.animateColor.__init__
+pySVG.animate.animateMotion.__init__
+pySVG.animate.animateTransform.__init__
+pySVG.animate.mpath.__init__
+pySVG.animate.set.__init__
+pySVG.builders.StyleBuilder.__init__
+pySVG.builders.TransformBuilder.__init__
+pySVG.core.BaseElement.__init__
+pySVG.core.TextContent.__init__
+pySVG.filter.feBlend.__init__
+pySVG.filter.feColorMatrix.__init__
+pySVG.filter.feComponentTransfer.__init__
+pySVG.filter.feComposite.__init__
+pySVG.filter.feConvolveMatrix.__init__
+pySVG.filter.feDiffuseLighting.__init__
+pySVG.filter.feDisplacementMap.__init__
+pySVG.filter.feDistantLight.__init__
+pySVG.filter.feFlood.__init__
+pySVG.filter.feFuncA.__init__
+pySVG.filter.feFuncB.__init__
+pySVG.filter.feFuncG.__init__
+pySVG.filter.feFuncR.__init__
+pySVG.filter.feGaussianBlur.__init__
+pySVG.filter.feImage.__init__
+pySVG.filter.feMerge.__init__
+pySVG.filter.feMergeNode.__init__
+pySVG.filter.feMorphology.__init__
+pySVG.filter.feOffset.__init__
+pySVG.filter.fePointLight.__init__
+pySVG.filter.feSpecularLighting.__init__
+pySVG.filter.feSpotLight.__init__
+pySVG.filter.feTile.__init__
+pySVG.filter.feTurbulence.__init__
+pySVG.filter.filter.__init__
+pySVG.gradient.linearGradient.__init__
+pySVG.gradient.pattern.__init__
+pySVG.gradient.radialGradient.__init__
+pySVG.gradient.stop.__init__
+pySVG.linking.a.__init__
+pySVG.linking.view.__init__
+pySVG.shape.circle.__init__
+pySVG.shape.ellipse.__init__
+pySVG.shape.line.__init__
+pySVG.shape.path.__init__
+pySVG.shape.polygon.__init__
+pySVG.shape.polyline.__init__
+pySVG.shape.rect.__init__
+pySVG.structure.defs.__init__
+pySVG.structure.desc.__init__
+pySVG.structure.g.__init__
+pySVG.structure.image.__init__
+pySVG.structure.metadata.__init__
+pySVG.structure.svg.__init__
+pySVG.structure.switch.__init__
+pySVG.structure.symbol.__init__
+pySVG.structure.title.__init__
+pySVG.structure.use.__init__
+pySVG.style.style.__init__" class="py-name" href="#" onclick="return doclink('link-11', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt><tt class="py-string">'circle'</tt><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Method pySVG.gradient.radialGradient.set_cx()=pySVG.gradient.radialGradient-class.html#set_cx,Method pySVG.shape.circle.set_cx()=pySVG.shape.circle-class.html#set_cx,Method pySVG.shape.ellipse.set_cx()=pySVG.shape.ellipse-class.html#set_cx"><a title="pySVG.gradient.radialGradient.set_cx
+pySVG.shape.circle.set_cx
+pySVG.shape.ellipse.set_cx" class="py-name" href="#" onclick="return doclink('link-12', 'set_cx', 'link-12');">set_cx</a></tt><tt class="py-op">(</tt><tt class="py-name">cx</tt><tt class="py-op">)</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Method pySVG.gradient.radialGradient.set_cy()=pySVG.gradient.radialGradient-class.html#set_cy,Method pySVG.shape.circle.set_cy()=pySVG.shape.circle-class.html#set_cy,Method pySVG.shape.ellipse.set_cy()=pySVG.shape.ellipse-class.html#set_cy"><a title="pySVG.gradient.radialGradient.set_cy
+pySVG.shape.circle.set_cy
+pySVG.shape.ellipse.set_cy" class="py-name" href="#" onclick="return doclink('link-13', 'set_cy', 'link-13');">set_cy</a></tt><tt class="py-op">(</tt><tt class="py-name">cy</tt><tt class="py-op">)</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Method pySVG.gradient.radialGradient.set_r()=pySVG.gradient.radialGradient-class.html#set_r,Method pySVG.shape.circle.set_r()=pySVG.shape.circle-class.html#set_r"><a title="pySVG.gradient.radialGradient.set_r
+pySVG.shape.circle.set_r" class="py-name" href="#" onclick="return doclink('link-14', 'set_r', 'link-14');">set_r</a></tt><tt class="py-op">(</tt><tt class="py-name">r</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">     </tt>
+<a name="circle.set_cx"></a><div id="circle.set_cx-def"><a name="L45"></a><tt class="py-lineno"> 45</tt> <a class="py-toggle" href="#" id="circle.set_cx-toggle" onclick="return toggle('circle.set_cx');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.circle-class.html#set_cx">set_cx</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">cx</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="circle.set_cx-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="circle.set_cx-expanded"><a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'cx'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">cx</tt> </tt>
+</div><a name="circle.get_cx"></a><div id="circle.get_cx-def"><a name="L47"></a><tt class="py-lineno"> 47</tt> <a class="py-toggle" href="#" id="circle.get_cx-toggle" onclick="return toggle('circle.get_cx');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.circle-class.html#get_cx">get_cx</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="circle.get_cx-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="circle.get_cx-expanded"><a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'cx'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">     </tt>
+<a name="circle.set_cy"></a><div id="circle.set_cy-def"><a name="L50"></a><tt class="py-lineno"> 50</tt> <a class="py-toggle" href="#" id="circle.set_cy-toggle" onclick="return toggle('circle.set_cy');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.circle-class.html#set_cy">set_cy</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">cy</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="circle.set_cy-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="circle.set_cy-expanded"><a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'cy'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">cy</tt> </tt>
+</div><a name="circle.get_cy"></a><div id="circle.get_cy-def"><a name="L52"></a><tt class="py-lineno"> 52</tt> <a class="py-toggle" href="#" id="circle.get_cy-toggle" onclick="return toggle('circle.get_cy');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.circle-class.html#get_cy">get_cy</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="circle.get_cy-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="circle.get_cy-expanded"><a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'cy'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">     </tt>
+<a name="circle.set_r"></a><div id="circle.set_r-def"><a name="L55"></a><tt class="py-lineno"> 55</tt> <a class="py-toggle" href="#" id="circle.set_r-toggle" onclick="return toggle('circle.set_r');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.circle-class.html#set_r">set_r</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">r</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="circle.set_r-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="circle.set_r-expanded"><a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'r'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">r</tt> </tt>
+</div><a name="circle.get_r"></a><div id="circle.get_r-def"><a name="L57"></a><tt class="py-lineno"> 57</tt> <a class="py-toggle" href="#" id="circle.get_r-toggle" onclick="return toggle('circle.get_r');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.circle-class.html#get_r">get_r</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="circle.get_r-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="circle.get_r-expanded"><a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'r'</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"> </tt>
+<a name="ellipse"></a><div id="ellipse-def"><a name="L60"></a><tt class="py-lineno"> 60</tt> <a class="py-toggle" href="#" id="ellipse-toggle" onclick="return toggle('ellipse');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pySVG.shape.ellipse-class.html">ellipse</a><tt class="py-op">(</tt><tt class="py-base-class">BaseShape</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ellipse-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ellipse-expanded"><a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-docstring">    Class representing the ellipse element of an svg doc.</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="ellipse.__init__"></a><div id="ellipse.__init__-def"><a name="L64"></a><tt class="py-lineno"> 64</tt> <a class="py-toggle" href="#" id="ellipse.__init__-toggle" onclick="return toggle('ellipse.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.ellipse-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">cx</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt><tt class="py-param">cy</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt><tt class="py-param">rx</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt><tt class="py-param">ry</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ellipse.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ellipse.__init__-expanded"><a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">        <tt id="link-15" class="py-name"><a title="pySVG.core.BaseElement" class="py-name" href="#" onclick="return doclink('link-15', 'BaseElement', 'link-2');">BaseElement</a></tt><tt class="py-op">.</tt><tt id="link-16" class="py-name"><a title="pySVG.animate.animate.__init__
+pySVG.animate.animateColor.__init__
+pySVG.animate.animateMotion.__init__
+pySVG.animate.animateTransform.__init__
+pySVG.animate.mpath.__init__
+pySVG.animate.set.__init__
+pySVG.builders.StyleBuilder.__init__
+pySVG.builders.TransformBuilder.__init__
+pySVG.core.BaseElement.__init__
+pySVG.core.TextContent.__init__
+pySVG.filter.feBlend.__init__
+pySVG.filter.feColorMatrix.__init__
+pySVG.filter.feComponentTransfer.__init__
+pySVG.filter.feComposite.__init__
+pySVG.filter.feConvolveMatrix.__init__
+pySVG.filter.feDiffuseLighting.__init__
+pySVG.filter.feDisplacementMap.__init__
+pySVG.filter.feDistantLight.__init__
+pySVG.filter.feFlood.__init__
+pySVG.filter.feFuncA.__init__
+pySVG.filter.feFuncB.__init__
+pySVG.filter.feFuncG.__init__
+pySVG.filter.feFuncR.__init__
+pySVG.filter.feGaussianBlur.__init__
+pySVG.filter.feImage.__init__
+pySVG.filter.feMerge.__init__
+pySVG.filter.feMergeNode.__init__
+pySVG.filter.feMorphology.__init__
+pySVG.filter.feOffset.__init__
+pySVG.filter.fePointLight.__init__
+pySVG.filter.feSpecularLighting.__init__
+pySVG.filter.feSpotLight.__init__
+pySVG.filter.feTile.__init__
+pySVG.filter.feTurbulence.__init__
+pySVG.filter.filter.__init__
+pySVG.gradient.linearGradient.__init__
+pySVG.gradient.pattern.__init__
+pySVG.gradient.radialGradient.__init__
+pySVG.gradient.stop.__init__
+pySVG.linking.a.__init__
+pySVG.linking.view.__init__
+pySVG.shape.circle.__init__
+pySVG.shape.ellipse.__init__
+pySVG.shape.line.__init__
+pySVG.shape.path.__init__
+pySVG.shape.polygon.__init__
+pySVG.shape.polyline.__init__
+pySVG.shape.rect.__init__
+pySVG.structure.defs.__init__
+pySVG.structure.desc.__init__
+pySVG.structure.g.__init__
+pySVG.structure.image.__init__
+pySVG.structure.metadata.__init__
+pySVG.structure.svg.__init__
+pySVG.structure.switch.__init__
+pySVG.structure.symbol.__init__
+pySVG.structure.title.__init__
+pySVG.structure.use.__init__
+pySVG.style.style.__init__" class="py-name" href="#" onclick="return doclink('link-16', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt><tt class="py-string">'ellipse'</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name"><a title="pySVG.gradient.radialGradient.set_cx
+pySVG.shape.circle.set_cx
+pySVG.shape.ellipse.set_cx" class="py-name" href="#" onclick="return doclink('link-17', 'set_cx', 'link-12');">set_cx</a></tt><tt class="py-op">(</tt><tt class="py-name">cx</tt><tt class="py-op">)</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name"><a title="pySVG.gradient.radialGradient.set_cy
+pySVG.shape.circle.set_cy
+pySVG.shape.ellipse.set_cy" class="py-name" href="#" onclick="return doclink('link-18', 'set_cy', 'link-13');">set_cy</a></tt><tt class="py-op">(</tt><tt class="py-name">cy</tt><tt class="py-op">)</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-19" class="py-name"><a title="pySVG.shape.ellipse.set_rx
+pySVG.shape.rect.set_rx" class="py-name" href="#" onclick="return doclink('link-19', 'set_rx', 'link-8');">set_rx</a></tt><tt class="py-op">(</tt><tt class="py-name">rx</tt><tt class="py-op">)</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name"><a title="pySVG.shape.ellipse.set_ry
+pySVG.shape.rect.set_ry" class="py-name" href="#" onclick="return doclink('link-20', 'set_ry', 'link-9');">set_ry</a></tt><tt class="py-op">(</tt><tt class="py-name">ry</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">         </tt>
+<a name="ellipse.set_cx"></a><div id="ellipse.set_cx-def"><a name="L71"></a><tt class="py-lineno"> 71</tt> <a class="py-toggle" href="#" id="ellipse.set_cx-toggle" onclick="return toggle('ellipse.set_cx');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.ellipse-class.html#set_cx">set_cx</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">cx</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ellipse.set_cx-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ellipse.set_cx-expanded"><a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'cx'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">cx</tt> </tt>
+</div><a name="ellipse.get_cx"></a><div id="ellipse.get_cx-def"><a name="L73"></a><tt class="py-lineno"> 73</tt> <a class="py-toggle" href="#" id="ellipse.get_cx-toggle" onclick="return toggle('ellipse.get_cx');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.ellipse-class.html#get_cx">get_cx</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ellipse.get_cx-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ellipse.get_cx-expanded"><a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'cx'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">     </tt>
+<a name="ellipse.set_cy"></a><div id="ellipse.set_cy-def"><a name="L76"></a><tt class="py-lineno"> 76</tt> <a class="py-toggle" href="#" id="ellipse.set_cy-toggle" onclick="return toggle('ellipse.set_cy');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.ellipse-class.html#set_cy">set_cy</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">cy</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ellipse.set_cy-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ellipse.set_cy-expanded"><a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'cy'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">cy</tt> </tt>
+</div><a name="ellipse.get_cy"></a><div id="ellipse.get_cy-def"><a name="L78"></a><tt class="py-lineno"> 78</tt> <a class="py-toggle" href="#" id="ellipse.get_cy-toggle" onclick="return toggle('ellipse.get_cy');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.ellipse-class.html#get_cy">get_cy</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ellipse.get_cy-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ellipse.get_cy-expanded"><a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'cy'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">     </tt>
+<a name="ellipse.set_rx"></a><div id="ellipse.set_rx-def"><a name="L81"></a><tt class="py-lineno"> 81</tt> <a class="py-toggle" href="#" id="ellipse.set_rx-toggle" onclick="return toggle('ellipse.set_rx');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.ellipse-class.html#set_rx">set_rx</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">rx</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ellipse.set_rx-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ellipse.set_rx-expanded"><a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'rx'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">rx</tt> </tt>
+</div><a name="ellipse.get_rx"></a><div id="ellipse.get_rx-def"><a name="L83"></a><tt class="py-lineno"> 83</tt> <a class="py-toggle" href="#" id="ellipse.get_rx-toggle" onclick="return toggle('ellipse.get_rx');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.ellipse-class.html#get_rx">get_rx</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ellipse.get_rx-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ellipse.get_rx-expanded"><a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'rx'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">     </tt>
+<a name="ellipse.set_ry"></a><div id="ellipse.set_ry-def"><a name="L86"></a><tt class="py-lineno"> 86</tt> <a class="py-toggle" href="#" id="ellipse.set_ry-toggle" onclick="return toggle('ellipse.set_ry');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.ellipse-class.html#set_ry">set_ry</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">ry</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ellipse.set_ry-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ellipse.set_ry-expanded"><a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'ry'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">ry</tt> </tt>
+</div><a name="ellipse.get_ry"></a><div id="ellipse.get_ry-def"><a name="L88"></a><tt class="py-lineno"> 88</tt> <a class="py-toggle" href="#" id="ellipse.get_ry-toggle" onclick="return toggle('ellipse.get_ry');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.ellipse-class.html#get_ry">get_ry</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ellipse.get_ry-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ellipse.get_ry-expanded"><a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'ry'</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"> </tt>
+<a name="line"></a><div id="line-def"><a name="L91"></a><tt class="py-lineno"> 91</tt> <a class="py-toggle" href="#" id="line-toggle" onclick="return toggle('line');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pySVG.shape.line-class.html">line</a><tt class="py-op">(</tt><tt class="py-base-class">BaseShape</tt><tt class="py-op">,</tt> <tt class="py-base-class">PointToAttrib</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="line-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="line-expanded"><a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-docstring">    Class representing the line element of an svg doc.</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-docstring">    Note that this element is NOT painted VISIBLY by default UNLESS you provide</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"><tt class="py-docstring">    a style including STROKE and STROKE-WIDTH</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="line.__init__"></a><div id="line.__init__-def"><a name="L97"></a><tt class="py-lineno"> 97</tt> <a class="py-toggle" href="#" id="line.__init__-toggle" onclick="return toggle('line.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.line-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">x1</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt><tt class="py-param">y1</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt><tt class="py-param">x2</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt><tt class="py-param">y2</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="line.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="line.__init__-expanded"><a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-docstring">        Creates a line</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-docstring">        @type  x1: string or int</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"><tt class="py-docstring">        @param x1:  starting x-coordinate</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"><tt class="py-docstring">        @type  x1: string or int</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"><tt class="py-docstring">        @param y1:  starting y-coordinate</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"><tt class="py-docstring">        @type  y2: string or int</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"><tt class="py-docstring">        @param x2:  ending x-coordinate</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"><tt class="py-docstring">        @type  y2: string or int</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-docstring">        @param y2:  ending y-coordinate</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">        <tt id="link-21" class="py-name"><a title="pySVG.core.BaseElement" class="py-name" href="#" onclick="return doclink('link-21', 'BaseElement', 'link-2');">BaseElement</a></tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="pySVG.animate.animate.__init__
+pySVG.animate.animateColor.__init__
+pySVG.animate.animateMotion.__init__
+pySVG.animate.animateTransform.__init__
+pySVG.animate.mpath.__init__
+pySVG.animate.set.__init__
+pySVG.builders.StyleBuilder.__init__
+pySVG.builders.TransformBuilder.__init__
+pySVG.core.BaseElement.__init__
+pySVG.core.TextContent.__init__
+pySVG.filter.feBlend.__init__
+pySVG.filter.feColorMatrix.__init__
+pySVG.filter.feComponentTransfer.__init__
+pySVG.filter.feComposite.__init__
+pySVG.filter.feConvolveMatrix.__init__
+pySVG.filter.feDiffuseLighting.__init__
+pySVG.filter.feDisplacementMap.__init__
+pySVG.filter.feDistantLight.__init__
+pySVG.filter.feFlood.__init__
+pySVG.filter.feFuncA.__init__
+pySVG.filter.feFuncB.__init__
+pySVG.filter.feFuncG.__init__
+pySVG.filter.feFuncR.__init__
+pySVG.filter.feGaussianBlur.__init__
+pySVG.filter.feImage.__init__
+pySVG.filter.feMerge.__init__
+pySVG.filter.feMergeNode.__init__
+pySVG.filter.feMorphology.__init__
+pySVG.filter.feOffset.__init__
+pySVG.filter.fePointLight.__init__
+pySVG.filter.feSpecularLighting.__init__
+pySVG.filter.feSpotLight.__init__
+pySVG.filter.feTile.__init__
+pySVG.filter.feTurbulence.__init__
+pySVG.filter.filter.__init__
+pySVG.gradient.linearGradient.__init__
+pySVG.gradient.pattern.__init__
+pySVG.gradient.radialGradient.__init__
+pySVG.gradient.stop.__init__
+pySVG.linking.a.__init__
+pySVG.linking.view.__init__
+pySVG.shape.circle.__init__
+pySVG.shape.ellipse.__init__
+pySVG.shape.line.__init__
+pySVG.shape.path.__init__
+pySVG.shape.polygon.__init__
+pySVG.shape.polyline.__init__
+pySVG.shape.rect.__init__
+pySVG.structure.defs.__init__
+pySVG.structure.desc.__init__
+pySVG.structure.g.__init__
+pySVG.structure.image.__init__
+pySVG.structure.metadata.__init__
+pySVG.structure.svg.__init__
+pySVG.structure.switch.__init__
+pySVG.structure.symbol.__init__
+pySVG.structure.title.__init__
+pySVG.structure.use.__init__
+pySVG.style.style.__init__" class="py-name" href="#" onclick="return doclink('link-22', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt><tt class="py-string">'line'</tt><tt class="py-op">)</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-23" class="py-name" targets="Method pySVG.gradient.linearGradient.set_x1()=pySVG.gradient.linearGradient-class.html#set_x1,Method pySVG.shape.line.set_x1()=pySVG.shape.line-class.html#set_x1"><a title="pySVG.gradient.linearGradient.set_x1
+pySVG.shape.line.set_x1" class="py-name" href="#" onclick="return doclink('link-23', 'set_x1', 'link-23');">set_x1</a></tt><tt class="py-op">(</tt><tt class="py-name">x1</tt><tt class="py-op">)</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name" targets="Method pySVG.gradient.linearGradient.set_y1()=pySVG.gradient.linearGradient-class.html#set_y1,Method pySVG.shape.line.set_y1()=pySVG.shape.line-class.html#set_y1"><a title="pySVG.gradient.linearGradient.set_y1
+pySVG.shape.line.set_y1" class="py-name" href="#" onclick="return doclink('link-24', 'set_y1', 'link-24');">set_y1</a></tt><tt class="py-op">(</tt><tt class="py-name">y1</tt><tt class="py-op">)</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-25" class="py-name" targets="Method pySVG.core.PointToAttrib.set_x2()=pySVG.core.PointToAttrib-class.html#set_x2,Method pySVG.gradient.linearGradient.set_x2()=pySVG.gradient.linearGradient-class.html#set_x2,Method pySVG.shape.line.set_x2()=pySVG.shape.line-class.html#set_x2"><a title="pySVG.core.PointToAttrib.set_x2
+pySVG.gradient.linearGradient.set_x2
+pySVG.shape.line.set_x2" class="py-name" href="#" onclick="return doclink('link-25', 'set_x2', 'link-25');">set_x2</a></tt><tt class="py-op">(</tt><tt class="py-name">x2</tt><tt class="py-op">)</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name" targets="Method pySVG.core.PointToAttrib.set_y2()=pySVG.core.PointToAttrib-class.html#set_y2,Method pySVG.gradient.linearGradient.set_y2()=pySVG.gradient.linearGradient-class.html#set_y2,Method pySVG.shape.line.set_y2()=pySVG.shape.line-class.html#set_y2"><a title="pySVG.core.PointToAttrib.set_y2
+pySVG.gradient.linearGradient.set_y2
+pySVG.shape.line.set_y2" class="py-name" href="#" onclick="return doclink('link-26', 'set_y2', 'link-26');">set_y2</a></tt><tt class="py-op">(</tt><tt class="py-name">y2</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">         </tt>
+<a name="line.set_x1"></a><div id="line.set_x1-def"><a name="L115"></a><tt class="py-lineno">115</tt> <a class="py-toggle" href="#" id="line.set_x1-toggle" onclick="return toggle('line.set_x1');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.line-class.html#set_x1">set_x1</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">x1</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="line.set_x1-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="line.set_x1-expanded"><a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'x1'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">x1</tt> </tt>
+</div><a name="line.get_x1"></a><div id="line.get_x1-def"><a name="L117"></a><tt class="py-lineno">117</tt> <a class="py-toggle" href="#" id="line.get_x1-toggle" onclick="return toggle('line.get_x1');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.line-class.html#get_x1">get_x1</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="line.get_x1-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="line.get_x1-expanded"><a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'x1'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">     </tt>
+<a name="line.set_y1"></a><div id="line.set_y1-def"><a name="L120"></a><tt class="py-lineno">120</tt> <a class="py-toggle" href="#" id="line.set_y1-toggle" onclick="return toggle('line.set_y1');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.line-class.html#set_y1">set_y1</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">y1</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="line.set_y1-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="line.set_y1-expanded"><a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'y1'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">y1</tt> </tt>
+</div><a name="line.get_y1"></a><div id="line.get_y1-def"><a name="L122"></a><tt class="py-lineno">122</tt> <a class="py-toggle" href="#" id="line.get_y1-toggle" onclick="return toggle('line.get_y1');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.line-class.html#get_y1">get_y1</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="line.get_y1-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="line.get_y1-expanded"><a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'y1'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">     </tt>
+<a name="line.set_x2"></a><div id="line.set_x2-def"><a name="L125"></a><tt class="py-lineno">125</tt> <a class="py-toggle" href="#" id="line.set_x2-toggle" onclick="return toggle('line.set_x2');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.line-class.html#set_x2">set_x2</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">x2</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="line.set_x2-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="line.set_x2-expanded"><a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'x2'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">x2</tt> </tt>
+</div><a name="line.get_x2"></a><div id="line.get_x2-def"><a name="L127"></a><tt class="py-lineno">127</tt> <a class="py-toggle" href="#" id="line.get_x2-toggle" onclick="return toggle('line.get_x2');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.line-class.html#get_x2">get_x2</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="line.get_x2-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="line.get_x2-expanded"><a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'x2'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">     </tt>
+<a name="line.set_y2"></a><div id="line.set_y2-def"><a name="L130"></a><tt class="py-lineno">130</tt> <a class="py-toggle" href="#" id="line.set_y2-toggle" onclick="return toggle('line.set_y2');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.line-class.html#set_y2">set_y2</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">y2</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="line.set_y2-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="line.set_y2-expanded"><a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'y2'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">y2</tt> </tt>
+</div><a name="line.get_y2"></a><div id="line.get_y2-def"><a name="L132"></a><tt class="py-lineno">132</tt> <a class="py-toggle" href="#" id="line.get_y2-toggle" onclick="return toggle('line.get_y2');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.line-class.html#get_y2">get_y2</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="line.get_y2-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="line.get_y2-expanded"><a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'y2'</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">     </tt>
+<a name="path"></a><div id="path-def"><a name="L136"></a><tt class="py-lineno">136</tt> <a class="py-toggle" href="#" id="path-toggle" onclick="return toggle('path');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pySVG.shape.path-class.html">path</a><tt class="py-op">(</tt><tt class="py-base-class">BaseShape</tt><tt class="py-op">,</tt> <tt class="py-base-class">ExternalAttrib</tt><tt class="py-op">,</tt> <tt class="py-base-class">MarkerAttrib</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="path-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="path-expanded"><a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"><tt class="py-docstring">    Class representing the path element of an svg doc.</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="path.__init__"></a><div id="path.__init__-def"><a name="L140"></a><tt class="py-lineno">140</tt> <a class="py-toggle" href="#" id="path.__init__-toggle" onclick="return toggle('path.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.path-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">pathData</tt><tt class="py-op">=</tt><tt class="py-string">""</tt><tt class="py-op">,</tt><tt class="py-param">pathLength</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt><tt class="py-param">style</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">focusable</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="path.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="path.__init__-expanded"><a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">        <tt id="link-27" class="py-name"><a title="pySVG.core.BaseElement" class="py-name" href="#" onclick="return doclink('link-27', 'BaseElement', 'link-2');">BaseElement</a></tt><tt class="py-op">.</tt><tt id="link-28" class="py-name"><a title="pySVG.animate.animate.__init__
+pySVG.animate.animateColor.__init__
+pySVG.animate.animateMotion.__init__
+pySVG.animate.animateTransform.__init__
+pySVG.animate.mpath.__init__
+pySVG.animate.set.__init__
+pySVG.builders.StyleBuilder.__init__
+pySVG.builders.TransformBuilder.__init__
+pySVG.core.BaseElement.__init__
+pySVG.core.TextContent.__init__
+pySVG.filter.feBlend.__init__
+pySVG.filter.feColorMatrix.__init__
+pySVG.filter.feComponentTransfer.__init__
+pySVG.filter.feComposite.__init__
+pySVG.filter.feConvolveMatrix.__init__
+pySVG.filter.feDiffuseLighting.__init__
+pySVG.filter.feDisplacementMap.__init__
+pySVG.filter.feDistantLight.__init__
+pySVG.filter.feFlood.__init__
+pySVG.filter.feFuncA.__init__
+pySVG.filter.feFuncB.__init__
+pySVG.filter.feFuncG.__init__
+pySVG.filter.feFuncR.__init__
+pySVG.filter.feGaussianBlur.__init__
+pySVG.filter.feImage.__init__
+pySVG.filter.feMerge.__init__
+pySVG.filter.feMergeNode.__init__
+pySVG.filter.feMorphology.__init__
+pySVG.filter.feOffset.__init__
+pySVG.filter.fePointLight.__init__
+pySVG.filter.feSpecularLighting.__init__
+pySVG.filter.feSpotLight.__init__
+pySVG.filter.feTile.__init__
+pySVG.filter.feTurbulence.__init__
+pySVG.filter.filter.__init__
+pySVG.gradient.linearGradient.__init__
+pySVG.gradient.pattern.__init__
+pySVG.gradient.radialGradient.__init__
+pySVG.gradient.stop.__init__
+pySVG.linking.a.__init__
+pySVG.linking.view.__init__
+pySVG.shape.circle.__init__
+pySVG.shape.ellipse.__init__
+pySVG.shape.line.__init__
+pySVG.shape.path.__init__
+pySVG.shape.polygon.__init__
+pySVG.shape.polyline.__init__
+pySVG.shape.rect.__init__
+pySVG.structure.defs.__init__
+pySVG.structure.desc.__init__
+pySVG.structure.g.__init__
+pySVG.structure.image.__init__
+pySVG.structure.metadata.__init__
+pySVG.structure.svg.__init__
+pySVG.structure.switch.__init__
+pySVG.structure.symbol.__init__
+pySVG.structure.title.__init__
+pySVG.structure.use.__init__
+pySVG.style.style.__init__" class="py-name" href="#" onclick="return doclink('link-28', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt><tt class="py-string">'path'</tt><tt class="py-op">)</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">pathData</tt><tt class="py-op">!=</tt><tt class="py-string">''</tt> <tt class="py-keyword">and</tt> <tt class="py-keyword">not</tt> <tt class="py-name">pathData</tt><tt class="py-op">.</tt><tt class="py-name">endswith</tt><tt class="py-op">(</tt><tt class="py-string">' '</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">            <tt class="py-name">pathData</tt><tt class="py-op">+=</tt><tt class="py-string">' '</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-29" class="py-name" targets="Method pySVG.shape.path.set_d()=pySVG.shape.path-class.html#set_d"><a title="pySVG.shape.path.set_d" class="py-name" href="#" onclick="return doclink('link-29', 'set_d', 'link-29');">set_d</a></tt><tt class="py-op">(</tt><tt class="py-name">pathData</tt><tt class="py-op">)</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-30" class="py-name" targets="Module pySVG.style=pySVG.style-module.html,Class pySVG.style.style=pySVG.style.style-class.html"><a title="pySVG.style
+pySVG.style.style" class="py-name" href="#" onclick="return doclink('link-30', 'style', 'link-30');">style</a></tt><tt class="py-op">!=</tt><tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-31" class="py-name" targets="Method pySVG.attributes.StyleAttrib.set_style()=pySVG.attributes.StyleAttrib-class.html#set_style"><a title="pySVG.attributes.StyleAttrib.set_style" class="py-name" href="#" onclick="return doclink('link-31', 'set_style', 'link-31');">set_style</a></tt><tt class="py-op">(</tt><tt id="link-32" class="py-name"><a title="pySVG.style
+pySVG.style.style" class="py-name" href="#" onclick="return doclink('link-32', 'style', 'link-30');">style</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line"> </tt>
+<a name="path.set_d"></a><div id="path.set_d-def"><a name="L148"></a><tt class="py-lineno">148</tt> <a class="py-toggle" href="#" id="path.set_d-toggle" onclick="return toggle('path.set_d');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.path-class.html#set_d">set_d</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">d</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="path.set_d-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="path.set_d-expanded"><a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'d'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">d</tt> </tt>
+</div><a name="path.get_d"></a><div id="path.get_d-def"><a name="L150"></a><tt class="py-lineno">150</tt> <a class="py-toggle" href="#" id="path.get_d-toggle" onclick="return toggle('path.get_d');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.path-class.html#get_d">get_d</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="path.get_d-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="path.get_d-expanded"><a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'d'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">     </tt>
+<a name="path.set_pathLength"></a><div id="path.set_pathLength-def"><a name="L153"></a><tt class="py-lineno">153</tt> <a class="py-toggle" href="#" id="path.set_pathLength-toggle" onclick="return toggle('path.set_pathLength');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.path-class.html#set_pathLength">set_pathLength</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">pathLength</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="path.set_pathLength-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="path.set_pathLength-expanded"><a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'pathLength'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">pathLength</tt> </tt>
+</div><a name="path.get_pathLength"></a><div id="path.get_pathLength-def"><a name="L155"></a><tt class="py-lineno">155</tt> <a class="py-toggle" href="#" id="path.get_pathLength-toggle" onclick="return toggle('path.get_pathLength');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.path-class.html#get_pathLength">get_pathLength</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="path.get_pathLength-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="path.get_pathLength-expanded"><a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'pathLength'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line"> </tt>
+<a name="path.__append__"></a><div id="path.__append__-def"><a name="L158"></a><tt class="py-lineno">158</tt> <a class="py-toggle" href="#" id="path.__append__-toggle" onclick="return toggle('path.__append__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.path-class.html#__append__">__append__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">command</tt><tt class="py-op">,</tt> <tt class="py-param">params</tt><tt class="py-op">,</tt> <tt class="py-param">relative</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="path.__append__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="path.__append__-expanded"><a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">        <tt class="py-name">d</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name" targets="Method pySVG.shape.path.get_d()=pySVG.shape.path-class.html#get_d"><a title="pySVG.shape.path.get_d" class="py-name" href="#" onclick="return doclink('link-33', 'get_d', 'link-33');">get_d</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">relative</tt><tt class="py-op">==</tt><tt class="py-name">True</tt><tt class="py-op">:</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">            <tt class="py-name">d</tt><tt class="py-op">+=</tt><tt class="py-name">command</tt><tt class="py-op">.</tt><tt class="py-name">lower</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">            <tt class="py-name">d</tt><tt class="py-op">+=</tt><tt class="py-name">command</tt><tt class="py-op">.</tt><tt class="py-name">upper</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">param</tt> <tt class="py-keyword">in</tt> <tt class="py-name">params</tt><tt class="py-op">:</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">            <tt class="py-name">d</tt><tt class="py-op">+=</tt><tt class="py-string">' %s '</tt> <tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">param</tt><tt class="py-op">)</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name"><a title="pySVG.shape.path.set_d" class="py-name" href="#" onclick="return doclink('link-34', 'set_d', 'link-29');">set_d</a></tt><tt class="py-op">(</tt><tt class="py-name">d</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">         </tt>
+<a name="path.appendLineToPath"></a><div id="path.appendLineToPath-def"><a name="L168"></a><tt class="py-lineno">168</tt> <a class="py-toggle" href="#" id="path.appendLineToPath-toggle" onclick="return toggle('path.appendLineToPath');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.path-class.html#appendLineToPath">appendLineToPath</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">endx</tt><tt class="py-op">,</tt><tt class="py-param">endy</tt><tt class="py-op">,</tt> <tt class="py-param">relative</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="path.appendLineToPath-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="path.appendLineToPath-expanded"><a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-35" class="py-name" targets="Method pySVG.shape.path.__append__()=pySVG.shape.path-class.html#__append__"><a title="pySVG.shape.path.__append__" class="py-name" href="#" onclick="return doclink('link-35', '__append__', 'link-35');">__append__</a></tt><tt class="py-op">(</tt><tt class="py-string">'l'</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">endx</tt><tt class="py-op">,</tt><tt class="py-name">endy</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">relative</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">   </tt>
+<a name="path.appendHorizontalLineToPath"></a><div id="path.appendHorizontalLineToPath-def"><a name="L171"></a><tt class="py-lineno">171</tt> <a class="py-toggle" href="#" id="path.appendHorizontalLineToPath-toggle" onclick="return toggle('path.appendHorizontalLineToPath');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.path-class.html#appendHorizontalLineToPath">appendHorizontalLineToPath</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">endx</tt><tt class="py-op">,</tt> <tt class="py-param">relative</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="path.appendHorizontalLineToPath-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="path.appendHorizontalLineToPath-expanded"><a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-36" class="py-name"><a title="pySVG.shape.path.__append__" class="py-name" href="#" onclick="return doclink('link-36', '__append__', 'link-35');">__append__</a></tt><tt class="py-op">(</tt><tt class="py-string">'h'</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">endx</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">relative</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line">       </tt>
+<a name="path.appendVerticalLineToPath"></a><div id="path.appendVerticalLineToPath-def"><a name="L174"></a><tt class="py-lineno">174</tt> <a class="py-toggle" href="#" id="path.appendVerticalLineToPath-toggle" onclick="return toggle('path.appendVerticalLineToPath');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.path-class.html#appendVerticalLineToPath">appendVerticalLineToPath</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">endy</tt><tt class="py-op">,</tt> <tt class="py-param">relative</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="path.appendVerticalLineToPath-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="path.appendVerticalLineToPath-expanded"><a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name"><a title="pySVG.shape.path.__append__" class="py-name" href="#" onclick="return doclink('link-37', '__append__', 'link-35');">__append__</a></tt><tt class="py-op">(</tt><tt class="py-string">'v'</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">endy</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">relative</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line">   </tt>
+<a name="path.appendMoveToPath"></a><div id="path.appendMoveToPath-def"><a name="L177"></a><tt class="py-lineno">177</tt> <a class="py-toggle" href="#" id="path.appendMoveToPath-toggle" onclick="return toggle('path.appendMoveToPath');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.path-class.html#appendMoveToPath">appendMoveToPath</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">endx</tt><tt class="py-op">,</tt><tt class="py-param">endy</tt><tt class="py-op">,</tt> <tt class="py-param">relative</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="path.appendMoveToPath-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="path.appendMoveToPath-expanded"><a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-38" class="py-name"><a title="pySVG.shape.path.__append__" class="py-name" href="#" onclick="return doclink('link-38', '__append__', 'link-35');">__append__</a></tt><tt class="py-op">(</tt><tt class="py-string">'m'</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">endx</tt><tt class="py-op">,</tt><tt class="py-name">endy</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">relative</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line">     </tt>
+<a name="path.appendCloseCurve"></a><div id="path.appendCloseCurve-def"><a name="L180"></a><tt class="py-lineno">180</tt> <a class="py-toggle" href="#" id="path.appendCloseCurve-toggle" onclick="return toggle('path.appendCloseCurve');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.path-class.html#appendCloseCurve">appendCloseCurve</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="path.appendCloseCurve-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="path.appendCloseCurve-expanded"><a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line">        <tt class="py-name">d</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-39" class="py-name"><a title="pySVG.shape.path.get_d" class="py-name" href="#" onclick="return doclink('link-39', 'get_d', 'link-33');">get_d</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line">        <tt class="py-name">d</tt><tt class="py-op">+=</tt><tt class="py-string">"z"</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-40" class="py-name"><a title="pySVG.shape.path.set_d" class="py-name" href="#" onclick="return doclink('link-40', 'set_d', 'link-29');">set_d</a></tt><tt class="py-op">(</tt><tt class="py-name">d</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line">         </tt>
+<a name="path.appendCubicCurveToPath"></a><div id="path.appendCubicCurveToPath-def"><a name="L185"></a><tt class="py-lineno">185</tt> <a class="py-toggle" href="#" id="path.appendCubicCurveToPath-toggle" onclick="return toggle('path.appendCubicCurveToPath');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.path-class.html#appendCubicCurveToPath">appendCubicCurveToPath</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">controlstartx</tt><tt class="py-op">,</tt> <tt class="py-param">controlstarty</tt><tt class="py-op">,</tt> <tt class="py-param">controlendx</tt><tt class="py-op">,</tt> <tt class="py-param">controlendy</tt><tt class="py-op">,</tt> <tt class="py-param">endx</tt><tt class="py-op">,</tt><tt class="py-param">endy</tt><tt class="py-op">,</tt><tt class="py-param">relative</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="path.appendCubicCurveToPath-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="path.appendCubicCurveToPath-expanded"><a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-41" class="py-name"><a title="pySVG.shape.path.__append__" class="py-name" href="#" onclick="return doclink('link-41', '__append__', 'link-35');">__append__</a></tt><tt class="py-op">(</tt><tt class="py-string">'c'</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">controlstartx</tt><tt class="py-op">,</tt> <tt class="py-name">controlstarty</tt><tt class="py-op">,</tt> <tt class="py-name">controlendx</tt><tt class="py-op">,</tt> <tt class="py-name">controlendy</tt><tt class="py-op">,</tt> <tt class="py-name">endx</tt><tt class="py-op">,</tt><tt class="py-name">endy</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">relative</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line">   </tt>
+<a name="path.appendCubicShorthandCurveToPath"></a><div id="path.appendCubicShorthandCurveToPath-def"><a name="L188"></a><tt class="py-lineno">188</tt> <a class="py-toggle" href="#" id="path.appendCubicShorthandCurveToPath-toggle" onclick="return toggle('path.appendCubicShorthandCurveToPath');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.path-class.html#appendCubicShorthandCurveToPath">appendCubicShorthandCurveToPath</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt>  <tt class="py-param">controlendx</tt><tt class="py-op">,</tt> <tt class="py-param">controlendy</tt><tt class="py-op">,</tt> <tt class="py-param">endx</tt><tt class="py-op">,</tt><tt class="py-param">endy</tt><tt class="py-op">,</tt><tt class="py-param">relative</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="path.appendCubicShorthandCurveToPath-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="path.appendCubicShorthandCurveToPath-expanded"><a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-42" class="py-name"><a title="pySVG.shape.path.__append__" class="py-name" href="#" onclick="return doclink('link-42', '__append__', 'link-35');">__append__</a></tt><tt class="py-op">(</tt><tt class="py-string">'s'</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">controlendx</tt><tt class="py-op">,</tt> <tt class="py-name">controlendy</tt><tt class="py-op">,</tt> <tt class="py-name">endx</tt><tt class="py-op">,</tt><tt class="py-name">endy</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">relative</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line">     </tt>
+<a name="path.appendQuadraticCurveToPath"></a><div id="path.appendQuadraticCurveToPath-def"><a name="L191"></a><tt class="py-lineno">191</tt> <a class="py-toggle" href="#" id="path.appendQuadraticCurveToPath-toggle" onclick="return toggle('path.appendQuadraticCurveToPath');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.path-class.html#appendQuadraticCurveToPath">appendQuadraticCurveToPath</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">controlx</tt><tt class="py-op">,</tt> <tt class="py-param">controly</tt><tt class="py-op">,</tt> <tt class="py-param">endx</tt><tt class="py-op">,</tt><tt class="py-param">endy</tt><tt class="py-op">,</tt><tt class="py-param">relative</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="path.appendQuadraticCurveToPath-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="path.appendQuadraticCurveToPath-expanded"><a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-43" class="py-name"><a title="pySVG.shape.path.__append__" class="py-name" href="#" onclick="return doclink('link-43', '__append__', 'link-35');">__append__</a></tt><tt class="py-op">(</tt><tt class="py-string">'q'</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">controlx</tt><tt class="py-op">,</tt> <tt class="py-name">controly</tt><tt class="py-op">,</tt> <tt class="py-name">endx</tt><tt class="py-op">,</tt><tt class="py-name">endy</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">relative</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line">   </tt>
+<a name="path.appendQuadraticShorthandCurveToPath"></a><div id="path.appendQuadraticShorthandCurveToPath-def"><a name="L194"></a><tt class="py-lineno">194</tt> <a class="py-toggle" href="#" id="path.appendQuadraticShorthandCurveToPath-toggle" onclick="return toggle('path.appendQuadraticShorthandCurveToPath');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.path-class.html#appendQuadraticShorthandCurveToPath">appendQuadraticShorthandCurveToPath</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">endx</tt><tt class="py-op">,</tt><tt class="py-param">endy</tt><tt class="py-op">,</tt><tt class="py-param">relative</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="path.appendQuadraticShorthandCurveToPath-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="path.appendQuadraticShorthandCurveToPath-expanded"><a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-44" class="py-name"><a title="pySVG.shape.path.__append__" class="py-name" href="#" onclick="return doclink('link-44', '__append__', 'link-35');">__append__</a></tt><tt class="py-op">(</tt><tt class="py-string">'t'</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">endx</tt><tt class="py-op">,</tt><tt class="py-name">endy</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">relative</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line">     </tt>
+<a name="path.appendArcToPath"></a><div id="path.appendArcToPath-def"><a name="L197"></a><tt class="py-lineno">197</tt> <a class="py-toggle" href="#" id="path.appendArcToPath-toggle" onclick="return toggle('path.appendArcToPath');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.path-class.html#appendArcToPath">appendArcToPath</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">rx</tt><tt class="py-op">,</tt><tt class="py-param">ry</tt><tt class="py-op">,</tt><tt class="py-param">x</tt><tt class="py-op">,</tt><tt class="py-param">y</tt><tt class="py-op">,</tt><tt class="py-param">x_axis_rotation</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">,</tt><tt class="py-param">large_arc_flag</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">,</tt><tt class="py-param">sweep_flag</tt><tt class="py-op">=</tt><tt class="py-number">1</tt> <tt class="py-op">,</tt><tt class="py-param">relative</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="path.appendArcToPath-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="path.appendArcToPath-expanded"><a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-45" class="py-name"><a title="pySVG.shape.path.__append__" class="py-name" href="#" onclick="return doclink('link-45', '__append__', 'link-35');">__append__</a></tt><tt class="py-op">(</tt><tt class="py-string">'a'</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-name">rx</tt><tt class="py-op">,</tt><tt class="py-name">ry</tt><tt class="py-op">,</tt><tt class="py-name">x_axis_rotation</tt><tt class="py-op">,</tt><tt class="py-name">large_arc_flag</tt><tt class="py-op">,</tt><tt class="py-name">sweep_flag</tt><tt class="py-op">,</tt><tt class="py-name">x</tt><tt class="py-op">,</tt><tt class="py-name">y</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">relative</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line"> </tt>
+<a name="polyline"></a><div id="polyline-def"><a name="L200"></a><tt class="py-lineno">200</tt> <a class="py-toggle" href="#" id="polyline-toggle" onclick="return toggle('polyline');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pySVG.shape.polyline-class.html">polyline</a><tt class="py-op">(</tt><tt class="py-base-class">BaseShape</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="polyline-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="polyline-expanded"><a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line"><tt class="py-docstring">    Class representing the polyline element of an svg doc.</tt> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="polyline.__init__"></a><div id="polyline.__init__-def"><a name="L204"></a><tt class="py-lineno">204</tt> <a class="py-toggle" href="#" id="polyline.__init__-toggle" onclick="return toggle('polyline.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.polyline-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">points</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="polyline.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="polyline.__init__-expanded"><a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line">        <tt id="link-46" class="py-name"><a title="pySVG.core.BaseElement" class="py-name" href="#" onclick="return doclink('link-46', 'BaseElement', 'link-2');">BaseElement</a></tt><tt class="py-op">.</tt><tt id="link-47" class="py-name"><a title="pySVG.animate.animate.__init__
+pySVG.animate.animateColor.__init__
+pySVG.animate.animateMotion.__init__
+pySVG.animate.animateTransform.__init__
+pySVG.animate.mpath.__init__
+pySVG.animate.set.__init__
+pySVG.builders.StyleBuilder.__init__
+pySVG.builders.TransformBuilder.__init__
+pySVG.core.BaseElement.__init__
+pySVG.core.TextContent.__init__
+pySVG.filter.feBlend.__init__
+pySVG.filter.feColorMatrix.__init__
+pySVG.filter.feComponentTransfer.__init__
+pySVG.filter.feComposite.__init__
+pySVG.filter.feConvolveMatrix.__init__
+pySVG.filter.feDiffuseLighting.__init__
+pySVG.filter.feDisplacementMap.__init__
+pySVG.filter.feDistantLight.__init__
+pySVG.filter.feFlood.__init__
+pySVG.filter.feFuncA.__init__
+pySVG.filter.feFuncB.__init__
+pySVG.filter.feFuncG.__init__
+pySVG.filter.feFuncR.__init__
+pySVG.filter.feGaussianBlur.__init__
+pySVG.filter.feImage.__init__
+pySVG.filter.feMerge.__init__
+pySVG.filter.feMergeNode.__init__
+pySVG.filter.feMorphology.__init__
+pySVG.filter.feOffset.__init__
+pySVG.filter.fePointLight.__init__
+pySVG.filter.feSpecularLighting.__init__
+pySVG.filter.feSpotLight.__init__
+pySVG.filter.feTile.__init__
+pySVG.filter.feTurbulence.__init__
+pySVG.filter.filter.__init__
+pySVG.gradient.linearGradient.__init__
+pySVG.gradient.pattern.__init__
+pySVG.gradient.radialGradient.__init__
+pySVG.gradient.stop.__init__
+pySVG.linking.a.__init__
+pySVG.linking.view.__init__
+pySVG.shape.circle.__init__
+pySVG.shape.ellipse.__init__
+pySVG.shape.line.__init__
+pySVG.shape.path.__init__
+pySVG.shape.polygon.__init__
+pySVG.shape.polyline.__init__
+pySVG.shape.rect.__init__
+pySVG.structure.defs.__init__
+pySVG.structure.desc.__init__
+pySVG.structure.g.__init__
+pySVG.structure.image.__init__
+pySVG.structure.metadata.__init__
+pySVG.structure.svg.__init__
+pySVG.structure.switch.__init__
+pySVG.structure.symbol.__init__
+pySVG.structure.title.__init__
+pySVG.structure.use.__init__
+pySVG.style.style.__init__" class="py-name" href="#" onclick="return doclink('link-47', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt><tt class="py-string">'polyline'</tt><tt class="py-op">)</tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-48" class="py-name" targets="Method pySVG.shape.polyline.set_points()=pySVG.shape.polyline-class.html#set_points"><a title="pySVG.shape.polyline.set_points" class="py-name" href="#" onclick="return doclink('link-48', 'set_points', 'link-48');">set_points</a></tt><tt class="py-op">(</tt><tt class="py-name">points</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line">         </tt>
+<a name="polyline.set_points"></a><div id="polyline.set_points-def"><a name="L208"></a><tt class="py-lineno">208</tt> <a class="py-toggle" href="#" id="polyline.set_points-toggle" onclick="return toggle('polyline.set_points');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.polyline-class.html#set_points">set_points</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">points</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="polyline.set_points-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="polyline.set_points-expanded"><a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'points'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">points</tt> </tt>
+</div><a name="polyline.get_points"></a><div id="polyline.get_points-def"><a name="L210"></a><tt class="py-lineno">210</tt> <a class="py-toggle" href="#" id="polyline.get_points-toggle" onclick="return toggle('polyline.get_points');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.polyline-class.html#get_points">get_points</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="polyline.get_points-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="polyline.get_points-expanded"><a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'points'</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line">     </tt>
+<a name="polygon"></a><div id="polygon-def"><a name="L213"></a><tt class="py-lineno">213</tt> <a class="py-toggle" href="#" id="polygon-toggle" onclick="return toggle('polygon');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pySVG.shape.polygon-class.html">polygon</a><tt class="py-op">(</tt><tt class="py-base-class">polyline</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="polygon-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="polygon-expanded"><a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line"><tt class="py-docstring">    Class representing the polygon element of an svg doc.</tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="polygon.__init__"></a><div id="polygon.__init__-def"><a name="L217"></a><tt class="py-lineno">217</tt> <a class="py-toggle" href="#" id="polygon.__init__-toggle" onclick="return toggle('polygon.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.shape.polygon-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">points</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="polygon.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="polygon.__init__-expanded"><a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line">        <tt id="link-49" class="py-name"><a title="pySVG.core.BaseElement" class="py-name" href="#" onclick="return doclink('link-49', 'BaseElement', 'link-2');">BaseElement</a></tt><tt class="py-op">.</tt><tt id="link-50" class="py-name"><a title="pySVG.animate.animate.__init__
+pySVG.animate.animateColor.__init__
+pySVG.animate.animateMotion.__init__
+pySVG.animate.animateTransform.__init__
+pySVG.animate.mpath.__init__
+pySVG.animate.set.__init__
+pySVG.builders.StyleBuilder.__init__
+pySVG.builders.TransformBuilder.__init__
+pySVG.core.BaseElement.__init__
+pySVG.core.TextContent.__init__
+pySVG.filter.feBlend.__init__
+pySVG.filter.feColorMatrix.__init__
+pySVG.filter.feComponentTransfer.__init__
+pySVG.filter.feComposite.__init__
+pySVG.filter.feConvolveMatrix.__init__
+pySVG.filter.feDiffuseLighting.__init__
+pySVG.filter.feDisplacementMap.__init__
+pySVG.filter.feDistantLight.__init__
+pySVG.filter.feFlood.__init__
+pySVG.filter.feFuncA.__init__
+pySVG.filter.feFuncB.__init__
+pySVG.filter.feFuncG.__init__
+pySVG.filter.feFuncR.__init__
+pySVG.filter.feGaussianBlur.__init__
+pySVG.filter.feImage.__init__
+pySVG.filter.feMerge.__init__
+pySVG.filter.feMergeNode.__init__
+pySVG.filter.feMorphology.__init__
+pySVG.filter.feOffset.__init__
+pySVG.filter.fePointLight.__init__
+pySVG.filter.feSpecularLighting.__init__
+pySVG.filter.feSpotLight.__init__
+pySVG.filter.feTile.__init__
+pySVG.filter.feTurbulence.__init__
+pySVG.filter.filter.__init__
+pySVG.gradient.linearGradient.__init__
+pySVG.gradient.pattern.__init__
+pySVG.gradient.radialGradient.__init__
+pySVG.gradient.stop.__init__
+pySVG.linking.a.__init__
+pySVG.linking.view.__init__
+pySVG.shape.circle.__init__
+pySVG.shape.ellipse.__init__
+pySVG.shape.line.__init__
+pySVG.shape.path.__init__
+pySVG.shape.polygon.__init__
+pySVG.shape.polyline.__init__
+pySVG.shape.rect.__init__
+pySVG.structure.defs.__init__
+pySVG.structure.desc.__init__
+pySVG.structure.g.__init__
+pySVG.structure.image.__init__
+pySVG.structure.metadata.__init__
+pySVG.structure.svg.__init__
+pySVG.structure.switch.__init__
+pySVG.structure.symbol.__init__
+pySVG.structure.title.__init__
+pySVG.structure.use.__init__
+pySVG.style.style.__init__" class="py-name" href="#" onclick="return doclink('link-50', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt><tt class="py-string">'polygon'</tt><tt class="py-op">)</tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-51" class="py-name"><a title="pySVG.shape.polyline.set_points" class="py-name" href="#" onclick="return doclink('link-51', 'set_points', 'link-48');">set_points</a></tt><tt class="py-op">(</tt><tt class="py-name">points</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pySVG-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >pysvg</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Sep 25 13:55:12 2009
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

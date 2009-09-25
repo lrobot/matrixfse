@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pySVG.gradient</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pySVG-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >pysvg</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pySVG-module.html">Package&nbsp;pySVG</a> ::
+        Module&nbsp;gradient
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pySVG.gradient-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="pySVG.gradient-module.html">Module pySVG.gradient</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#!/usr/bin/python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># -*- coding: iso-8859-1 -*-</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-docstring">'''</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">(C) 2008, 2009 Kerim Mansour</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring">For licensing information please refer to license.txt</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-docstring">'''</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Module pySVG.attributes=pySVG.attributes-module.html"><a title="pySVG.attributes" class="py-name" href="#" onclick="return doclink('link-0', 'attributes', 'link-0');">attributes</a></tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-1" class="py-name" targets="Module pySVG.core=pySVG.core-module.html"><a title="pySVG.core" class="py-name" href="#" onclick="return doclink('link-1', 'core', 'link-1');">core</a></tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line">   </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line">         </tt>
+<a name="linearGradient"></a><div id="linearGradient-def"><a name="L12"></a><tt class="py-lineno"> 12</tt> <a class="py-toggle" href="#" id="linearGradient-toggle" onclick="return toggle('linearGradient');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pySVG.gradient.linearGradient-class.html">linearGradient</a><tt class="py-op">(</tt><tt class="py-base-class">BaseElement</tt><tt class="py-op">,</tt> <tt class="py-base-class">CoreAttrib</tt><tt class="py-op">,</tt> <tt class="py-base-class">XLinkAttrib</tt><tt class="py-op">,</tt> <tt class="py-base-class">PaintAttrib</tt><tt class="py-op">,</tt> <tt class="py-base-class">StyleAttrib</tt><tt class="py-op">,</tt> <tt class="py-base-class">ExternalAttrib</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="linearGradient-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="linearGradient-expanded"><a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-docstring">    Class representing the linearGradient element of an svg doc.</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="linearGradient.__init__"></a><div id="linearGradient.__init__-def"><a name="L16"></a><tt class="py-lineno"> 16</tt> <a class="py-toggle" href="#" id="linearGradient.__init__-toggle" onclick="return toggle('linearGradient.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.linearGradient-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">x1</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">y1</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">x2</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">y2</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="linearGradient.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="linearGradient.__init__-expanded"><a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">        <tt id="link-2" class="py-name" targets="Class pySVG.core.BaseElement=pySVG.core.BaseElement-class.html"><a title="pySVG.core.BaseElement" class="py-name" href="#" onclick="return doclink('link-2', 'BaseElement', 'link-2');">BaseElement</a></tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Method pySVG.animate.animate.__init__()=pySVG.animate.animate-class.html#__init__,Method pySVG.animate.animateColor.__init__()=pySVG.animate.animateColor-class.html#__init__,Method pySVG.animate.animateMotion.__init__()=pySVG.animate.animateMotion-class.html#__init__,Method pySVG.animate.animateTransform.__init__()=pySVG.animate.animateTransform-class.html#__init__,Method pySVG.animate.mpath.__init__()=pySVG.animate.mpath-class.html#__init__,Method pySVG.animate.set.__init__()=pySVG.animate.set-class.html#__init__,Method pySVG.builders.StyleBuilder.__init__()=pySVG.builders.StyleBuilder-class.html#__init__,Method pySVG.builders.TransformBuilder.__init__()=pySVG.builders.TransformBuilder-class.html#__init__,Method pySVG.core.BaseElement.__init__()=pySVG.core.BaseElement-class.html#__init__,Method pySVG.core.TextContent.__init__()=pySVG.core.TextContent-class.html#__init__,Method pySVG.filter.feBlend.__init__()=pySVG.filter.feBlend-class.html#__init__,Method pySVG.filter.feColorMatrix.__init__()=pySVG.filter.feColorMatrix-class.html#__init__,Method pySVG.filter.feComponentTransfer.__init__()=pySVG.filter.feComponentTransfer-class.html#__init__,Method pySVG.filter.feComposite.__init__()=pySVG.filter.feComposite-class.html#__init__,Method pySVG.filter.feConvolveMatrix.__init__()=pySVG.filter.feConvolveMatrix-class.html#__init__,Method pySVG.filter.feDiffuseLighting.__init__()=pySVG.filter.feDiffuseLighting-class.html#__init__,Method pySVG.filter.feDisplacementMap.__init__()=pySVG.filter.feDisplacementMap-class.html#__init__,Method pySVG.filter.feDistantLight.__init__()=pySVG.filter.feDistantLight-class.html#__init__,Method pySVG.filter.feFlood.__init__()=pySVG.filter.feFlood-class.html#__init__,Method pySVG.filter.feFuncA.__init__()=pySVG.filter.feFuncA-class.html#__init__,Method pySVG.filter.feFuncB.__init__()=pySVG.filter.feFuncB-class.html#__init__,Method pySVG.filter.feFuncG.__init__()=pySVG.filter.feFuncG-class.html#__init__,Method pySVG.filter.feFuncR.__init__()=pySVG.filter.feFuncR-class.html#__init__,Method pySVG.filter.feGaussianBlur.__init__()=pySVG.filter.feGaussianBlur-class.html#__init__,Method pySVG.filter.feImage.__init__()=pySVG.filter.feImage-class.html#__init__,Method pySVG.filter.feMerge.__init__()=pySVG.filter.feMerge-class.html#__init__,Method pySVG.filter.feMergeNode.__init__()=pySVG.filter.feMergeNode-class.html#__init__,Method pySVG.filter.feMorphology.__init__()=pySVG.filter.feMorphology-class.html#__init__,Method pySVG.filter.feOffset.__init__()=pySVG.filter.feOffset-class.html#__init__,Method pySVG.filter.fePointLight.__init__()=pySVG.filter.fePointLight-class.html#__init__,Method pySVG.filter.feSpecularLighting.__init__()=pySVG.filter.feSpecularLighting-class.html#__init__,Method pySVG.filter.feSpotLight.__init__()=pySVG.filter.feSpotLight-class.html#__init__,Method pySVG.filter.feTile.__init__()=pySVG.filter.feTile-class.html#__init__,Method pySVG.filter.feTurbulence.__init__()=pySVG.filter.feTurbulence-class.html#__init__,Method pySVG.filter.filter.__init__()=pySVG.filter.filter-class.html#__init__,Method pySVG.gradient.linearGradient.__init__()=pySVG.gradient.linearGradient-class.html#__init__,Method pySVG.gradient.pattern.__init__()=pySVG.gradient.pattern-class.html#__init__,Method pySVG.gradient.radialGradient.__init__()=pySVG.gradient.radialGradient-class.html#__init__,Method pySVG.gradient.stop.__init__()=pySVG.gradient.stop-class.html#__init__,Method pySVG.linking.a.__init__()=pySVG.linking.a-class.html#__init__,Method pySVG.linking.view.__init__()=pySVG.linking.view-class.html#__init__,Method pySVG.shape.circle.__init__()=pySVG.shape.circle-class.html#__init__,Method pySVG.shape.ellipse.__init__()=pySVG.shape.ellipse-class.html#__init__,Method pySVG.shape.line.__init__()=pySVG.shape.line-class.html#__init__,Method pySVG.shape.path.__init__()=pySVG.shape.path-class.html#__init__,Method pySVG.shape.polygon.__init__()=pySVG.shape.polygon-class.html#__init__,Method pySVG.shape.polyline.__init__()=pySVG.shape.polyline-class.html#__init__,Method pySVG.shape.rect.__init__()=pySVG.shape.rect-class.html#__init__,Method pySVG.structure.defs.__init__()=pySVG.structure.defs-class.html#__init__,Method pySVG.structure.desc.__init__()=pySVG.structure.desc-class.html#__init__,Method pySVG.structure.g.__init__()=pySVG.structure.g-class.html#__init__,Method pySVG.structure.image.__init__()=pySVG.structure.image-class.html#__init__,Method pySVG.structure.metadata.__init__()=pySVG.structure.metadata-class.html#__init__,Method pySVG.structure.svg.__init__()=pySVG.structure.svg-class.html#__init__,Method pySVG.structure.switch.__init__()=pySVG.structure.switch-class.html#__init__,Method pySVG.structure.symbol.__init__()=pySVG.structure.symbol-class.html#__init__,Method pySVG.structure.title.__init__()=pySVG.structure.title-class.html#__init__,Method pySVG.structure.use.__init__()=pySVG.structure.use-class.html#__init__,Method pySVG.style.style.__init__()=pySVG.style.style-class.html#__init__"><a title="pySVG.animate.animate.__init__
+pySVG.animate.animateColor.__init__
+pySVG.animate.animateMotion.__init__
+pySVG.animate.animateTransform.__init__
+pySVG.animate.mpath.__init__
+pySVG.animate.set.__init__
+pySVG.builders.StyleBuilder.__init__
+pySVG.builders.TransformBuilder.__init__
+pySVG.core.BaseElement.__init__
+pySVG.core.TextContent.__init__
+pySVG.filter.feBlend.__init__
+pySVG.filter.feColorMatrix.__init__
+pySVG.filter.feComponentTransfer.__init__
+pySVG.filter.feComposite.__init__
+pySVG.filter.feConvolveMatrix.__init__
+pySVG.filter.feDiffuseLighting.__init__
+pySVG.filter.feDisplacementMap.__init__
+pySVG.filter.feDistantLight.__init__
+pySVG.filter.feFlood.__init__
+pySVG.filter.feFuncA.__init__
+pySVG.filter.feFuncB.__init__
+pySVG.filter.feFuncG.__init__
+pySVG.filter.feFuncR.__init__
+pySVG.filter.feGaussianBlur.__init__
+pySVG.filter.feImage.__init__
+pySVG.filter.feMerge.__init__
+pySVG.filter.feMergeNode.__init__
+pySVG.filter.feMorphology.__init__
+pySVG.filter.feOffset.__init__
+pySVG.filter.fePointLight.__init__
+pySVG.filter.feSpecularLighting.__init__
+pySVG.filter.feSpotLight.__init__
+pySVG.filter.feTile.__init__
+pySVG.filter.feTurbulence.__init__
+pySVG.filter.filter.__init__
+pySVG.gradient.linearGradient.__init__
+pySVG.gradient.pattern.__init__
+pySVG.gradient.radialGradient.__init__
+pySVG.gradient.stop.__init__
+pySVG.linking.a.__init__
+pySVG.linking.view.__init__
+pySVG.shape.circle.__init__
+pySVG.shape.ellipse.__init__
+pySVG.shape.line.__init__
+pySVG.shape.path.__init__
+pySVG.shape.polygon.__init__
+pySVG.shape.polyline.__init__
+pySVG.shape.rect.__init__
+pySVG.structure.defs.__init__
+pySVG.structure.desc.__init__
+pySVG.structure.g.__init__
+pySVG.structure.image.__init__
+pySVG.structure.metadata.__init__
+pySVG.structure.svg.__init__
+pySVG.structure.switch.__init__
+pySVG.structure.symbol.__init__
+pySVG.structure.title.__init__
+pySVG.structure.use.__init__
+pySVG.style.style.__init__" class="py-name" href="#" onclick="return doclink('link-3', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt><tt class="py-string">'linearGradient'</tt><tt class="py-op">)</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name" targets="Method pySVG.gradient.linearGradient.set_x1()=pySVG.gradient.linearGradient-class.html#set_x1,Method pySVG.shape.line.set_x1()=pySVG.shape.line-class.html#set_x1"><a title="pySVG.gradient.linearGradient.set_x1
+pySVG.shape.line.set_x1" class="py-name" href="#" onclick="return doclink('link-4', 'set_x1', 'link-4');">set_x1</a></tt><tt class="py-op">(</tt><tt class="py-name">x1</tt><tt class="py-op">)</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Method pySVG.gradient.linearGradient.set_y1()=pySVG.gradient.linearGradient-class.html#set_y1,Method pySVG.shape.line.set_y1()=pySVG.shape.line-class.html#set_y1"><a title="pySVG.gradient.linearGradient.set_y1
+pySVG.shape.line.set_y1" class="py-name" href="#" onclick="return doclink('link-5', 'set_y1', 'link-5');">set_y1</a></tt><tt class="py-op">(</tt><tt class="py-name">y1</tt><tt class="py-op">)</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Method pySVG.core.PointToAttrib.set_x2()=pySVG.core.PointToAttrib-class.html#set_x2,Method pySVG.gradient.linearGradient.set_x2()=pySVG.gradient.linearGradient-class.html#set_x2,Method pySVG.shape.line.set_x2()=pySVG.shape.line-class.html#set_x2"><a title="pySVG.core.PointToAttrib.set_x2
+pySVG.gradient.linearGradient.set_x2
+pySVG.shape.line.set_x2" class="py-name" href="#" onclick="return doclink('link-6', 'set_x2', 'link-6');">set_x2</a></tt><tt class="py-op">(</tt><tt class="py-name">x2</tt><tt class="py-op">)</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Method pySVG.core.PointToAttrib.set_y2()=pySVG.core.PointToAttrib-class.html#set_y2,Method pySVG.gradient.linearGradient.set_y2()=pySVG.gradient.linearGradient-class.html#set_y2,Method pySVG.shape.line.set_y2()=pySVG.shape.line-class.html#set_y2"><a title="pySVG.core.PointToAttrib.set_y2
+pySVG.gradient.linearGradient.set_y2
+pySVG.shape.line.set_y2" class="py-name" href="#" onclick="return doclink('link-7', 'set_y2', 'link-7');">set_y2</a></tt><tt class="py-op">(</tt><tt class="py-name">y2</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line">     </tt>
+<a name="linearGradient.set_x1"></a><div id="linearGradient.set_x1-def"><a name="L23"></a><tt class="py-lineno"> 23</tt> <a class="py-toggle" href="#" id="linearGradient.set_x1-toggle" onclick="return toggle('linearGradient.set_x1');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.linearGradient-class.html#set_x1">set_x1</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">x1</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="linearGradient.set_x1-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="linearGradient.set_x1-expanded"><a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'x1'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">x1</tt> </tt>
+</div><a name="linearGradient.get_x1"></a><div id="linearGradient.get_x1-def"><a name="L25"></a><tt class="py-lineno"> 25</tt> <a class="py-toggle" href="#" id="linearGradient.get_x1-toggle" onclick="return toggle('linearGradient.get_x1');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.linearGradient-class.html#get_x1">get_x1</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="linearGradient.get_x1-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="linearGradient.get_x1-expanded"><a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'x1'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">     </tt>
+<a name="linearGradient.set_y1"></a><div id="linearGradient.set_y1-def"><a name="L28"></a><tt class="py-lineno"> 28</tt> <a class="py-toggle" href="#" id="linearGradient.set_y1-toggle" onclick="return toggle('linearGradient.set_y1');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.linearGradient-class.html#set_y1">set_y1</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">y1</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="linearGradient.set_y1-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="linearGradient.set_y1-expanded"><a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'y1'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">y1</tt> </tt>
+</div><a name="linearGradient.get_y1"></a><div id="linearGradient.get_y1-def"><a name="L30"></a><tt class="py-lineno"> 30</tt> <a class="py-toggle" href="#" id="linearGradient.get_y1-toggle" onclick="return toggle('linearGradient.get_y1');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.linearGradient-class.html#get_y1">get_y1</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="linearGradient.get_y1-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="linearGradient.get_y1-expanded"><a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'y1'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">     </tt>
+<a name="linearGradient.set_x2"></a><div id="linearGradient.set_x2-def"><a name="L33"></a><tt class="py-lineno"> 33</tt> <a class="py-toggle" href="#" id="linearGradient.set_x2-toggle" onclick="return toggle('linearGradient.set_x2');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.linearGradient-class.html#set_x2">set_x2</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">x2</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="linearGradient.set_x2-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="linearGradient.set_x2-expanded"><a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'x2'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">x2</tt> </tt>
+</div><a name="linearGradient.get_x2"></a><div id="linearGradient.get_x2-def"><a name="L35"></a><tt class="py-lineno"> 35</tt> <a class="py-toggle" href="#" id="linearGradient.get_x2-toggle" onclick="return toggle('linearGradient.get_x2');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.linearGradient-class.html#get_x2">get_x2</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="linearGradient.get_x2-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="linearGradient.get_x2-expanded"><a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'x2'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">     </tt>
+<a name="linearGradient.set_y2"></a><div id="linearGradient.set_y2-def"><a name="L38"></a><tt class="py-lineno"> 38</tt> <a class="py-toggle" href="#" id="linearGradient.set_y2-toggle" onclick="return toggle('linearGradient.set_y2');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.linearGradient-class.html#set_y2">set_y2</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">y2</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="linearGradient.set_y2-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="linearGradient.set_y2-expanded"><a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'y2'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">y2</tt> </tt>
+</div><a name="linearGradient.get_y2"></a><div id="linearGradient.get_y2-def"><a name="L40"></a><tt class="py-lineno"> 40</tt> <a class="py-toggle" href="#" id="linearGradient.get_y2-toggle" onclick="return toggle('linearGradient.get_y2');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.linearGradient-class.html#get_y2">get_y2</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="linearGradient.get_y2-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="linearGradient.get_y2-expanded"><a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'y2'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">     </tt>
+<a name="linearGradient.set_gradientUnits"></a><div id="linearGradient.set_gradientUnits-def"><a name="L43"></a><tt class="py-lineno"> 43</tt> <a class="py-toggle" href="#" id="linearGradient.set_gradientUnits-toggle" onclick="return toggle('linearGradient.set_gradientUnits');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.linearGradient-class.html#set_gradientUnits">set_gradientUnits</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">gradientUnits</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="linearGradient.set_gradientUnits-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="linearGradient.set_gradientUnits-expanded"><a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'gradientUnits'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">gradientUnits</tt> </tt>
+</div><a name="linearGradient.get_gradientUnits"></a><div id="linearGradient.get_gradientUnits-def"><a name="L45"></a><tt class="py-lineno"> 45</tt> <a class="py-toggle" href="#" id="linearGradient.get_gradientUnits-toggle" onclick="return toggle('linearGradient.get_gradientUnits');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.linearGradient-class.html#get_gradientUnits">get_gradientUnits</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="linearGradient.get_gradientUnits-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="linearGradient.get_gradientUnits-expanded"><a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'gradientUnits'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">     </tt>
+<a name="linearGradient.set_gradientTransform"></a><div id="linearGradient.set_gradientTransform-def"><a name="L48"></a><tt class="py-lineno"> 48</tt> <a class="py-toggle" href="#" id="linearGradient.set_gradientTransform-toggle" onclick="return toggle('linearGradient.set_gradientTransform');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.linearGradient-class.html#set_gradientTransform">set_gradientTransform</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">gradientTransform</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="linearGradient.set_gradientTransform-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="linearGradient.set_gradientTransform-expanded"><a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'gradientTransform'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">gradientTransform</tt> </tt>
+</div><a name="linearGradient.get_gradientTransform"></a><div id="linearGradient.get_gradientTransform-def"><a name="L50"></a><tt class="py-lineno"> 50</tt> <a class="py-toggle" href="#" id="linearGradient.get_gradientTransform-toggle" onclick="return toggle('linearGradient.get_gradientTransform');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.linearGradient-class.html#get_gradientTransform">get_gradientTransform</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="linearGradient.get_gradientTransform-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="linearGradient.get_gradientTransform-expanded"><a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'gradientTransform'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">     </tt>
+<a name="linearGradient.set_spreadMethod"></a><div id="linearGradient.set_spreadMethod-def"><a name="L53"></a><tt class="py-lineno"> 53</tt> <a class="py-toggle" href="#" id="linearGradient.set_spreadMethod-toggle" onclick="return toggle('linearGradient.set_spreadMethod');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.linearGradient-class.html#set_spreadMethod">set_spreadMethod</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">spreadMethod</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="linearGradient.set_spreadMethod-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="linearGradient.set_spreadMethod-expanded"><a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'spreadMethod'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">spreadMethod</tt> </tt>
+</div><a name="linearGradient.get_spreadMethod"></a><div id="linearGradient.get_spreadMethod-def"><a name="L55"></a><tt class="py-lineno"> 55</tt> <a class="py-toggle" href="#" id="linearGradient.get_spreadMethod-toggle" onclick="return toggle('linearGradient.get_spreadMethod');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.linearGradient-class.html#get_spreadMethod">get_spreadMethod</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="linearGradient.get_spreadMethod-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="linearGradient.get_spreadMethod-expanded"><a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'spreadMethod'</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">     </tt>
+<a name="radialGradient"></a><div id="radialGradient-def"><a name="L58"></a><tt class="py-lineno"> 58</tt> <a class="py-toggle" href="#" id="radialGradient-toggle" onclick="return toggle('radialGradient');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pySVG.gradient.radialGradient-class.html">radialGradient</a><tt class="py-op">(</tt><tt class="py-base-class">BaseElement</tt><tt class="py-op">,</tt> <tt class="py-base-class">CoreAttrib</tt><tt class="py-op">,</tt> <tt class="py-base-class">XLinkAttrib</tt><tt class="py-op">,</tt> <tt class="py-base-class">PaintAttrib</tt><tt class="py-op">,</tt> <tt class="py-base-class">StyleAttrib</tt><tt class="py-op">,</tt> <tt class="py-base-class">ExternalAttrib</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="radialGradient-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="radialGradient-expanded"><a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-docstring">    Class representing the radialGradient element of an svg doc.</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="radialGradient.__init__"></a><div id="radialGradient.__init__-def"><a name="L62"></a><tt class="py-lineno"> 62</tt> <a class="py-toggle" href="#" id="radialGradient.__init__-toggle" onclick="return toggle('radialGradient.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.radialGradient-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">cx</tt><tt class="py-op">=</tt><tt class="py-string">'50%'</tt><tt class="py-op">,</tt><tt class="py-param">cy</tt><tt class="py-op">=</tt><tt class="py-string">'50%'</tt><tt class="py-op">,</tt><tt class="py-param">r</tt><tt class="py-op">=</tt><tt class="py-string">'50%'</tt><tt class="py-op">,</tt> <tt class="py-param">fx</tt><tt class="py-op">=</tt><tt class="py-string">'50%'</tt><tt class="py-op">,</tt><tt class="py-param">fy</tt><tt class="py-op">=</tt><tt class="py-string">'50%'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="radialGradient.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="radialGradient.__init__-expanded"><a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">        <tt id="link-8" class="py-name"><a title="pySVG.core.BaseElement" class="py-name" href="#" onclick="return doclink('link-8', 'BaseElement', 'link-2');">BaseElement</a></tt><tt class="py-op">.</tt><tt id="link-9" class="py-name"><a title="pySVG.animate.animate.__init__
+pySVG.animate.animateColor.__init__
+pySVG.animate.animateMotion.__init__
+pySVG.animate.animateTransform.__init__
+pySVG.animate.mpath.__init__
+pySVG.animate.set.__init__
+pySVG.builders.StyleBuilder.__init__
+pySVG.builders.TransformBuilder.__init__
+pySVG.core.BaseElement.__init__
+pySVG.core.TextContent.__init__
+pySVG.filter.feBlend.__init__
+pySVG.filter.feColorMatrix.__init__
+pySVG.filter.feComponentTransfer.__init__
+pySVG.filter.feComposite.__init__
+pySVG.filter.feConvolveMatrix.__init__
+pySVG.filter.feDiffuseLighting.__init__
+pySVG.filter.feDisplacementMap.__init__
+pySVG.filter.feDistantLight.__init__
+pySVG.filter.feFlood.__init__
+pySVG.filter.feFuncA.__init__
+pySVG.filter.feFuncB.__init__
+pySVG.filter.feFuncG.__init__
+pySVG.filter.feFuncR.__init__
+pySVG.filter.feGaussianBlur.__init__
+pySVG.filter.feImage.__init__
+pySVG.filter.feMerge.__init__
+pySVG.filter.feMergeNode.__init__
+pySVG.filter.feMorphology.__init__
+pySVG.filter.feOffset.__init__
+pySVG.filter.fePointLight.__init__
+pySVG.filter.feSpecularLighting.__init__
+pySVG.filter.feSpotLight.__init__
+pySVG.filter.feTile.__init__
+pySVG.filter.feTurbulence.__init__
+pySVG.filter.filter.__init__
+pySVG.gradient.linearGradient.__init__
+pySVG.gradient.pattern.__init__
+pySVG.gradient.radialGradient.__init__
+pySVG.gradient.stop.__init__
+pySVG.linking.a.__init__
+pySVG.linking.view.__init__
+pySVG.shape.circle.__init__
+pySVG.shape.ellipse.__init__
+pySVG.shape.line.__init__
+pySVG.shape.path.__init__
+pySVG.shape.polygon.__init__
+pySVG.shape.polyline.__init__
+pySVG.shape.rect.__init__
+pySVG.structure.defs.__init__
+pySVG.structure.desc.__init__
+pySVG.structure.g.__init__
+pySVG.structure.image.__init__
+pySVG.structure.metadata.__init__
+pySVG.structure.svg.__init__
+pySVG.structure.switch.__init__
+pySVG.structure.symbol.__init__
+pySVG.structure.title.__init__
+pySVG.structure.use.__init__
+pySVG.style.style.__init__" class="py-name" href="#" onclick="return doclink('link-9', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt><tt class="py-string">'radialGradient'</tt><tt class="py-op">)</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Method pySVG.gradient.radialGradient.set_cx()=pySVG.gradient.radialGradient-class.html#set_cx,Method pySVG.shape.circle.set_cx()=pySVG.shape.circle-class.html#set_cx,Method pySVG.shape.ellipse.set_cx()=pySVG.shape.ellipse-class.html#set_cx"><a title="pySVG.gradient.radialGradient.set_cx
+pySVG.shape.circle.set_cx
+pySVG.shape.ellipse.set_cx" class="py-name" href="#" onclick="return doclink('link-10', 'set_cx', 'link-10');">set_cx</a></tt><tt class="py-op">(</tt><tt class="py-name">cx</tt><tt class="py-op">)</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Method pySVG.gradient.radialGradient.set_cy()=pySVG.gradient.radialGradient-class.html#set_cy,Method pySVG.shape.circle.set_cy()=pySVG.shape.circle-class.html#set_cy,Method pySVG.shape.ellipse.set_cy()=pySVG.shape.ellipse-class.html#set_cy"><a title="pySVG.gradient.radialGradient.set_cy
+pySVG.shape.circle.set_cy
+pySVG.shape.ellipse.set_cy" class="py-name" href="#" onclick="return doclink('link-11', 'set_cy', 'link-11');">set_cy</a></tt><tt class="py-op">(</tt><tt class="py-name">cy</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Method pySVG.gradient.radialGradient.set_fx()=pySVG.gradient.radialGradient-class.html#set_fx"><a title="pySVG.gradient.radialGradient.set_fx" class="py-name" href="#" onclick="return doclink('link-12', 'set_fx', 'link-12');">set_fx</a></tt><tt class="py-op">(</tt><tt class="py-name">fx</tt><tt class="py-op">)</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Method pySVG.gradient.radialGradient.set_fy()=pySVG.gradient.radialGradient-class.html#set_fy"><a title="pySVG.gradient.radialGradient.set_fy" class="py-name" href="#" onclick="return doclink('link-13', 'set_fy', 'link-13');">set_fy</a></tt><tt class="py-op">(</tt><tt class="py-name">fy</tt><tt class="py-op">)</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Method pySVG.gradient.radialGradient.set_r()=pySVG.gradient.radialGradient-class.html#set_r,Method pySVG.shape.circle.set_r()=pySVG.shape.circle-class.html#set_r"><a title="pySVG.gradient.radialGradient.set_r
+pySVG.shape.circle.set_r" class="py-name" href="#" onclick="return doclink('link-14', 'set_r', 'link-14');">set_r</a></tt><tt class="py-op">(</tt><tt class="py-name">r</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">         </tt>
+<a name="radialGradient.set_cx"></a><div id="radialGradient.set_cx-def"><a name="L70"></a><tt class="py-lineno"> 70</tt> <a class="py-toggle" href="#" id="radialGradient.set_cx-toggle" onclick="return toggle('radialGradient.set_cx');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.radialGradient-class.html#set_cx">set_cx</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">cx</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="radialGradient.set_cx-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="radialGradient.set_cx-expanded"><a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'cx'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">cx</tt> </tt>
+</div><a name="radialGradient.get_cx"></a><div id="radialGradient.get_cx-def"><a name="L72"></a><tt class="py-lineno"> 72</tt> <a class="py-toggle" href="#" id="radialGradient.get_cx-toggle" onclick="return toggle('radialGradient.get_cx');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.radialGradient-class.html#get_cx">get_cx</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="radialGradient.get_cx-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="radialGradient.get_cx-expanded"><a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'cx'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">     </tt>
+<a name="radialGradient.set_cy"></a><div id="radialGradient.set_cy-def"><a name="L75"></a><tt class="py-lineno"> 75</tt> <a class="py-toggle" href="#" id="radialGradient.set_cy-toggle" onclick="return toggle('radialGradient.set_cy');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.radialGradient-class.html#set_cy">set_cy</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">cy</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="radialGradient.set_cy-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="radialGradient.set_cy-expanded"><a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'cy'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">cy</tt> </tt>
+</div><a name="radialGradient.get_cy"></a><div id="radialGradient.get_cy-def"><a name="L77"></a><tt class="py-lineno"> 77</tt> <a class="py-toggle" href="#" id="radialGradient.get_cy-toggle" onclick="return toggle('radialGradient.get_cy');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.radialGradient-class.html#get_cy">get_cy</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="radialGradient.get_cy-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="radialGradient.get_cy-expanded"><a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'cy'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">     </tt>
+<a name="radialGradient.set_r"></a><div id="radialGradient.set_r-def"><a name="L80"></a><tt class="py-lineno"> 80</tt> <a class="py-toggle" href="#" id="radialGradient.set_r-toggle" onclick="return toggle('radialGradient.set_r');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.radialGradient-class.html#set_r">set_r</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">r</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="radialGradient.set_r-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="radialGradient.set_r-expanded"><a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'r'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">r</tt> </tt>
+</div><a name="radialGradient.get_r"></a><div id="radialGradient.get_r-def"><a name="L82"></a><tt class="py-lineno"> 82</tt> <a class="py-toggle" href="#" id="radialGradient.get_r-toggle" onclick="return toggle('radialGradient.get_r');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.radialGradient-class.html#get_r">get_r</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="radialGradient.get_r-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="radialGradient.get_r-expanded"><a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'r'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">     </tt>
+<a name="radialGradient.set_fx"></a><div id="radialGradient.set_fx-def"><a name="L85"></a><tt class="py-lineno"> 85</tt> <a class="py-toggle" href="#" id="radialGradient.set_fx-toggle" onclick="return toggle('radialGradient.set_fx');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.radialGradient-class.html#set_fx">set_fx</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">fx</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="radialGradient.set_fx-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="radialGradient.set_fx-expanded"><a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'fx'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">fx</tt> </tt>
+</div><a name="radialGradient.get_fx"></a><div id="radialGradient.get_fx-def"><a name="L87"></a><tt class="py-lineno"> 87</tt> <a class="py-toggle" href="#" id="radialGradient.get_fx-toggle" onclick="return toggle('radialGradient.get_fx');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.radialGradient-class.html#get_fx">get_fx</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="radialGradient.get_fx-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="radialGradient.get_fx-expanded"><a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'fx'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">     </tt>
+<a name="radialGradient.set_fy"></a><div id="radialGradient.set_fy-def"><a name="L90"></a><tt class="py-lineno"> 90</tt> <a class="py-toggle" href="#" id="radialGradient.set_fy-toggle" onclick="return toggle('radialGradient.set_fy');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.radialGradient-class.html#set_fy">set_fy</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">fy</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="radialGradient.set_fy-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="radialGradient.set_fy-expanded"><a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'fy'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">fy</tt> </tt>
+</div><a name="radialGradient.get_fy"></a><div id="radialGradient.get_fy-def"><a name="L92"></a><tt class="py-lineno"> 92</tt> <a class="py-toggle" href="#" id="radialGradient.get_fy-toggle" onclick="return toggle('radialGradient.get_fy');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.radialGradient-class.html#get_fy">get_fy</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="radialGradient.get_fy-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="radialGradient.get_fy-expanded"><a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'fy'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">     </tt>
+<a name="radialGradient.set_gradientUnits"></a><div id="radialGradient.set_gradientUnits-def"><a name="L95"></a><tt class="py-lineno"> 95</tt> <a class="py-toggle" href="#" id="radialGradient.set_gradientUnits-toggle" onclick="return toggle('radialGradient.set_gradientUnits');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.radialGradient-class.html#set_gradientUnits">set_gradientUnits</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">gradientUnits</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="radialGradient.set_gradientUnits-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="radialGradient.set_gradientUnits-expanded"><a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'gradientUnits'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">gradientUnits</tt> </tt>
+</div><a name="radialGradient.get_gradientUnits"></a><div id="radialGradient.get_gradientUnits-def"><a name="L97"></a><tt class="py-lineno"> 97</tt> <a class="py-toggle" href="#" id="radialGradient.get_gradientUnits-toggle" onclick="return toggle('radialGradient.get_gradientUnits');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.radialGradient-class.html#get_gradientUnits">get_gradientUnits</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="radialGradient.get_gradientUnits-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="radialGradient.get_gradientUnits-expanded"><a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'gradientUnits'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">     </tt>
+<a name="radialGradient.set_gradientTransform"></a><div id="radialGradient.set_gradientTransform-def"><a name="L100"></a><tt class="py-lineno">100</tt> <a class="py-toggle" href="#" id="radialGradient.set_gradientTransform-toggle" onclick="return toggle('radialGradient.set_gradientTransform');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.radialGradient-class.html#set_gradientTransform">set_gradientTransform</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">gradientTransform</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="radialGradient.set_gradientTransform-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="radialGradient.set_gradientTransform-expanded"><a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'gradientTransform'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">gradientTransform</tt> </tt>
+</div><a name="radialGradient.get_gradientTransform"></a><div id="radialGradient.get_gradientTransform-def"><a name="L102"></a><tt class="py-lineno">102</tt> <a class="py-toggle" href="#" id="radialGradient.get_gradientTransform-toggle" onclick="return toggle('radialGradient.get_gradientTransform');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.radialGradient-class.html#get_gradientTransform">get_gradientTransform</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="radialGradient.get_gradientTransform-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="radialGradient.get_gradientTransform-expanded"><a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'gradientTransform'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">     </tt>
+<a name="radialGradient.set_spreadMethod"></a><div id="radialGradient.set_spreadMethod-def"><a name="L105"></a><tt class="py-lineno">105</tt> <a class="py-toggle" href="#" id="radialGradient.set_spreadMethod-toggle" onclick="return toggle('radialGradient.set_spreadMethod');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.radialGradient-class.html#set_spreadMethod">set_spreadMethod</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">spreadMethod</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="radialGradient.set_spreadMethod-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="radialGradient.set_spreadMethod-expanded"><a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'spreadMethod'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">spreadMethod</tt> </tt>
+</div><a name="radialGradient.get_spreadMethod"></a><div id="radialGradient.get_spreadMethod-def"><a name="L107"></a><tt class="py-lineno">107</tt> <a class="py-toggle" href="#" id="radialGradient.get_spreadMethod-toggle" onclick="return toggle('radialGradient.get_spreadMethod');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.radialGradient-class.html#get_spreadMethod">get_spreadMethod</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="radialGradient.get_spreadMethod-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="radialGradient.get_spreadMethod-expanded"><a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'spreadMethod'</tt><tt class="py-op">)</tt>     </tt>
+</div></div><a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">     </tt>
+<a name="stop"></a><div id="stop-def"><a name="L110"></a><tt class="py-lineno">110</tt> <a class="py-toggle" href="#" id="stop-toggle" onclick="return toggle('stop');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pySVG.gradient.stop-class.html">stop</a><tt class="py-op">(</tt><tt class="py-base-class">BaseElement</tt><tt class="py-op">,</tt> <tt class="py-base-class">CoreAttrib</tt><tt class="py-op">,</tt> <tt class="py-base-class">StyleAttrib</tt><tt class="py-op">,</tt> <tt class="py-base-class">PaintAttrib</tt><tt class="py-op">,</tt> <tt class="py-base-class">GradientAttrib</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="stop-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="stop-expanded"><a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"><tt class="py-docstring">    Class representing the stop element of an svg doc.</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="stop.__init__"></a><div id="stop.__init__-def"><a name="L114"></a><tt class="py-lineno">114</tt> <a class="py-toggle" href="#" id="stop.__init__-toggle" onclick="return toggle('stop.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.stop-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">offset</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="stop.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="stop.__init__-expanded"><a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">        <tt id="link-15" class="py-name"><a title="pySVG.core.BaseElement" class="py-name" href="#" onclick="return doclink('link-15', 'BaseElement', 'link-2');">BaseElement</a></tt><tt class="py-op">.</tt><tt id="link-16" class="py-name"><a title="pySVG.animate.animate.__init__
+pySVG.animate.animateColor.__init__
+pySVG.animate.animateMotion.__init__
+pySVG.animate.animateTransform.__init__
+pySVG.animate.mpath.__init__
+pySVG.animate.set.__init__
+pySVG.builders.StyleBuilder.__init__
+pySVG.builders.TransformBuilder.__init__
+pySVG.core.BaseElement.__init__
+pySVG.core.TextContent.__init__
+pySVG.filter.feBlend.__init__
+pySVG.filter.feColorMatrix.__init__
+pySVG.filter.feComponentTransfer.__init__
+pySVG.filter.feComposite.__init__
+pySVG.filter.feConvolveMatrix.__init__
+pySVG.filter.feDiffuseLighting.__init__
+pySVG.filter.feDisplacementMap.__init__
+pySVG.filter.feDistantLight.__init__
+pySVG.filter.feFlood.__init__
+pySVG.filter.feFuncA.__init__
+pySVG.filter.feFuncB.__init__
+pySVG.filter.feFuncG.__init__
+pySVG.filter.feFuncR.__init__
+pySVG.filter.feGaussianBlur.__init__
+pySVG.filter.feImage.__init__
+pySVG.filter.feMerge.__init__
+pySVG.filter.feMergeNode.__init__
+pySVG.filter.feMorphology.__init__
+pySVG.filter.feOffset.__init__
+pySVG.filter.fePointLight.__init__
+pySVG.filter.feSpecularLighting.__init__
+pySVG.filter.feSpotLight.__init__
+pySVG.filter.feTile.__init__
+pySVG.filter.feTurbulence.__init__
+pySVG.filter.filter.__init__
+pySVG.gradient.linearGradient.__init__
+pySVG.gradient.pattern.__init__
+pySVG.gradient.radialGradient.__init__
+pySVG.gradient.stop.__init__
+pySVG.linking.a.__init__
+pySVG.linking.view.__init__
+pySVG.shape.circle.__init__
+pySVG.shape.ellipse.__init__
+pySVG.shape.line.__init__
+pySVG.shape.path.__init__
+pySVG.shape.polygon.__init__
+pySVG.shape.polyline.__init__
+pySVG.shape.rect.__init__
+pySVG.structure.defs.__init__
+pySVG.structure.desc.__init__
+pySVG.structure.g.__init__
+pySVG.structure.image.__init__
+pySVG.structure.metadata.__init__
+pySVG.structure.svg.__init__
+pySVG.structure.switch.__init__
+pySVG.structure.symbol.__init__
+pySVG.structure.title.__init__
+pySVG.structure.use.__init__
+pySVG.style.style.__init__" class="py-name" href="#" onclick="return doclink('link-16', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt><tt class="py-string">'stop'</tt><tt class="py-op">)</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name" targets="Method pySVG.filter.feFuncR.set_offset()=pySVG.filter.feFuncR-class.html#set_offset,Method pySVG.gradient.stop.set_offset()=pySVG.gradient.stop-class.html#set_offset"><a title="pySVG.filter.feFuncR.set_offset
+pySVG.gradient.stop.set_offset" class="py-name" href="#" onclick="return doclink('link-17', 'set_offset', 'link-17');">set_offset</a></tt><tt class="py-op">(</tt><tt class="py-name">offset</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">         </tt>
+<a name="stop.set_offset"></a><div id="stop.set_offset-def"><a name="L118"></a><tt class="py-lineno">118</tt> <a class="py-toggle" href="#" id="stop.set_offset-toggle" onclick="return toggle('stop.set_offset');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.stop-class.html#set_offset">set_offset</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">offset</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="stop.set_offset-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="stop.set_offset-expanded"><a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'offset'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">offset</tt> </tt>
+</div><a name="stop.get_offset"></a><div id="stop.get_offset-def"><a name="L120"></a><tt class="py-lineno">120</tt> <a class="py-toggle" href="#" id="stop.get_offset-toggle" onclick="return toggle('stop.get_offset');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.stop-class.html#get_offset">get_offset</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="stop.get_offset-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="stop.get_offset-expanded"><a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'offset'</tt><tt class="py-op">)</tt>     </tt>
+</div></div><a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"> </tt>
+<a name="pattern"></a><div id="pattern-def"><a name="L123"></a><tt class="py-lineno">123</tt> <a class="py-toggle" href="#" id="pattern-toggle" onclick="return toggle('pattern');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="pySVG.gradient.pattern-class.html">pattern</a><tt class="py-op">(</tt><tt class="py-base-class">BaseElement</tt><tt class="py-op">,</tt> <tt class="py-base-class">CoreAttrib</tt><tt class="py-op">,</tt> <tt class="py-base-class">XLinkAttrib</tt><tt class="py-op">,</tt> <tt class="py-base-class">ConditionalAttrib</tt><tt class="py-op">,</tt> <tt class="py-base-class">ExternalAttrib</tt><tt class="py-op">,</tt> <tt class="py-base-class">StyleAttrib</tt><tt class="py-op">,</tt> <tt class="py-base-class">PresentationAttrib</tt><tt class="py-op">,</tt> <tt class="py-base-class">PointAttrib</tt><tt class="py-op">,</tt> <tt class="py-base-class">DimensionAttrib</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="pattern-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="pattern-expanded"><a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line"><tt class="py-docstring">    Class representing the pattern element of an svg doc.</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="pattern.__init__"></a><div id="pattern.__init__-def"><a name="L127"></a><tt class="py-lineno">127</tt> <a class="py-toggle" href="#" id="pattern.__init__-toggle" onclick="return toggle('pattern.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.pattern-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">x</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">y</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">width</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">height</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">patternUnits</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">patternContentUnits</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">patternTransform</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">viewBox</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">preserveAspectRatio</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="pattern.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="pattern.__init__-expanded"><a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">        <tt id="link-18" class="py-name"><a title="pySVG.core.BaseElement" class="py-name" href="#" onclick="return doclink('link-18', 'BaseElement', 'link-2');">BaseElement</a></tt><tt class="py-op">.</tt><tt id="link-19" class="py-name"><a title="pySVG.animate.animate.__init__
+pySVG.animate.animateColor.__init__
+pySVG.animate.animateMotion.__init__
+pySVG.animate.animateTransform.__init__
+pySVG.animate.mpath.__init__
+pySVG.animate.set.__init__
+pySVG.builders.StyleBuilder.__init__
+pySVG.builders.TransformBuilder.__init__
+pySVG.core.BaseElement.__init__
+pySVG.core.TextContent.__init__
+pySVG.filter.feBlend.__init__
+pySVG.filter.feColorMatrix.__init__
+pySVG.filter.feComponentTransfer.__init__
+pySVG.filter.feComposite.__init__
+pySVG.filter.feConvolveMatrix.__init__
+pySVG.filter.feDiffuseLighting.__init__
+pySVG.filter.feDisplacementMap.__init__
+pySVG.filter.feDistantLight.__init__
+pySVG.filter.feFlood.__init__
+pySVG.filter.feFuncA.__init__
+pySVG.filter.feFuncB.__init__
+pySVG.filter.feFuncG.__init__
+pySVG.filter.feFuncR.__init__
+pySVG.filter.feGaussianBlur.__init__
+pySVG.filter.feImage.__init__
+pySVG.filter.feMerge.__init__
+pySVG.filter.feMergeNode.__init__
+pySVG.filter.feMorphology.__init__
+pySVG.filter.feOffset.__init__
+pySVG.filter.fePointLight.__init__
+pySVG.filter.feSpecularLighting.__init__
+pySVG.filter.feSpotLight.__init__
+pySVG.filter.feTile.__init__
+pySVG.filter.feTurbulence.__init__
+pySVG.filter.filter.__init__
+pySVG.gradient.linearGradient.__init__
+pySVG.gradient.pattern.__init__
+pySVG.gradient.radialGradient.__init__
+pySVG.gradient.stop.__init__
+pySVG.linking.a.__init__
+pySVG.linking.view.__init__
+pySVG.shape.circle.__init__
+pySVG.shape.ellipse.__init__
+pySVG.shape.line.__init__
+pySVG.shape.path.__init__
+pySVG.shape.polygon.__init__
+pySVG.shape.polyline.__init__
+pySVG.shape.rect.__init__
+pySVG.structure.defs.__init__
+pySVG.structure.desc.__init__
+pySVG.structure.g.__init__
+pySVG.structure.image.__init__
+pySVG.structure.metadata.__init__
+pySVG.structure.svg.__init__
+pySVG.structure.switch.__init__
+pySVG.structure.symbol.__init__
+pySVG.structure.title.__init__
+pySVG.structure.use.__init__
+pySVG.style.style.__init__" class="py-name" href="#" onclick="return doclink('link-19', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt><tt class="py-string">'pattern'</tt><tt class="py-op">)</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name" targets="Method pySVG.attributes.FilterPrimitiveAttrib.set_x()=pySVG.attributes.FilterPrimitiveAttrib-class.html#set_x,Method pySVG.core.PointAttrib.set_x()=pySVG.core.PointAttrib-class.html#set_x"><a title="pySVG.attributes.FilterPrimitiveAttrib.set_x
+pySVG.core.PointAttrib.set_x" class="py-name" href="#" onclick="return doclink('link-20', 'set_x', 'link-20');">set_x</a></tt><tt class="py-op">(</tt><tt class="py-name">x</tt><tt class="py-op">)</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name" targets="Method pySVG.attributes.FilterPrimitiveAttrib.set_y()=pySVG.attributes.FilterPrimitiveAttrib-class.html#set_y,Method pySVG.core.PointAttrib.set_y()=pySVG.core.PointAttrib-class.html#set_y"><a title="pySVG.attributes.FilterPrimitiveAttrib.set_y
+pySVG.core.PointAttrib.set_y" class="py-name" href="#" onclick="return doclink('link-21', 'set_y', 'link-21');">set_y</a></tt><tt class="py-op">(</tt><tt class="py-name">y</tt><tt class="py-op">)</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name" targets="Method pySVG.attributes.FilterPrimitiveAttrib.set_width()=pySVG.attributes.FilterPrimitiveAttrib-class.html#set_width,Method pySVG.core.DimensionAttrib.set_width()=pySVG.core.DimensionAttrib-class.html#set_width"><a title="pySVG.attributes.FilterPrimitiveAttrib.set_width
+pySVG.core.DimensionAttrib.set_width" class="py-name" href="#" onclick="return doclink('link-22', 'set_width', 'link-22');">set_width</a></tt><tt class="py-op">(</tt><tt class="py-name">width</tt><tt class="py-op">)</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-23" class="py-name" targets="Method pySVG.attributes.FilterPrimitiveAttrib.set_height()=pySVG.attributes.FilterPrimitiveAttrib-class.html#set_height,Method pySVG.core.DimensionAttrib.set_height()=pySVG.core.DimensionAttrib-class.html#set_height"><a title="pySVG.attributes.FilterPrimitiveAttrib.set_height
+pySVG.core.DimensionAttrib.set_height" class="py-name" href="#" onclick="return doclink('link-23', 'set_height', 'link-23');">set_height</a></tt><tt class="py-op">(</tt><tt class="py-name">height</tt><tt class="py-op">)</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name" targets="Method pySVG.gradient.pattern.set_patternUnits()=pySVG.gradient.pattern-class.html#set_patternUnits"><a title="pySVG.gradient.pattern.set_patternUnits" class="py-name" href="#" onclick="return doclink('link-24', 'set_patternUnits', 'link-24');">set_patternUnits</a></tt><tt class="py-op">(</tt><tt class="py-name">patternUnits</tt><tt class="py-op">)</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-25" class="py-name" targets="Method pySVG.gradient.pattern.set_patternContentUnits()=pySVG.gradient.pattern-class.html#set_patternContentUnits"><a title="pySVG.gradient.pattern.set_patternContentUnits" class="py-name" href="#" onclick="return doclink('link-25', 'set_patternContentUnits', 'link-25');">set_patternContentUnits</a></tt><tt class="py-op">(</tt><tt class="py-name">patternContentUnits</tt><tt class="py-op">)</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name" targets="Method pySVG.gradient.pattern.set_patternTransform()=pySVG.gradient.pattern-class.html#set_patternTransform"><a title="pySVG.gradient.pattern.set_patternTransform" class="py-name" href="#" onclick="return doclink('link-26', 'set_patternTransform', 'link-26');">set_patternTransform</a></tt><tt class="py-op">(</tt><tt class="py-name">patternTransform</tt><tt class="py-op">)</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-27" class="py-name" targets="Method pySVG.gradient.pattern.set_viewBox()=pySVG.gradient.pattern-class.html#set_viewBox,Method pySVG.linking.view.set_viewBox()=pySVG.linking.view-class.html#set_viewBox,Method pySVG.structure.svg.set_viewBox()=pySVG.structure.svg-class.html#set_viewBox,Method pySVG.structure.symbol.set_viewBox()=pySVG.structure.symbol-class.html#set_viewBox"><a title="pySVG.gradient.pattern.set_viewBox
+pySVG.linking.view.set_viewBox
+pySVG.structure.svg.set_viewBox
+pySVG.structure.symbol.set_viewBox" class="py-name" href="#" onclick="return doclink('link-27', 'set_viewBox', 'link-27');">set_viewBox</a></tt><tt class="py-op">(</tt><tt class="py-name">viewBox</tt><tt class="py-op">)</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Method pySVG.gradient.pattern.set_preserveAspectRatio()=pySVG.gradient.pattern-class.html#set_preserveAspectRatio,Method pySVG.linking.view.set_preserveAspectRatio()=pySVG.linking.view-class.html#set_preserveAspectRatio,Method pySVG.structure.image.set_preserveAspectRatio()=pySVG.structure.image-class.html#set_preserveAspectRatio,Method pySVG.structure.svg.set_preserveAspectRatio()=pySVG.structure.svg-class.html#set_preserveAspectRatio,Method pySVG.structure.symbol.set_preserveAspectRatio()=pySVG.structure.symbol-class.html#set_preserveAspectRatio"><a title="pySVG.gradient.pattern.set_preserveAspectRatio
+pySVG.linking.view.set_preserveAspectRatio
+pySVG.structure.image.set_preserveAspectRatio
+pySVG.structure.svg.set_preserveAspectRatio
+pySVG.structure.symbol.set_preserveAspectRatio" class="py-name" href="#" onclick="return doclink('link-28', 'set_preserveAspectRatio', 'link-28');">set_preserveAspectRatio</a></tt><tt class="py-op">(</tt><tt class="py-name">preserveAspectRatio</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">         </tt>
+<a name="pattern.set_viewBox"></a><div id="pattern.set_viewBox-def"><a name="L139"></a><tt class="py-lineno">139</tt> <a class="py-toggle" href="#" id="pattern.set_viewBox-toggle" onclick="return toggle('pattern.set_viewBox');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.pattern-class.html#set_viewBox">set_viewBox</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">viewBox</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="pattern.set_viewBox-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="pattern.set_viewBox-expanded"><a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'viewBox'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">viewBox</tt> </tt>
+</div><a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">     </tt>
+<a name="pattern.get_viewBox"></a><div id="pattern.get_viewBox-def"><a name="L142"></a><tt class="py-lineno">142</tt> <a class="py-toggle" href="#" id="pattern.get_viewBox-toggle" onclick="return toggle('pattern.get_viewBox');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.pattern-class.html#get_viewBox">get_viewBox</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="pattern.get_viewBox-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="pattern.get_viewBox-expanded"><a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'viewBox'</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">     </tt>
+<a name="pattern.set_preserveAspectRatio"></a><div id="pattern.set_preserveAspectRatio-def"><a name="L145"></a><tt class="py-lineno">145</tt> <a class="py-toggle" href="#" id="pattern.set_preserveAspectRatio-toggle" onclick="return toggle('pattern.set_preserveAspectRatio');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.pattern-class.html#set_preserveAspectRatio">set_preserveAspectRatio</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">preserveAspectRatio</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="pattern.set_preserveAspectRatio-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="pattern.set_preserveAspectRatio-expanded"><a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'preserveAspectRatio'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">preserveAspectRatio</tt> </tt>
+</div><a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">     </tt>
+<a name="pattern.get_preserveAspectRatio"></a><div id="pattern.get_preserveAspectRatio-def"><a name="L148"></a><tt class="py-lineno">148</tt> <a class="py-toggle" href="#" id="pattern.get_preserveAspectRatio-toggle" onclick="return toggle('pattern.get_preserveAspectRatio');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.pattern-class.html#get_preserveAspectRatio">get_preserveAspectRatio</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="pattern.get_preserveAspectRatio-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="pattern.get_preserveAspectRatio-expanded"><a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'preserveAspectRatio'</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">     </tt>
+<a name="pattern.set_patternUnits"></a><div id="pattern.set_patternUnits-def"><a name="L151"></a><tt class="py-lineno">151</tt> <a class="py-toggle" href="#" id="pattern.set_patternUnits-toggle" onclick="return toggle('pattern.set_patternUnits');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.pattern-class.html#set_patternUnits">set_patternUnits</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">patternUnits</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="pattern.set_patternUnits-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="pattern.set_patternUnits-expanded"><a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'patternUnits'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">patternUnits</tt> </tt>
+</div><a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">     </tt>
+<a name="pattern.get_patternUnits"></a><div id="pattern.get_patternUnits-def"><a name="L154"></a><tt class="py-lineno">154</tt> <a class="py-toggle" href="#" id="pattern.get_patternUnits-toggle" onclick="return toggle('pattern.get_patternUnits');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.pattern-class.html#get_patternUnits">get_patternUnits</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="pattern.get_patternUnits-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="pattern.get_patternUnits-expanded"><a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'patternUnits'</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">     </tt>
+<a name="pattern.set_patternContentUnits"></a><div id="pattern.set_patternContentUnits-def"><a name="L157"></a><tt class="py-lineno">157</tt> <a class="py-toggle" href="#" id="pattern.set_patternContentUnits-toggle" onclick="return toggle('pattern.set_patternContentUnits');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.pattern-class.html#set_patternContentUnits">set_patternContentUnits</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">patternContentUnits</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="pattern.set_patternContentUnits-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="pattern.set_patternContentUnits-expanded"><a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'patternContentUnits'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">patternContentUnits</tt> </tt>
+</div><a name="pattern.get_patternContentUnits"></a><div id="pattern.get_patternContentUnits-def"><a name="L159"></a><tt class="py-lineno">159</tt> <a class="py-toggle" href="#" id="pattern.get_patternContentUnits-toggle" onclick="return toggle('pattern.get_patternContentUnits');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.pattern-class.html#get_patternContentUnits">get_patternContentUnits</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="pattern.get_patternContentUnits-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="pattern.get_patternContentUnits-expanded"><a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'patternContentUnits'</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">     </tt>
+<a name="pattern.set_patternTransform"></a><div id="pattern.set_patternTransform-def"><a name="L162"></a><tt class="py-lineno">162</tt> <a class="py-toggle" href="#" id="pattern.set_patternTransform-toggle" onclick="return toggle('pattern.set_patternTransform');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.pattern-class.html#set_patternTransform">set_patternTransform</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">patternTransform</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="pattern.set_patternTransform-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="pattern.set_patternTransform-expanded"><a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'patternTransform'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">patternTransform</tt> </tt>
+</div><a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">     </tt>
+<a name="pattern.get_patternTransform"></a><div id="pattern.get_patternTransform-def"><a name="L165"></a><tt class="py-lineno">165</tt> <a class="py-toggle" href="#" id="pattern.get_patternTransform-toggle" onclick="return toggle('pattern.get_patternTransform');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="pySVG.gradient.pattern-class.html#get_patternTransform">get_patternTransform</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="pattern.get_patternTransform-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="pattern.get_patternTransform-expanded"><a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_attributes</tt><tt class="py-op">[</tt><tt class="py-string">'patternTransform'</tt><tt class="py-op">]</tt> </tt>
+</div></div><a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pySVG-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >pysvg</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Sep 25 13:55:12 2009
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
