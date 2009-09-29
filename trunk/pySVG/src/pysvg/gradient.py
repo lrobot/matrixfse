@@ -120,7 +120,7 @@ class stop(BaseElement, CoreAttrib, StyleAttrib, PaintAttrib, GradientAttrib):
     def get_offset(self):
         return self._attributes.get('offset')    
 
-class pattern(BaseElement, CoreAttrib, XLinkAttrib, ConditionalAttrib, ExternalAttrib, StyleAttrib, PresentationAttrib, PointAttrib, DimensionAttrib):
+class pattern(BaseElement, CoreAttrib, XLinkAttrib, ConditionalAttrib, ExternalAttrib, StyleAttrib, PresentationAttributes_All, PointAttrib, DimensionAttrib):
     """
     Class representing the pattern element of an svg doc.
     """

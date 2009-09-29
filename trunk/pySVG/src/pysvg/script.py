@@ -19,4 +19,4 @@ class script(BaseElement, CoreAttrib, XLinkAttrib):
     def set_type(self, type):
         self._attributes['type']=type
     def get_type(self):
-        return self._attributes.get('type') 
+        return self._attributes.get('type')

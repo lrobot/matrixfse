@@ -7,7 +7,7 @@ For licensing information please refer to license.txt
 from attributes import *
 from core import *
 
-class filter(BaseElement, CoreAttrib, XLinkAttrib, ExternalAttrib, StyleAttrib, PresentationAttrib, PointAttrib, DimensionAttrib):
+class filter(BaseElement, CoreAttrib, XLinkAttrib, ExternalAttrib, StyleAttrib, PresentationAttributes_All, PointAttrib, DimensionAttrib):
     """
     Class representing the filter element of an svg doc.
     """
@@ -177,17 +177,12 @@ class feConvolveMatrix(feComponentTransfer):
     def get_preserveAlpha(self):
         return self._attributes.get('preserveAlpha')
 
-class feDiffuseLighting(feComponentTransfer, StyleAttrib, PaintAttrib):
+class feDiffuseLighting(feComponentTransfer, StyleAttrib, PaintAttrib, PresentationAttributes_LightingEffects):
     """
     Class representing the feDiffuseLighting element of an svg doc.
     """
     def __init__(self, ):
         BaseElement.__init__(self,'feDiffuseLighting')
-    
-    def set_lighting_color(self, lighting_color):
-        self._attributes['lighting-color']=lighting_color
-    def get_lighting_color(self):
-        return self._attributes.get('lighting-color')
     
     def set_surfaceScale(self, surfaceScale):
         self._attributes['surfaceScale']=surfaceScale
@@ -231,22 +226,12 @@ class feDisplacementMap(feComponentTransfer):
     def get_yChannelSelector(self):
         return self._attributes.get('yChannelSelector')
 
-class feFlood(feComponentTransfer, StyleAttrib, PaintAttrib):
+class feFlood(feComponentTransfer, StyleAttrib, PaintAttrib, PresentationAttributes_feFlood):
     """
     Class representing the feFlood element of an svg doc.
     """
     def __init__(self, ):
         BaseElement.__init__(self,'feFlood')
-    
-    def set_flood_color(self, flood_color):
-        self._attributes['flood-color']=flood_color
-    def get_flood_color(self):
-        return self._attributes.get('flood-color')
-    
-    def set_flood_opacity(self, flood_opacity):
-        self._attributes['flood-opacity']=flood_opacity
-    def get_flood_opacity(self):
-        return self._attributes.get('flood-opacity')
     
 class feGaussianBlur(feComponentTransfer):
     """
@@ -261,7 +246,7 @@ class feGaussianBlur(feComponentTransfer):
     def get_stdDeviation(self):
         return self._attributes.get('stdDeviation')
 
-class feImage(BaseElement, CoreAttrib, XLinkAttrib, FilterColorAttrib, FilterPrimitiveAttrib, ExternalAttrib, StyleAttrib, PresentationAttrib):
+class feImage(BaseElement, CoreAttrib, XLinkAttrib, FilterColorAttrib, FilterPrimitiveAttrib, ExternalAttrib, StyleAttrib, PresentationAttributes_All):
     """
     Class representing the feImage element of an svg doc.
     """
@@ -311,7 +296,7 @@ class feOffset(feComponentTransfer, DeltaPointAttrib):
     def __init__(self, ):
         BaseElement.__init__(self,'feOffset')
 
-class feSpecularLighting(feComponentTransfer, StyleAttrib, PaintAttrib):
+class feSpecularLighting(feComponentTransfer, StyleAttrib, PaintAttrib, PresentationAttributes_LightingEffects):
     """
     Class representing the feSpecularLighting element of an svg doc.
     """
@@ -323,11 +308,6 @@ class feSpecularLighting(feComponentTransfer, StyleAttrib, PaintAttrib):
         self.set_specularExponent(specularExponent)
         self.set_kernelUnitLength(kernelUnitLength)
         
-    def set_lighting_color(self, lighting_color):
-        self._attributes['lighting-color']=lighting_color
-    def get_lighting_color(self):
-        return self._attributes.get('lighting-color')
-    
     def set_surfaceScale(self, surfaceScale):
         self._attributes['surfaceScale']=surfaceScale
     def get_surfaceScale(self):

@@ -26,8 +26,8 @@ class BaseElement:
     def __init__(self, elementName):
         """
         initializes the object
-        @type  startTag: string 
-        @param startTag:  the tag for the svg element name (e.g. <text ) 
+        @type  elementName: string 
+        @param elementName:  name of the element (used for the xml tag) 
         """
         self._elementName=elementName
         self._attributes={}  #key value
