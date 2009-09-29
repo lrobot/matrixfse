@@ -9,7 +9,7 @@ from core import *
 
   
         
-class a(BaseElement, CoreAttrib, ConditionalAttrib, StyleAttrib, ExternalAttrib, PresentationAttrib, GraphicalEventsAttrib, XLinkAttrib):
+class a(BaseElement, CoreAttrib, ConditionalAttrib, StyleAttrib, ExternalAttrib, PresentationAttributes_All, GraphicalEventsAttrib, XLinkAttrib):
     """
     Class representing the a element of an svg doc.
     """

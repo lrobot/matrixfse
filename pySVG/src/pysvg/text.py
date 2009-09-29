@@ -157,4 +157,5 @@ class text(BaseElement, CoreAttrib, ConditionalAttrib, ExternalAttrib, StyleAttr
     def set_lengthAdjust(self, lengthAdjust):
         self._attributes['lengthAdjust']=lengthAdjust
     def get_lengthAdjust(self):
-        return self._attributes.get('lengthAdjust')   
+        return self._attributes.get('lengthAdjust')
+    

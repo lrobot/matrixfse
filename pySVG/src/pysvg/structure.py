@@ -11,7 +11,7 @@ from core import *
 
   
         
-class g(BaseElement, CoreAttrib, ConditionalAttrib, StyleAttrib, ExternalAttrib, PresentationAttrib, GraphicalEventsAttrib):
+class g(BaseElement, CoreAttrib, ConditionalAttrib, StyleAttrib, ExternalAttrib, PresentationAttributes_All, GraphicalEventsAttrib):
     """
     Class representing the g element of an svg doc.
     """
@@ -52,7 +52,7 @@ class metadata(BaseElement, CoreAttrib):
     def __init__(self, ):
         BaseElement.__init__(self,'metadata')
 
-class symbol(BaseElement, CoreAttrib, StyleAttrib, ExternalAttrib, PresentationAttrib, GraphicalEventsAttrib):
+class symbol(BaseElement, CoreAttrib, StyleAttrib, ExternalAttrib, PresentationAttributes_All, GraphicalEventsAttrib):
     """
     Class representing the symbol element of an svg doc.
     """
@@ -71,7 +71,7 @@ class symbol(BaseElement, CoreAttrib, StyleAttrib, ExternalAttrib, PresentationA
     def get_preserveAspectRatio(self):
         return self._attributes['preserveAspectRatio']
 
-class use(BaseElement, CoreAttrib, StyleAttrib, ConditionalAttrib, PointAttrib, DimensionAttrib, XLinkAttrib, PresentationAttrib, GraphicalEventsAttrib):
+class use(BaseElement, CoreAttrib, StyleAttrib, ConditionalAttrib, PointAttrib, DimensionAttrib, XLinkAttrib, PresentationAttributes_All, GraphicalEventsAttrib):
     """
     Class representing the use element of an svg doc.
     """
@@ -83,7 +83,7 @@ class use(BaseElement, CoreAttrib, StyleAttrib, ConditionalAttrib, PointAttrib, 
     def get_transform(self):
         return self._attributes.get('transform')
 
-class svg(BaseElement, CoreAttrib, StyleAttrib, ConditionalAttrib, PointAttrib, DimensionAttrib, XLinkAttrib, PresentationAttrib, GraphicalEventsAttrib, DocumentEventsAttrib):
+class svg(BaseElement, CoreAttrib, StyleAttrib, ConditionalAttrib, PointAttrib, DimensionAttrib, XLinkAttrib, PresentationAttributes_All, GraphicalEventsAttrib, DocumentEventsAttrib):
     """
     Class representing the svg element of an svg doc.
     """
@@ -175,7 +175,7 @@ class image(BaseElement, CoreAttrib, ConditionalAttrib, StyleAttrib, ViewportAtt
     def get_transform(self):
         return self._attributes.get('transform') 
 
-class switch(BaseElement, CoreAttrib, ConditionalAttrib, StyleAttrib, PresentationAttrib, GraphicalEventsAttrib, ExternalAttrib):
+class switch(BaseElement, CoreAttrib, ConditionalAttrib, StyleAttrib, PresentationAttributes_All, GraphicalEventsAttrib, ExternalAttrib):
     """
     Class representing the switch element of an svg doc.
     """

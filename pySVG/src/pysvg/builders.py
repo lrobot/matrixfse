@@ -133,17 +133,17 @@ class ShapeBuilder:
     return p
     
     
-  def createLine(self,x1,y1,x2,y2,strokewidth=1,stroke="black"):
+  def createLine(self,X1,Y1,X2,Y2,strokewidth=1,stroke="black"):
     """
     Creates a line
-    @type  x1: string or int
-    @param x1:  starting x-coordinate
-    @type  x1: string or int
-    @param y1:  starting y-coordinate
-    @type  y2: string or int
-    @param x2:  ending x-coordinate
-    @type  y2: string or int
-    @param y2:  ending y-coordinate
+    @type  X1: string or int
+    @param X1:  starting x-coordinate
+    @type  Y1: string or int
+    @param Y1:  starting y-coordinate
+    @type  X2: string or int
+    @param X2:  ending x-coordinate
+    @type  Y2: string or int
+    @param Y2:  ending y-coordinate
     @type  strokewidth: string or int
     @param strokewidth:  width of the pen used to draw
     @type  stroke: string (either css constants like "black" or numerical values like "#FFFFFF")
@@ -152,7 +152,7 @@ class ShapeBuilder:
     """
     style_dict={'stroke-width':strokewidth,'stroke':stroke}
     myStyle=StyleBuilder(style_dict)
-    l=line(x1,y1,x2,y2)
+    l=line(X1,Y1,X2,Y2)
     l.set_style(myStyle.getStyle())
     return l
   

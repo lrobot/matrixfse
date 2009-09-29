@@ -94,23 +94,23 @@ class line(BaseShape, PointToAttrib):
     Note that this element is NOT painted VISIBLY by default UNLESS you provide
     a style including STROKE and STROKE-WIDTH
     """
-    def __init__(self, x1=None,y1=None,x2=None,y2=None):
+    def __init__(self, X1=None, Y1=None, X2=None, Y2=None):
         """
         Creates a line
-        @type  x1: string or int
-        @param x1:  starting x-coordinate
-        @type  x1: string or int
-        @param y1:  starting y-coordinate
-        @type  y2: string or int
-        @param x2:  ending x-coordinate
-        @type  y2: string or int
-        @param y2:  ending y-coordinate
+        @type  X1: string or int
+        @param X1:  starting x-coordinate
+        @type  Y1: string or int
+        @param Y1:  starting y-coordinate
+        @type  X2: string or int
+        @param X2:  ending x-coordinate
+        @type  Y2: string or int
+        @param Y2:  ending y-coordinate
         """
         BaseElement.__init__(self,'line')
-        self.set_x1(x1)
-        self.set_y1(y1)
-        self.set_x2(x2)
-        self.set_y2(y2)
+        self.set_x1(X1)
+        self.set_y1(Y1)
+        self.set_x2(X2)
+        self.set_y2(Y2)
         
     def set_x1(self, x1):
         self._attributes['x1']=x1
