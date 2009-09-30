@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Welcome to pySVG’s documentation! &mdash; pySVG v0.2.0 documentation</title>
+    <title>Application API &mdash; pySVG v0.2.0 documentation</title>
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -19,7 +19,7 @@
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="pySVG v0.2.0 documentation" href="" /> 
+    <link rel="top" title="pySVG v0.2.0 documentation" href="index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -31,7 +31,7 @@
         <li class="right" >
           <a href="modindex.html" title="Global Module Index"
              accesskey="M">modules</a> |</li>
-        <li><a href="">pySVG v0.2.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">pySVG v0.2.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -40,19 +40,41 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="welcome-to-pysvg-s-documentation">
-<h1>Welcome to pySVG&#8217;s documentation!<a class="headerlink" href="#welcome-to-pysvg-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<ul class="simple">
-</ul>
-</div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><a class="reference external" href="genindex.html"><em>Index</em></a></li>
-<li><a class="reference external" href="modindex.html"><em>Module Index</em></a></li>
-<li><a class="reference external" href="search.html"><em>Search Page</em></a></li>
-</ul>
+  <div class="section" id="module-pysvg.core">
+<h1>Application API<a class="headerlink" href="#module-pysvg.core" title="Permalink to this headline">¶</a></h1>
+<p>(C) 2008, 2009 Kerim Mansour
+For licensing information please refer to license.txt</p>
+<dl class="class">
+<dt id="pysvg.core.BaseElement">
+<em class="property">class </em><tt class="descclassname">pysvg.core.</tt><tt class="descname">BaseElement</tt><big>(</big><em>elementName</em><big>)</big><a class="headerlink" href="#pysvg.core.BaseElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the base class for all svg elements like title etc. It provides common functionality.
+It should NOT be directly used by anyone.</p>
+<dl class="method">
+<dt id="pysvg.core.BaseElement.getXML">
+<tt class="descname">getXML</tt><big>(</big><big>)</big><a class="headerlink" href="#pysvg.core.BaseElement.getXML" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a XML representation of the current element.
+This function can be used for debugging purposes. It is also used by getXML in SVG</p>
+<p>&#64;return:  the representation of the current element as an xml string</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pysvg.core.BaseElement.quote_attrib">
+<tt class="descname">quote_attrib</tt><big>(</big><em>inStr</em><big>)</big><a class="headerlink" href="#pysvg.core.BaseElement.quote_attrib" title="Permalink to this definition">¶</a></dt>
+<dd>Transforms characters between xml notation and python notation.</dd></dl>
+
+<dl class="method">
+<dt id="pysvg.core.BaseElement.save">
+<tt class="descname">save</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#pysvg.core.BaseElement.save" title="Permalink to this definition">¶</a></dt>
+<dd>Stores any element in a svg file (including header). 
+Calling this method only makes sense if the root element is an svg elemnt</dd></dl>
+
+<dl class="method">
+<dt id="pysvg.core.BaseElement.wrap_xml">
+<tt class="descname">wrap_xml</tt><big>(</big><em>xml</em><big>)</big><a class="headerlink" href="#pysvg.core.BaseElement.wrap_xml" title="Permalink to this definition">¶</a></dt>
+<dd>Method that provides a standard svg header string for a file</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -61,17 +83,9 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-            <h3><a href="">Table Of Contents</a></h3>
-            <ul>
-<li><a class="reference external" href="">Welcome to pySVG&#8217;s documentation!</a><ul>
-</ul>
-</li>
-<li><a class="reference external" href="#indices-and-tables">Indices and tables</a></li>
-</ul>
-
             <h3>This Page</h3>
             <ul class="this-page-menu">
-              <li><a href="_sources/index.txt"
+              <li><a href="_sources/api_core.txt"
                      rel="nofollow">Show Source</a></li>
             </ul>
           <div id="searchbox" style="display: none">
@@ -100,7 +114,7 @@
         <li class="right" >
           <a href="modindex.html" title="Global Module Index"
              >modules</a> |</li>
-        <li><a href="">pySVG v0.2.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">pySVG v0.2.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
